@@ -1,47 +1,42 @@
 # COM_04_WOOCOMMERCE_RELAUNCH_BACKLOG
 
 Status: PRIVATE_CANONICAL — LIVE BACKLOG
-Version: 0.2
+Version: 0.3
 Venture: Tropik Commerce
-Updated: 2026-08-17
-Source: COM-WC-001 Audit Blueprint + Inventory findings WC-F001 to WC-F009
+Updated: 2026-08-22
+Source: COM-WC-001 Audit Blueprint + founder evidence batches
 
 ## Rules
 
-- Every item traces to an Inventory finding.
+- Every item traces to an Inventory finding/evidence.
 - GREEN = execute now / before relaunch.
 - YELLOW = prepare, validate or monitor.
 - RED = defer.
 - Payments, tax, shipping and legal always carry a human gate.
-- Do not remediate production before backup/staging readiness is confirmed.
+- Production changes require explicit approval even when staging tests have passed.
 
 ## Backlog
 
-| ID | Title | Source Finding | Track | Priority | Impact | Urgency | Effort | Launch Blocker? | Proposed Action | Human Approval Required? | Status | Notes |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| BL-001 | Confirm Hostinger backup + create/use staging before changes | WC-F001, WC-F009 | Both | GREEN | High | High | Low | Yes for safe remediation | Verify latest restorable backup and staging capability; perform build/audit changes in staging, not live production. | Yes — before any production change | Not started | First action before redesign/updates. |
-| BL-002 | Capture current visual system before redesign | WC-F004, WC-F009 | Both | GREEN | High | High | Low | No | Document active theme, Divi setup, typography, colors, layouts, header/footer, product-card patterns, reusable modules and old-design references before altering them. | No for documentation; Yes before production changes | Not started | Preserve what already works aesthetically. |
-| BL-003 | Inventory themes and plugins with dependencies | WC-F003, WC-F004, WC-F008 | Both | GREEN | High | High | Medium | Potentially | Capture active/inactive themes and plugins, versions, function and business criticality. Remove/update nothing yet. | Yes before removal/update | Not started | Needed to understand legacy stack and reduce risk. |
-| BL-004 | Define store information architecture/navigation | WC-F009 | Both | GREEN | High | High | Medium | Yes for usable relaunch | Define minimal navigation for LATAM vs USA without confusing customers; map Home → Shop/region/product → Cart → Checkout and supporting pages. | Human approval of navigation/brand structure | Not started | Design before building pages. |
-| BL-005 | Verify real ecommerce analytics baseline | WC-F006 | Both | GREEN | High | Medium | Medium | No, but required pre-relaunch | Identify current analytics stack and verify view_item/add_to_cart/begin_checkout/purchase measurement before launch. | Yes before paid tooling or live integration changes | Not started | Diagnostic currently reports ecommerce tracking absent. |
-| BL-006 | Measure performance before cache changes | WC-F005 | Both | YELLOW | Medium | Low | Medium | No | Establish real mobile/page performance baseline, then decide whether cache/object-cache changes are justified. | Yes before server/cache config change | Not started | Do not optimize from Site Health recommendation alone. |
-| BL-007 | Review automatic-update policy after staging exists | WC-F008 | Both | YELLOW | Medium | Low | Medium | No | Determine which updates are disabled and define controlled update policy with backup/staging. | Yes | Not started | Avoid enabling blanket auto-updates on unknown stack. |
-| BL-008 | Connect/verify Search Console after architecture stabilizes | WC-F007 | Both | YELLOW | Low | Low | Low | No | Verify Search Console ownership/indexing closer to relaunch. | Yes if account connection/access required | Not started | Not a current relaunch blocker. |
-| BL-009 | Maintain public maintenance mode until launch gate passes | WC-F009 | Both | GREEN | High | High | Low | Yes for public relaunch | Keep maintenance page while staging/audit/build occurs; remove only after checkout, fulfillment, analytics and content QA pass. | Yes — going live | In progress | Current public state is intentionally non-shopping. |
+| ID | Title | Track | Priority | Impact | Urgency | Effort | Launch Blocker? | Proposed Action | Human Approval Required? | Status | Notes |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| BL-001 | Confirm Hostinger backup + staging before changes | Both | GREEN | High | High | Low | Yes for safe remediation | Use staging for build/audit. Latest Hostinger backup observed 2026-08-22 14:58; automated backups shown as Daily; staging `staging.tropikgoods.com` status Completed. | Yes before production push/restore | Done | Safe-build prerequisite satisfied for staging work. |
+| BL-002 | Capture current visual system before redesign | Both | GREEN | High | High | Low | No | Preserve centered prominent logo, clean white/black/yellow palette, large imagery, rounded components, side drawer and cart drawer; document useful legacy patterns. | No for documentation; Yes before production changes | In progress | Founder explicitly wants to retain these visual traits. |
+| BL-003 | Inventory themes and plugins with dependencies | Both | GREEN | High | High | Medium | Potentially | Theme/plugin inventory captured; next map checkout, payment and tracking ownership before updating/removing anything. | Yes before removal/update | In progress | Divi active; 35 plugins observed, with several functional overlaps. |
+| BL-004 | Define store information architecture/navigation | Both | GREEN | High | High | Medium | Yes for usable relaunch | Product-first navigation with centered Tropik logo and off-canvas drawer; avoid exposing fulfillment model more than needed; USA additionally exposes Travel. | Human approval of final labels/taxonomy | In progress | Direction approved; final taxonomy to be based on pilot catalog + keyword validation. |
+| BL-005 | Verify real ecommerce analytics baseline | Both | GREEN | High | Medium | Medium | No, but required pre-relaunch | Audit analytics stack and verify view_item/add_to_cart/begin_checkout/purchase events before launch. | Yes before paid tooling/live integration changes | Not started | Several analytics plugins overlap while Site Health reports ecommerce tracking absent. |
+| BL-006 | Measure performance before cache changes | Both | YELLOW | Medium | Low | Medium | No | Measure real mobile/page performance, then decide cache/object-cache changes. | Yes before server/cache config change | Not started | Do not optimize from Site Health recommendation alone. |
+| BL-007 | Review automatic-update policy after staging exists | Both | YELLOW | Medium | Low | Medium | No | Define controlled update sequence in staging before any production update policy. | Yes | Not started | 29 updates observed; no blanket updating. |
+| BL-008 | Connect/verify Search Console after architecture stabilizes | Both | YELLOW | Low | Low | Low | No | Verify Search Console closer to relaunch. | Yes if account connection/access required | Not started | Not a launch blocker now. |
+| BL-009 | Maintain public maintenance mode until launch gate passes | Both | GREEN | High | High | Low | Yes for public relaunch | Keep maintenance page while staging/audit/build occurs. | Yes — going live | In progress | Current live site intentionally non-shopping. |
+| BL-010 | Run builder/theme replacement proof-of-concept in staging | Both | GREEN | High | High | Medium | No | Recreate header/drawer/home/product-card shell using native WordPress block theme + WooCommerce blocks and compare against Divi on maintainability, visual fidelity, speed and dependency count. | Yes before changing production theme | Not started | Recommendation: test native block stack first; do not migrate production yet. |
+| BL-011 | Define Month-1 POD catalog by region | Both | GREEN | High | High | Medium | Yes for launch | LATAM: T-shirts, Hoodies, Caps. USA: T-shirts, Hoodies, Sweatshirts, Posters. Validate POD supplier availability/economics before final SKUs. | Yes before publishing products/prices | In progress | Private-label Travel remains post-textile launch. |
+| BL-012 | Build USA private-label candidate scorecard | USA | YELLOW | High | Medium | Medium | No | Re-screen old research + new ideas against demand, competition, margin, size/weight, fragility, compliance, IP, returns, differentiation and Amazon fit. Pick one product only after current research. | Yes before samples/inventory spend | Not started | Old 2024 spreadsheet is historical evidence, not current market validation. |
 
-## Snapshot summary
+## Current top 4
 
-- Total items: 9
-- GREEN: 6
-- YELLOW: 3
-- RED: 0
-- Launch blockers/open safe-build prerequisites: BL-001, BL-004, BL-009
-- Items with an open human gate: BL-001, BL-003, BL-004, BL-005, BL-006, BL-007, BL-008, BL-009
+1. BL-002 — visual legacy system.
+2. BL-003 — dependency mapping.
+3. BL-004 — final navigation/taxonomy.
+4. BL-010 — native block-theme proof-of-concept in staging.
 
-## Current top 3
-
-1. BL-001 — backup + staging.
-2. BL-002 — preserve current/legacy visual design system.
-3. BL-003 — theme/plugin dependency inventory.
-
-Do not start a production redesign before these three are complete enough to support safe work.
+Do not update 29 plugins or migrate production theme before dependency mapping and staging proof-of-concept.
