@@ -1,7 +1,7 @@
 # 05_STRATEGIC_DECISIONS_LOG
 
 Status: PRIVATE_CANONICAL  
-Version: 1.2
+Version: 1.3
 
 Only explicit human-approved strategic decisions belong here.
 
@@ -21,6 +21,10 @@ Only explicit human-approved strategic decisions belong here.
 | DEC-012 | 2026-08-22 | Launch sequence | Month 1 focuses on POD textiles. After the textile launch is operational, select and launch one USA private-label product on Tropik's store and Amazon USA. | APPROVED |
 | DEC-013 | 2026-08-22 | Product criteria | First USA private-label candidates should avoid products that are heavy, fragile/breakable, edible/food, children's ingestible/use-risk products, highly seasonal, or Amazon-restricted/high-compliance products where a simpler alternative exists. | APPROVED |
 | DEC-014 | 2026-08-22 | Store UX | Use a simple product-first navigation with a prominent centered Tropik logo and an off-canvas/drawer shopping experience; regional fulfillment complexity should be kept as invisible to customers as practical. | APPROVED |
+| DEC-015 | 2026-08-22 | USA POD catalog | Initial USA POD product types are T-Shirts, Hoodies, Caps and Posters; Sweatshirts are excluded from the initial pilot. | APPROVED |
+| DEC-016 | 2026-08-22 | USA product research | Outdoor-kitchen and travel-cooking convenience products may be researched as future USA private-label opportunities, but categories should not appear in customer navigation until at least one validated product is live or launch-ready. | APPROVED |
+| DEC-017 | 2026-08-22 | Architecture | Speed, responsive behavior, low maintenance burden and conversion clarity are non-negotiable requirements for the relaunch; prefer native WordPress/WooCommerce capabilities over plugin-heavy implementations when they meet the requirement. | APPROVED |
+| DEC-018 | 2026-08-22 | Subscriptions | Preserve architectural compatibility with future replenishment/subscription products, but do not implement a subscription feature or paid subscription plugin during Phase 1 without repeat-purchase evidence and a validated use case. | APPROVED |
 
 Statuses: PROPOSED / APPROVED / IN_EXPERIMENT / SUPERSEDED / REVERSED / PAUSED.
 
