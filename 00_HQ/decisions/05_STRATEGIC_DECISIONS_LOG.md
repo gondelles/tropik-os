@@ -1,7 +1,7 @@
 # 05_STRATEGIC_DECISIONS_LOG
 
 Status: PRIVATE_CANONICAL  
-Version: 1.3
+Version: 1.4
 
 Only explicit human-approved strategic decisions belong here.
 
@@ -25,6 +25,7 @@ Only explicit human-approved strategic decisions belong here.
 | DEC-016 | 2026-08-22 | USA product research | Outdoor-kitchen and travel-cooking convenience products may be researched as future USA private-label opportunities, but categories should not appear in customer navigation until at least one validated product is live or launch-ready. | APPROVED |
 | DEC-017 | 2026-08-22 | Architecture | Speed, responsive behavior, low maintenance burden and conversion clarity are non-negotiable requirements for the relaunch; prefer native WordPress/WooCommerce capabilities over plugin-heavy implementations when they meet the requirement. | APPROVED |
 | DEC-018 | 2026-08-22 | Subscriptions | Preserve architectural compatibility with future replenishment/subscription products, but do not implement a subscription feature or paid subscription plugin during Phase 1 without repeat-purchase evidence and a validated use case. | APPROVED |
+| DEC-019 | 2026-08-23 | Brand / Creative | `COM_09` Calle v0.2 is founder-approved as the working creative foundation: Venezuelan/Latin cultural balance, Do/Don't boundaries, five product-graphic lanes, market-portability logic, phrase-filter structure and multi-drop breadth are approved. A scoring rubric must be founder-approved before the phrase-ideation sprint. `Calle` remains the internal direction name; the public Drop 01 name remains TBD. | APPROVED |
 
 Statuses: PROPOSED / APPROVED / IN_EXPERIMENT / SUPERSEDED / REVERSED / PAUSED.
 
