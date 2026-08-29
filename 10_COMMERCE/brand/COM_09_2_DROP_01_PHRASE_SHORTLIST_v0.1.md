@@ -1,7 +1,7 @@
 # COM_09_2_DROP_01_PHRASE_SHORTLIST_v0.1
 
 Status: PRIVATE_WORKING
-Version: 0.1
+Version: 0.2
 Updated: 2026-08-29
 Venture: Tropik Commerce
 Parent direction: `COM_09_DROP_01_CREATIVE_DIRECTION_v0.2.md`
@@ -68,15 +68,19 @@ Founder validation date: 2026-08-29.
 | P10 | Zapegato | everyday absurdity / local confidence | REGION-LIMITED | 37 | — |
 | P11 | Encarpado | self-aware humor / local confidence | REGION-LIMITED | 37 | — |
 | P13 | Si no te gusta la velocidad, oríllate | local confidence | CROSS-MARKET | 31 | Seven words; consider Lane B or later copy-length refinement. Founder carried forward from ITERATE/HOLD for concept exploration. |
+| P14 | Estás todo timbrao | — | REGION-LIMITED | N/A | Added by explicit founder decision during COM-09.3, outside the standard scoring flow. Approved for future concept development only; not part of C1–C3. |
+
+### P14 founder-override note
+P14 did **not** pass through the eight-criterion numeric rubric. Its inclusion is an explicit founder creative decision and should remain clearly distinguishable from scored shortlist entries. Territory remains unspecified rather than inferred.
 
 ### Scoring audit note
-The Claude handoff supplied the founder-validated total score, territory, portability tag and execution note for each final line, but did not include the complete eight-criterion numeric breakdown for each phrase. Those missing sub-scores are **not reconstructed or invented here**. If later needed for audit, reconcile them from the original COM-09.2 Claude output.
+The Claude handoff supplied the founder-validated total score, territory, portability tag and execution note for each original COM-09.2 final line, but did not include the complete eight-criterion numeric breakdown for each phrase. Those missing sub-scores are **not reconstructed or invented here**. If later needed for audit, reconcile them from the original COM-09.2 Claude output.
 
 ## 3. Portfolio Observation
 
-Six of the eight validated lines are `REGION-LIMITED`. Only P07 and P13 are currently `USA-PORTABLE / CULTURALLY ROOTED` or `CROSS-MARKET`.
+Six of the original eight validated COM-09.2 lines are `REGION-LIMITED`. Only P07 and P13 are currently `USA-PORTABLE / CULTURALLY ROOTED` or `CROSS-MARKET`. P14 is also `REGION-LIMITED` and was added later via founder override.
 
-This is not a failure of the creative system, but COM-09.3 must account for the approved dual-market Commerce model. The first three product concepts should not accidentally make the USA track depend entirely on insider Venezuelan context.
+This is not a failure of the creative system, but downstream product selection must account for the approved dual-market Commerce model. The first product concepts should not accidentally make the USA track depend entirely on insider Venezuelan context.
 
 ## 4. Open Authenticity / Risk Notes
 
@@ -98,11 +102,13 @@ Do not use images of identifiable real people with political/public relevance as
 Definition of Done achieved from the founder-provided Claude handoff:
 - scoring rubric + hard rules approved;
 - phrase candidates generated and filtered;
-- 8 lines selected for concept development;
+- 8 scored/founder-carried lines selected for initial concept development;
 - portability tags and total scores recorded;
 - founder validation recorded;
 - COM-09.3 handoff prompt produced.
 
+P14 was added later during COM-09.3 through an explicit founder override and does not retroactively change the original COM-09.2 scoring outcome.
+
 ## 8. Next Gate — COM-09.3
 
-Convert the eight validated phrases into product-concept candidates using only the five approved graphic lanes from COM-09 v0.2. Recommend three concepts for visual development, with founder approval required before any image generation.
+COM-09.3 has since selected and founder-approved three visual-development concepts: C1/P07, C2/P13 and C3/P04. See `COM_09_3_DROP_01_PRODUCT_CONCEPTS_v0.1.md`.
