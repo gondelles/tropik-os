@@ -1,7 +1,7 @@
 # 05_STRATEGIC_DECISIONS_LOG
 
 Status: PRIVATE_CANONICAL  
-Version: 1.4
+Version: 1.5
 
 Only explicit human-approved strategic decisions belong here.
 
@@ -26,6 +26,7 @@ Only explicit human-approved strategic decisions belong here.
 | DEC-017 | 2026-08-22 | Architecture | Speed, responsive behavior, low maintenance burden and conversion clarity are non-negotiable requirements for the relaunch; prefer native WordPress/WooCommerce capabilities over plugin-heavy implementations when they meet the requirement. | APPROVED |
 | DEC-018 | 2026-08-22 | Subscriptions | Preserve architectural compatibility with future replenishment/subscription products, but do not implement a subscription feature or paid subscription plugin during Phase 1 without repeat-purchase evidence and a validated use case. | APPROVED |
 | DEC-019 | 2026-08-23 | Brand / Creative | `COM_09` Calle v0.2 is founder-approved as the working creative foundation: Venezuelan/Latin cultural balance, Do/Don't boundaries, five product-graphic lanes, market-portability logic, phrase-filter structure and multi-drop breadth are approved. A scoring rubric must be founder-approved before the phrase-ideation sprint. `Calle` remains the internal direction name; the public Drop 01 name remains TBD. | APPROVED |
+| DEC-020 | 2026-08-29 | Brand / Creative | First Drop 01 visual-development concepts are C1/P07 `Pura bulla lo tuyo` (tee, Lane A, BOTH), C2/P13 `Si no te gusta la velocidad, oríllate` (tee/hoodie, Lane B, BOTH) and C3/P04 `Qué Manguangua` (tee, Lane C, LATAM). Safe original/typographic routes are the default; identifiable real-person or recognizable motorsport/team/sponsor routes remain gated by rights review. P14 `Estás todo timbrao` is approved for future concept development as REGION-LIMITED but is outside C1–C3 and was not scored under the standard rubric. | APPROVED |
 
 Statuses: PROPOSED / APPROVED / IN_EXPERIMENT / SUPERSEDED / REVERSED / PAUSED.
 
