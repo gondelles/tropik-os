@@ -3,7 +3,7 @@
 **Status:** PRIVATE_WORKING  
 **Venture:** Tropik Re:Build  
 **Planning case:** Santa Eduvigis / Urimare single-hub 90-day pilot  
-**Updated:** 2026-09-06 — post RB-03B founder direction
+**Updated:** 2026-09-06 — RB-03C
 
 > ⚠️ **WORKING HYPOTHESIS — FIELD VALIDATION REQUIRED:** quantities below are planning quantities for a 25 -> 50 -> 75 t/day commissioning ramp / ~65 t/day formal base case. They are not purchase orders, awarded donations or confirmed site requirements.
 >
@@ -18,6 +18,23 @@ Additional: `PAUSED / NO LONGER NEEDED`.
 Priority: `CRITICAL / HIGH / MEDIUM / LATER`.
 
 Sourcing preference: `IN-KIND / SHARE / BORROW / RENT / SERVICE / BUY ONLY IF JUSTIFIED`.
+
+## RB-03C validation overlay — mandatory for every Need ID
+
+The current `NEEDED` status means **internal planning requirement**, not proof that Re:Build must source the item externally. Before any public ask, every Need ID must also record:
+
+`still_required, existing_onsite, host_can_provide, public_works_or_contractor_can_provide, donor_or_partner_can_provide, validated_qty, unit, make_spec, campaign_or_permanent, priority, needed_by, quoted_or_estimated_value, evidence_ref, validation_owner, public_ready`
+
+Until the Santa host/operator interview is completed, default values are:
+- `still_required = UNKNOWN — VALIDATE`;
+- `existing_onsite = UNKNOWN`;
+- `host_can_provide = ASK HOST`;
+- `public_works_or_contractor_can_provide = ASK`;
+- `donor_or_partner_can_provide = POSSIBLE / NOT YET REQUESTED`;
+- `validated_qty = PLANNING QTY ONLY`;
+- `public_ready = NO`.
+
+**STRATEGIC DECISION:** do not ask the public for something that the host/public works/current contractor can already provide under the pilot arrangement.
 
 ---
 
@@ -165,7 +182,6 @@ RB-03B conservative/base planning payroll: approximately **USD 11.2k/month** at 
 ### Public workforce-support units — PREPARE ONLY
 
 After legal/accounting/labor validation, the website may offer support units such as:
-
 - `Support one sorting worker-day`;
 - `Support one crew-day`;
 - `Support one crew-week`;
@@ -192,11 +208,56 @@ After legal/accounting/labor validation, the website may offer support units suc
 
 ---
 
-# J. PUBLICATION GATE
+# J. RB-03C Needs validation workflow
+
+For every Need ID:
+
+`NEED -> ASK HOST/OPERATOR -> CHECK EXISTING ASSET/SERVICE -> CHECK PUBLIC WORKS/CONTRACTOR -> CHECK PARTNER/IN-KIND -> QUOTE GAP -> FOUNDER PRIORITY -> PUBLIC-READY OR INTERNAL ONLY`
+
+### Validation questions
+1. Is the need still required for the approved pilot scope?
+2. Is it already onsite and usable?
+3. Can the host provide it under existing operations?
+4. Can the public-works/operating contractor provide it?
+5. Is an in-kind/service contribution operationally acceptable?
+6. What exact quantity/unit/spec is actually required?
+7. Is it campaign-only or permanent?
+8. What date/window is required?
+9. What is the current evidence-backed reference value/quote?
+10. Who owns validation and deployment?
+
+### Current determination
+
+**VERIFIED FACT:** no Santa host inventory/access response has yet been entered into this register during RB-03C. Therefore **none of the planning needs is yet validated as an external public ask**.
+
+---
+
+# K. Top 10 future public-ready needs — CANDIDATES ONLY, DO NOT PUBLISH YET
+
+> ⚠️ **WORKING HYPOTHESIS — FIELD VALIDATION REQUIRED:** These are the ten highest-value candidate asks for a future homepage because they directly unlock safe measurement, processing, QA or local work. They remain conditional on host inventory, specification and legal/accounting review. **DO NOT USE AS PUBLIC FACT OR CAPITAL COMMITMENT UNTIL VALIDATED.**
+
+| Rank | Need ID | Future public title | Why high-value | What must be validated before public ask |
+|---:|---|---|---|---|
+|1|NEED-DATA-001|Weighbridge access for pilot loads|Turns feedstock and impact into evidence-grade tonnes|existing scale, calibration, access window, operator/ticket rules|
+|2|NEED-OPS-006|Authorized suspect-material specialist pathway|Fatal safety gate; Re:Build does not process hazardous waste|authorized provider, accepted categories, response time, fee/responsibility|
+|3|NEED-OPS-005|Authorized residual disposal support|Prevents unsafe stock accumulation and closes mass balance|destination, authorization, capacity, ticketing, rate/transport|
+|4|NEED-EQ-001|Wheel-loader access|Core handling/stockpile/loading resource|host availability, model/capacity, operator/fuel/maintenance/schedule|
+|5|NEED-EQ-002|Excavator access|Core tipping/sorting/feed/oversize handling|same as above; attachment needs|
+|6|NEED-EQ-004 + NEED-EQ-005|Campaign crusher + screen support|Enables trial batches without equipment ownership|actual feed/product need, campaign days, mobilization, magnet/dust/operator/wear terms|
+|7|NEED-EQ-008 + NEED-EQ-009|Dust-control water + suppression equipment|Required if crushing/screening creates dust|site water source, actual demand, HSE design, bowser/mist spec|
+|8|NEED-QA-005 / 006|Laboratory qualification package|Turns a batch into a buyer-testable product|buyer spec, chosen product, methods, lab competence, quote/turnaround|
+|9|NEED-QA-007 / 008 / 009|Engineering + HSE validation hours|Closes site, product and HSE gates|actual disciplines/hours, interested-group capability/rates, conflict/independence needs|
+|10|NEED-WF-004 + NEED-WF-011|Sorting crew + required training support|Creates measurable local work and enables controlled separation|crew size/rates/status, HSE training, PPE, labor/accounting/funding treatment|
+
+**Public copy rule:** show one Need ID or one clearly defined combined support package; do not collapse multiple units into an ambiguous donation amount.
+
+---
+
+# L. PUBLICATION GATE
 
 Before any of this register becomes public:
-
 - confirm each public quantity/status;
+- confirm the host cannot already cover the resource or intentionally show it as a requested in-kind sharing need;
 - remove sensitive procurement/site/security details;
 - attach correct public description/use;
 - use `I can help with this` rather than automatic donation acceptance;
@@ -204,8 +265,15 @@ Before any of this register becomes public:
 - define donor acknowledgement rules;
 - do not show payroll names/personal data;
 - do not show `PLEDGED/FULFILLED/DEPLOYED` without evidence;
-- ensure estimated reference value is clearly distinguished from invoice/fair value.
+- ensure estimated reference value is clearly distinguished from invoice/fair value;
+- record `last_updated` and internal validation owner.
+
+## Approved / Not approved criterion
+
+**APPROVED AS PUBLIC-READY NEED:** exact requirement, quantity/unit/spec, owner, date, sourcing gap and status are validated; no conflicting host provision exists; CTA only collects an offer unless financial route is separately approved.
+
+**NOT APPROVED:** item is merely in the planning list, quantity is TBD, existing site assets are unknown, or funding/payment language has not passed required gates.
 
 ## Exact next action
 
-During RB-03C, replace the first ten `NEEDED/TBD` items with actual site/operator/vendor/engineer answers and identify which requirements can be covered by existing public/contractor equipment before requesting new resources.
+Use the Santa authority/site meeting to validate **NEED-DATA-001, NEED-EQ-001, NEED-EQ-002, NEED-EQ-004, NEED-EQ-005, NEED-EQ-008, NEED-OPS-005, NEED-OPS-006, NEED-OPS-007 and NEED-ENV-001** first. These ten answers remove the greatest amount of procurement/OPEX uncertainty before any public request.
