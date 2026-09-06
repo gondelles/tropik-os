@@ -2,7 +2,7 @@
 
 **Status:** PRIVATE_WORKING  
 **Venture:** Tropik Re:Build  
-**Updated:** 2026-09-06 — RB-03C
+**Updated:** 2026-09-06 — RB-03C + web execution handoff
 
 ## Purpose
 
@@ -26,6 +26,8 @@ Working scope:
 - **STRATEGIC DECISION:** material sales alone are not presented as self-funding; current model requires an authorized service/payer + institutional/public/in-kind layer in addition to material/scrap value.
 - **STRATEGIC DECISION:** no site becomes GREEN while authority, output rights, hazardous/residual pathway or critical HSE/environment conditions remain unknown/uncontrolled.
 - **STRATEGIC DECISION:** public Needs Registry + measured Impact Dashboard are part of the future Re:Build public layer; fundraising/payment remains gated.
+- **STRATEGIC DECISION:** the website may actively collect structured non-binding offers, capabilities, buyer specifications, workforce interest, authority referrals and funding-partner inquiries through `Work With Us`, but self-reported submissions remain unverified until reviewed.
+- **STRATEGIC DECISION:** the approved Claude Artifact is a visual/navigation reference; operational facts and public claims continue to come from this GitHub source of truth.
 
 ## RB-03C purpose
 
@@ -63,11 +65,14 @@ RB-03C does **not** upgrade a field/commercial assumption merely by producing a 
 - `digital/RB_WORDPRESS_WOOCOMMERCE_ARCHITECTURE_v0.1.md`
 - `digital/RB_PUBLIC_NEEDS_IMPACT_TRANSPARENCY_ARCHITECTURE_v0.1.md`
 - `digital/RB_WEBSITE_SITEMAP_v0.1.md`
+- `digital/RB_CLAUDE_COWORK_WEBSITE_HANDOFF_v0.1.md`
+- `digital/RB_WORK_WITH_US_EVIDENCE_ACQUISITION_ARCHITECTURE_v0.1.md`
 
 ### Governance / Business Plan
 - `governance/RB_ASSUMPTIONS_REGISTER_v0.1.md`
 - `governance/RB_EVIDENCE_REGISTER_v0.1.md`
 - `governance/RB_DECISION_LOG_v0.1.md`
+- `governance/RB_03D_CONTINUATION_PROMPT_v0.1.md`
 - `business_plan/RB_MASTER_BUSINESS_PLAN_BLUEPRINT_v0.1.md`
 
 All remain **PRIVATE_WORKING** unless the founder explicitly approves another status.
