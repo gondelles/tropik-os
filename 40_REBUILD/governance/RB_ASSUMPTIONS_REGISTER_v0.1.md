@@ -2,7 +2,7 @@
 
 **Status:** PRIVATE_WORKING  
 **Venture:** Tropik Re:Build  
-**Updated:** 2026-09-06 — RB-03B
+**Updated:** 2026-09-06 — RB-03C
 
 ## Purpose
 Track every important Re:Build assumption that is not yet verified locally. Assumptions must not silently become public claims or capital commitments.
@@ -78,6 +78,48 @@ Track every important Re:Build assumption that is not yet verified locally. Assu
 |RB-A-057|Residual/suspect controlled-disposal fee is unknown locally; $5/$15/$30 per t is only a planning range|WORKING HYPOTHESIS|HIGH|regional comparator / in-kind-low case|Authorized local disposal quote/path|
 |RB-A-058|Assumed net productive footprint after roads/buffers/support is ~70% Santa, ~60% Caraballeda and ~75% Catia|WORKING HYPOTHESIS|HIGH|layout-planning ratio|Survey + HSE/civil layout review|
 
+---
+
+# RB-03C — 10 highest-information-value unknowns to replace first
+
+These are **OPEN ASSUMPTIONS / EVIDENCE REQUESTS**, not new facts.
+
+| Priority | Existing assumptions affected | Unknown to resolve | Person/source | Question / measurement | Required evidence | Decision unlocked |
+|---:|---|---|---|---|---|---|
+|1|RB-A-001, 023, 043|Who can legally/operationally authorize a defined Santa Re:Build cell?|Site owner/controller + public-works/site operator + counsel|Who signs; under what authority; for what scope/time?|authority document + signer authority + proposed cell authorization|Santa site authority gate|
+|2|RB-A-043, 046, 051, 058|Exact usable Santa polygon and constraints|Site operator + civil/site engineer|GPS/survey usable area, exclusions, roads, drainage, receptors, stock/traffic limits|measured polygon + site-validation record|layout/throughput/stock gate|
+|3|RB-A-002, 004–008, 050|Who controls feedstock routing and what actually arrives?|Debris-routing authority + dispatch/load records|Current tonnes/day, trucks/day, sources/strata; permission for 30-load campaign|written routing authority + recent records + characterization schedule|feedstock campaign gate|
+|4|RB-A-010, 011, 022, 054|Who owns/redeploys/sells recovered outputs and who can authorize a service/gate fee?|Authority/host + Venezuelan counsel + payer contracting authority|Title through processing; mineral/metals/reuse rights; service payer/contract path|written output-rights/legal interpretation + payer authority|commercial/revenue gate|
+|5|RB-A-012, 057|Can suspect/hazardous and residual streams leave through authorized pathways?|HSE/environment authority + authorized specialist/disposal operator|Acceptance rules, documentation, capacity, responsibility and current fee|provider/authority evidence + route + quote/ticket example|fatal HSE/environment gate|
+|6|RB-A-008, 031–033, 050|What is the measured source-stratified debris composition and variability?|30-load campaign|Weigh/characterize source loads with mass-balance QA|Load/Characterization dataset + closure review|yield/process/economics reset|
+|7|RB-A-010, 017, 034, 035, 053, 055|Which bounded first mineral use has a real specification and technical approver?|3 buyer archetypes / active projects|Exact current material/spec, price, volume, trial tests, approver, haul|buyer spec + interview record + trial path|first product/trial/offtake gate|
+|8|RB-A-017, 055, 056|Which local lab can perform the buyer-required methods, at what cost/turnaround?|≥3 local labs|Methods, competence/accreditation, sample requirements, price and turnaround|written lab quote + competence/method statement|QA schedule/cost gate|
+|9|RB-A-003, 038, 049, 052|Which site/public/contractor equipment, scale, water and trucking already exist and can be scheduled?|Host/operator + equipment owners/contractors|Availability, owner, operator/fuel/maintenance, campaign schedule, scale calibration, water/truck rules|machine inventory + access commitment/non-binding quotes|Needs Register + OPEX reset|
+|10|RB-A-019, 020, 021, 030|What workforce is actually available and at what legally/HSE-compliant cost?|Interested engineer groups/cuadrillas/operators + counsel/accountant/HSE|Crew/roles/rates/inclusions/availability/contractor status/training|Workforce Partner Intakes + quotes + specialist treatment|workforce plan/fund-unit costing|
+
+**STRATEGIC DECISION:** RB-03C prioritizes these unknowns before lower-value precision. Site area, staffing, price or yield models are not upgraded merely because a more detailed estimate can be produced.
+
+---
+
+# RB-03C validation instruments now assigned
+
+- RB-A-001/002/012/023/043/046/051/052/057/058 -> `operations/RB_03C_AUTHORITY_VALIDATION_PACK_v0.1.md`.
+- RB-A-004–009/031–033/050 -> `operations/RB_03C_FEEDSTOCK_CHARACTERIZATION_PROTOCOL_v0.1.md`.
+- RB-A-010/011/017/034–036/053/055/056 -> `commercial/RB_03C_FIRST_OFFTAKE_SPRINT_v0.1.md` plus the existing product standards pack.
+- RB-A-019/020/021/030 -> `people/RB_WORKFORCE_PARTNER_AND_FUNDING_MODEL_v0.1.md`.
+- Cross-register traceability -> `data/RB_03C_MINIMUM_DATA_MODEL_v0.1.md` and `data/RB_KPI_DICTIONARY_v0.1.md`.
+
+## Assumptions replaced during RB-03C desk/session work
+
+**None of the fatal field/commercial assumptions above have been replaced by measured/site-authorized evidence yet.** RB-03C replaces ambiguity about **how** to validate them with explicit evidence-acquisition instruments; it does not reclassify the underlying conditions as facts.
+
+## Assumptions clarified / narrowed
+
+- **RB-A-023 / RB-A-043:** Santa remains preferred **validation target**, not an authorized Re:Build site.
+- **RB-A-050:** reduced 10/20-load campaigns are downgraded reconnaissance/pilot evidence and cannot be generalized as regional composition.
+- **RB-A-010:** first product is not fixed before buyer interviews; buyer specification/use determines Road Base vs Mineral Fill first.
+- **RB-A-019/020/030:** interested engineers/crews are potential workforce partners only; availability/rates/employment status remain open.
+
 ## Prohibited claims until validated
 - Re:Build can process X% of all La Guaira debris.
 - Re:Build diverts a stated percentage of incoming waste without measured records.
@@ -90,3 +132,5 @@ Track every important Re:Build assumption that is not yet verified locally. Assu
 - RB-03B product prices, truck rates, residual rates or equipment ROMs are current binding La Guaira quotes.
 - Material sales alone will finance the pilot.
 - Support-merch purchases are charitable donations or transfer a stated amount to victims/communities unless formally structured and disclosed.
+- `Jobs generated in impacted local communities` until the locality definition, privacy controls and paid-work evidence are approved.
+- Any Workforce Fund support unit amount before actual cost, legal, accounting, HSE and payment-mechanism validation.
