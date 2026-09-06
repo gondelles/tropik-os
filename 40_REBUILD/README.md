@@ -2,7 +2,7 @@
 
 **Status:** PRIVATE_WORKING  
 **Venture:** Tropik Re:Build  
-**Updated:** 2026-09-06 — RB-03C + web execution handoff
+**Updated:** 2026-09-06 — RB-03D evidence reconstruction
 
 ## Purpose
 
@@ -35,7 +35,14 @@ Move the project from `ASSUMPTION -> PERSON/SOURCE -> QUESTION/MEASUREMENT -> EV
 
 RB-03C does **not** upgrade a field/commercial assumption merely by producing a more precise estimate.
 
-## Canonical RB-03C working set
+## RB-03D current decision
+
+**HOLD.** The repository audit found no new decision-grade Santa field, authority, buyer, lab, vendor, workforce or funding evidence sufficient to replace any fatal RB-03C assumption. Do not rebuild economics or move toward commissioning until new evidence is actually ingested.
+
+Canonical RB-03D reconstruction:
+- `governance/RB_03D_EVIDENCE_RECONSTRUCTION_v0.1.md`
+
+## Canonical working set
 
 ### Operations
 - `operations/RB_03_LA_GUAIRA_SITE_MVP_MODEL_v0.2.md`
@@ -73,6 +80,7 @@ RB-03C does **not** upgrade a field/commercial assumption merely by producing a 
 - `governance/RB_EVIDENCE_REGISTER_v0.1.md`
 - `governance/RB_DECISION_LOG_v0.1.md`
 - `governance/RB_03D_CONTINUATION_PROMPT_v0.1.md`
+- `governance/RB_03D_EVIDENCE_RECONSTRUCTION_v0.1.md`
 - `business_plan/RB_MASTER_BUSINESS_PLAN_BLUEPRINT_v0.1.md`
 
 All remain **PRIVATE_WORKING** unless the founder explicitly approves another status.
