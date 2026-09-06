@@ -1,7 +1,7 @@
 # RB_DECISION_LOG_v0.1
 
 **Status:** PRIVATE_WORKING  
-**Updated:** 2026-09-06 — post RB-03B founder direction
+**Updated:** 2026-09-06 — RB-03C
 
 | ID | Decision | Classification | Status | Founder gate |
 |---|---|---|---|---|
@@ -29,3 +29,13 @@
 |RB-D-022|Use a restricted Re:Build Workforce Fund / worker-day / crew-week support model for salary support rather than donor-to-named-worker direct payments by default; Re:Build retains employer/payroll/HSE responsibility|STRATEGIC DECISION|ACTIVE|legal/accounting/labor validation before collection|
 |RB-D-023|Build a public Impact Dashboard showing only measured, approved KPIs with reporting period, methodology and source; targets/assumptions may not render as achieved impact|STRATEGIC DECISION|ACTIVE|founder/data approval before publication|
 |RB-D-024|The website may display approved summaries of needs, funding and impact, but accounting, payroll, HSE, load/batch and KPI source records remain external systems of record|STRATEGIC DECISION|ACTIVE|manual workflow proof before automation|
+|RB-D-025|RB-03C converts fatal assumptions into `PERSON/SOURCE -> QUESTION/MEASUREMENT -> EVIDENCE -> DECISION`; no new precision is accepted without an evidence request or measurement path|STRATEGIC DECISION|ACTIVE|none; founder approval to change method|
+|RB-D-026|For Santa, public reporting or meeting attendance does not establish signing authority. Site allocation, debris routing and output rights each require explicit documentary authority and an identified valid signatory.|STRATEGIC DECISION|ACTIVE|legal/authority validation before site agreement|
+|RB-D-027|The 30-load characterization protocol must preserve source strata, unique Load IDs, weight-method quality, suspect-load pathway and load/batch mass-balance closure. Reduced samples remain downgraded evidence and cannot be generalized.|STRATEGIC DECISION|ACTIVE|HSE/site access gate|
+|RB-D-028|The first mineral trial product is selected from real buyer trial paths using specification, approver, bounded use, test route, haul and repeat demand. If credible paths tie, Mineral Fill is the default lower-complexity first trial; this is not a final selection before interviews.|STRATEGIC DECISION / WORKING HYPOTHESIS|ACTIVE|founder + materials engineer + buyer/project gate|
+|RB-D-029|A buyer path is not validated by generic enthusiasm or a generic LOI. First offtake validation requires a bounded use, exact specification/trial criteria, named technical approver, test/placement plan and written disposition path.|STRATEGIC DECISION|ACTIVE|commercial terms/pricing remain founder-gated|
+|RB-D-030|Every interested engineer, crew or operator must enter a Workforce Partner Intake before contracting. `INTEREST IDENTIFIED` does not equal employment, award, availability or funded labor.|STRATEGIC DECISION|ACTIVE|founder approval before binding engagement|
+|RB-D-031|Workforce Fund public support units remain UNPRICED until actual rates, employment/contractor treatment, payroll/accounting, HSE and payment/fundraising mechanism are approved.|STRATEGIC DECISION|ACTIVE|legal/accounting/HSE/payment + founder gate|
+|RB-D-032|Do not publish `jobs generated in impacted local communities` until impacted-community boundary, privacy-safe worker eligibility evidence and auditable paid-work records are approved. Use workers paid, worker-days and payroll/labor paid first.|STRATEGIC DECISION|ACTIVE|legal/privacy/accounting/data gate|
+|RB-D-033|The RB-03C minimum data architecture remains spreadsheet/simple database first with explicit source/load/batch/QA/trial, need/offer/deployment and workforce/funding/KPI traceability. No ERP or automated live dashboard yet.|STRATEGIC DECISION|ACTIVE|manual workflow proof before automation|
+|RB-D-034|Needs Registry items remain internal/public-ready drafts until host/public-system availability is checked. A need can be removed or downgraded if Santa/contractor/public works can already provide it.|STRATEGIC DECISION|ACTIVE|public publication founder/data gate|
