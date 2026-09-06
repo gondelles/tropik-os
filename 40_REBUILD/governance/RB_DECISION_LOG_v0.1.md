@@ -1,7 +1,7 @@
 # RB_DECISION_LOG_v0.1
 
 **Status:** PRIVATE_WORKING  
-**Updated:** 2026-09-06 — RB-03B
+**Updated:** 2026-09-06 — post RB-03B founder direction
 
 | ID | Decision | Classification | Status | Founder gate |
 |---|---|---|---|---|
@@ -25,3 +25,7 @@
 |RB-D-018|Target 30 incoming loads / ~600 t across ≥5 source strata for the first formal feedstock characterization; do not claim regional representativeness from a convenience sample|STRATEGIC DECISION / TARGET|ACTIVE|HSE/site access gate|
 |RB-D-019|No candidate site can be GREEN while authority, output rights, hazardous pathway or critical environment/HSE conditions remain unknown or uncontrollable|STRATEGIC DECISION|ACTIVE|cannot be waived by area/throughput attractiveness|
 |RB-D-020|Heavy-equipment ownership remains RED; an ownership study may begin only after sustained useful utilization, multi-year feed/offtake and payback evidence exist|STRATEGIC DECISION|ACTIVE|explicit founder/capital approval|
+|RB-D-021|Create a public Re:Build Needs Registry reachable directly from the Re:Build homepage, grouped by project use and showing needed/pledged/received/deployed status for materials, equipment, services and workforce support|STRATEGIC DECISION|ACTIVE|public launch still requires data/legal review|
+|RB-D-022|Use a restricted Re:Build Workforce Fund / worker-day / crew-week support model for salary support rather than donor-to-named-worker direct payments by default; Re:Build retains employer/payroll/HSE responsibility|STRATEGIC DECISION|ACTIVE|legal/accounting/labor validation before collection|
+|RB-D-023|Build a public Impact Dashboard showing only measured, approved KPIs with reporting period, methodology and source; targets/assumptions may not render as achieved impact|STRATEGIC DECISION|ACTIVE|founder/data approval before publication|
+|RB-D-024|The website may display approved summaries of needs, funding and impact, but accounting, payroll, HSE, load/batch and KPI source records remain external systems of record|STRATEGIC DECISION|ACTIVE|manual workflow proof before automation|
