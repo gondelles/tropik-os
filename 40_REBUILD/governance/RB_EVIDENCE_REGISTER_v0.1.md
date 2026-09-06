@@ -2,7 +2,7 @@
 
 **Status:** PRIVATE_WORKING  
 **Venture:** Tropik Re:Build  
-**Updated:** 2026-09-06 — RB-03B
+**Updated:** 2026-09-06 — RB-03C
 
 ## Purpose
 Record evidence that materially changes Re:Build strategy. Public evidence does not substitute for site, legal, laboratory, buyer or quote validation.
@@ -167,19 +167,62 @@ Quito EMGIRS 2026 lists non-hazardous final-disposal charges around $30.08/t at 
 Source: https://emgirs.gob.ec/residuos-solidos-no-peligrosos/  
 Implication: RB-03B must not assume residual disposal is free; local authorized route/fee is required.
 
-## Evidence gaps after RB-03B desk work
-1. Exact GPS polygons / measured usable m² of Santa, Caraballeda and Catia candidate cells.
-2. Written site authority and host operating rules.
-3. Current tonnes/day, truck dispatch pattern and source geography by candidate.
-4. Legal material/output ownership and right to sell/redeploy.
+---
+
+# RB-03C evidence discipline
+
+**STRATEGIC DECISION:** an interview form, protocol, questionnaire, data schema or request pack is **not evidence of the underlying condition**. RB-03C has created evidence-acquisition instruments but has not yet created field/site/buyer/lab/workforce evidence sufficient to close the fatal assumptions.
+
+New canonical acquisition instruments:
+- `40_REBUILD/operations/RB_03C_AUTHORITY_VALIDATION_PACK_v0.1.md`
+- `40_REBUILD/operations/RB_03C_FEEDSTOCK_CHARACTERIZATION_PROTOCOL_v0.1.md`
+- `40_REBUILD/commercial/RB_03C_FIRST_OFFTAKE_SPRINT_v0.1.md`
+- `40_REBUILD/people/RB_WORKFORCE_PARTNER_AND_FUNDING_MODEL_v0.1.md`
+- `40_REBUILD/data/RB_KPI_DICTIONARY_v0.1.md`
+- `40_REBUILD/data/RB_03C_MINIMUM_DATA_MODEL_v0.1.md`
+
+## RB-03C evidence acquisition queue — create IDs only when evidence arrives
+
+| Priority | Evidence package to obtain | Minimum acceptable evidence | Assumptions addressed | Current status |
+|---:|---|---|---|---|
+|1|Santa authority/signatory package|written site/control/operating authority + named valid signer + Re:Build scope/permission|RB-A-001, 023, 043|OPEN — REQUEST PACK READY|
+|2|Santa polygon/field condition package|GPS/survey polygon, exclusions, traffic, drainage/receptors, utilities/security|RB-A-043, 046, 051, 052, 058|OPEN — FIELD FORM READY|
+|3|Routing/feedstock package|written routing authority + current load records + approved characterization schedule|RB-A-002, 004–008, 050|OPEN — REQUEST READY|
+|4|Output/title/service-payer package|written ownership/redeployment/sale rights + legal interpretation + payer authority|RB-A-010, 011, 022, 054|OPEN — LEGAL/AUTHORITY REVIEW REQUIRED|
+|5|Suspect/residual package|authorized provider/destination + acceptance rules + quote/fee + ticket/chain example|RB-A-012, 057|OPEN|
+|6|30-load characterization dataset|source/load/stream weights, photos, contamination, closure QA|RB-A-008, 031–033, 050|OPEN — PROTOCOL READY|
+|7|Mineral buyer package|≥3 technical interviews + written specs; one bounded trial path with approver|RB-A-010, 017, 034, 035, 053, 055|OPEN — INTERVIEW PACK READY|
+|8|Lab package|≥3 local quotes/competence/method/turnaround; selected lab chain-of-custody|RB-A-017, 055, 056|OPEN|
+|9|Equipment/logistics/utility package|host inventory + owner/availability + scale calibration + non-binding quotes for gaps|RB-A-003, 038, 049, 052, 053|OPEN|
+|10|Workforce package|intakes/rates/availability + HSE gaps + legal/accounting treatment|RB-A-019, 020, 021, 030|OPEN — INTAKE READY|
+|11|Ferrous recycler package|3 current written grade/price/terms responses + title/safe dispatch path|RB-A-011, 036|OPEN|
+|12|Funding/in-kind package|written eligible support/in-kind commitments or payer path|RB-A-021, 038, 054|OPEN — NO FUNDING ASSUMED|
+
+## Evidence naming rule for RB-03C field records
+
+When obtained, create normal `RB-E-###` evidence entries only for evidence that materially changes strategy. High-volume operational files remain in their source registers and are referenced by evidence summaries.
+
+Examples:
+- authority document/reference -> Evidence Register summary + source file;
+- 30-load dataset -> one Evidence Register summary, not 30 evidence entries;
+- buyer spec/trial path -> one evidence summary per materially distinct accepted path;
+- local lab/equipment quotes -> quote register first; Evidence Register only if they change economics/strategy.
+
+## Evidence gaps after RB-03C instrument creation
+1. Exact GPS polygon / measured usable m² of Santa candidate cell.
+2. Written Santa site authority and host operating rules.
+3. Current tonnes/day, truck dispatch pattern and source geography.
+4. Legal material/output ownership and right to sell/redeploy; authorized service/gate-fee payer path.
 5. 30-load source-stratified debris characterization.
 6. Hazardous/suspect specialist pathway and actual fee.
-7. Buyer/project specification explicitly accepting recycled material or approving a trial.
-8. Three local lab quotes/competence statements and turnaround.
-9. Three mineral-buyer prices/volumes and three ferrous recycler quotes.
-10. Local crusher/screen campaign/shared availability and price.
-11. Local trucking quotes by route; actual km/load/time.
-12. Local water, fuel, security and residual costs at the selected site.
+7. Authorized residual pathway and actual fee.
+8. Buyer/project specification explicitly allowing/approving a recycled trial.
+9. Three local lab quotes/competence statements and turnaround.
+10. Three mineral-buyer prices/volumes and three ferrous recycler quotes.
+11. Local crusher/screen campaign/shared availability and price.
+12. Local loader/excavator/trucking/water/security/fuel terms for Santa.
 13. Drainage/flood/wind/noise/receptor/site-bearing survey.
-14. Payment terms, taxes and labor treatment.
-15. Written institutional/in-kind commitments; none are assumed awarded.
+14. Workforce rates, availability, HSE qualification and labor/tax treatment.
+15. Written institutional/in-kind commitments or a service payer; none are assumed awarded.
+16. Approved Workforce Fund legal/accounting/payment structure before public collection.
+17. Approved locality/privacy methodology before publishing `jobs generated in impacted local communities`.
