@@ -2,270 +2,521 @@
 
 **Status:** PRIVATE_WORKING  
 **Venture:** Tropik Re:Build  
-**Updated:** 2026-09-06 — RB-03B
+**Updated:** 2026-09-06 — RB-03C
 
 ## Purpose
-Canonical living architecture for the complete Re:Build business plan, following the founder's structural method:
+Canonical living architecture for the complete Re:Build business plan:
 
-`problema -> justificación -> objetivos -> metodología -> mercado -> estudio técnico -> localización -> maquinaria -> organización -> RRHH -> legal -> inversión -> costos -> ingresos -> flujo de caja -> punto de equilibrio -> escenarios -> sensibilidad -> conclusiones`
+`problema -> justificación -> objetivos -> metodología -> mercado -> estudio técnico -> localización -> maquinaria -> organización -> RRHH -> legal -> inversión -> costos -> ingresos -> flujo de caja -> punto de equilibrio -> escenarios -> sensibilidad -> impacto -> implementación -> decisión`
 
-The founder's previous thesis/business plan is a **STRUCTURAL REFERENCE ONLY**, not evidence for Re:Build economics.
+Every material statement remains `VERIFIED FACT / STRATEGIC DECISION / WORKING HYPOTHESIS / TARGET / ASPIRATION / PROHIBITED CLAIM`.
 
-## Classification discipline
-Every material statement is **VERIFIED FACT / STRATEGIC DECISION / WORKING HYPOTHESIS / TARGET / ASPIRATION / PROHIBITED CLAIM**. Unknown figures remain visibly provisional.
-
-> ⚠️ **WORKING HYPOTHESIS — FIELD VALIDATION REQUIRED:** RB-03B uses public evidence, Venezuelan/regional benchmarks and engineering/commercial judgment to keep the business plan moving. **DO NOT USE UNVALIDATED FIGURES AS PUBLIC FACT OR CAPITAL COMMITMENT.**
-
-## Core scope
-Re:Build does **not** perform demolition.
-
-`authorized debris source -> loading/routing coordination -> transport -> receiving -> safety screening -> sorting -> recovery -> processing -> testing -> product release -> reconstruction/offtake -> residual authorized pathway`
+> ⚠️ **WORKING HYPOTHESIS — FIELD VALIDATION REQUIRED:** RB-03C still uses RB-03B planning values where field/site/buyer/lab/quote evidence is absent. **DO NOT USE AS PUBLIC FACT OR CAPITAL COMMITMENT UNTIL VALIDATED.**
 
 ---
 
-# BUSINESS PLAN CHAPTERS — CURRENT STATE AFTER RB-03B
+# 0. Executive Summary
 
-## 0. Executive Summary
-**STRATEGIC DIRECTION:** build a 90-day evidence-generating recovery pilot before scaling. The pilot must prove site authority, safe feedstock, measured mass balance, product qualification, buyer/redeployment route and cost per incoming/saleable tonne.
+**STRATEGIC DECISION:** Re:Build should prepare a single-hub, 90-day evidence-generating pilot before scale. Santa Eduvigis / Urimare is the first validation target; Catia La Mar remains the primary fallback/large-hub alternative; Caraballeda / Los Corales remains a source-side intake/sorting/transfer option rather than a second full plant by default.
 
-**Current commercial truth:** material sales alone do not finance the current pilot ROM. The operating model needs material/scrap revenue plus an authorized service/gate fee and/or public/recovery/in-kind support. Merch remains supplemental commerce, not the operating thesis.
+**TARGET:** physical commissioning remains 25 -> 50 -> 75 t/day, subject to HSE, product dwell/offtake and feedstock evidence.
 
-## 1. Problem Definition and Justification
-**VERIFIED FACT:** 2026 earthquake recovery generated a very large debris-management burden; UNDP reported ~2.1 million tonnes across hardest-hit areas by 24-Jul-2026. Public reporting describes temporary debris centers, segregation/crushing and reconstruction activity in La Guaira.
+**STRATEGIC DECISION:** no heavy-equipment purchase. At 25–75 t/day, crusher/screen is validated first as host/shared/in-kind/campaign rental.
 
-**PROHIBITED CLAIM:** no current La-Guaira-only Re:Build-addressable tonnage is known.
+**STRATEGIC DECISION:** material sales alone are not presented as self-funding. The current model needs materials/scrap + an authorized service/gate-fee or other payer route + institutional/public/in-kind support.
 
-## 2. Objectives
-1. Validate one authorized operating cell.
-2. Characterize incoming feedstock by measured loads.
-3. Produce traceable, non-structural MVP materials.
-4. Obtain local/project specifications and lab results.
-5. Complete real buyer/offtake trials.
-6. Replace ROM equipment/logistics costs with quotes.
-7. Establish a defensible blended funding/service model.
+**CURRENT STATE:** YELLOW — PRE-VALIDATION. RB-03C has created the exact authority, characterization, buyer, workforce, KPI and data instruments required to turn open assumptions into field/commercial evidence; it has not yet received that evidence.
 
-## 3. Research and Evidence Methodology
-Evidence hierarchy: public verified information -> local/regional benchmarks -> comparable C&D/disaster operations -> manufacturer data -> engineering judgment -> conservative ranges. Evidence, assumptions, validation and decisions are recorded separately.
+---
 
-**TARGET:** first feedstock characterization = 30 incoming loads / ~600 t across ≥5 source strata where feasible; no regional representativeness claim until source coverage/variance support it.
+# 1. Problem Definition and Justification
 
-Detailed field method: `40_REBUILD/operations/RB_03B_FIELD_VALIDATION_MODEL_v0.1.md`.
+**VERIFIED FACT:** 2026 earthquake recovery generated a very large debris-management burden; public/UNDP reporting confirms major debris-management activity and recovery needs. The registered evidence does not establish a current Re:Build-addressable La-Guaira-only tonnage.
 
-## 4. Market Study
-### Feedstock
-LOW/BASE/HIGH planning composition remains unmeasured. Base per 100 t: 50 concrete/mineral; 15 masonry; 4 ferrous; 1 non-ferrous; 5 wood; 2 other recyclables; 3 reuse; 5 suspect; 15 residual.
+**PROHIBITED CLAIM:** Re:Build controls or can process a stated share of all La Guaira debris.
 
-### Buyers/users
-Priority mineral buyer: active road/earthworks/public-works contractor able to approve a bounded non-structural trial. Public reconstruction/municipal programs are high-volume but higher-friction. Private developers/logistics yards are useful faster trial users. Ferrous scrap uses a separate recycler lane.
+---
 
-Detailed offtake pack: `40_REBUILD/commercial/RB_BUYER_OFFTAKE_VALIDATION_PACK_v0.1.md`.
+# 2. Objectives
 
-## 5. Business Model
-Three economic layers:
-1. **recovery/service layer** — authorized debris handling, segregation, traceability, avoided disposal/public-recovery value;
-2. **material layer** — tested mineral products + scrap/recyclables + selective reuse;
-3. **impact/funding layer** — public/recovery/in-kind/grant resources where eligible.
+**STRATEGIC DECISION / TARGET:**
+1. identify the valid authority/signature path for one Santa operating cell;
+2. measure the exact usable polygon and critical site conditions;
+3. execute a source-stratified 30-load characterization campaign where practical;
+4. select the first mineral product from real buyer specifications/use cases;
+5. execute one 50–100 t bounded mineral trial where practical;
+6. validate ferrous scrap through a separate recycler lane;
+7. replace major ROM costs with local/host evidence and quotes;
+8. validate interested workforce capability/rates/legal/HSE treatment;
+9. establish auditable Needs/KPI/funding data architecture;
+10. rebuild pilot economics before founder GO/NO-GO.
 
-**STRATEGIC DECISION:** no pure merchant-aggregate assumption for MVP.
+---
 
-## 6. Funding and Capital Strategy
-Priority capital stack: host/public operating cell + truck routing/haul support + equipment in-kind/shared/campaign rental + cash working capital + service/gate fee + institutional/grant support where awarded.
+# 3. Research and Evidence Methodology
 
-**WORKING HYPOTHESIS:** steady C-case 90-day gross resource envelope approximately $270k–$325k; 35% documented in-kind would imply roughly $176k–$211k cash. No funding is assumed secured.
+**STRATEGIC DECISION:** RB-03C uses:
 
-## 7. Product Portfolio
-MVP:
-1. RB-RB-040 Road Base 0–40 — YELLOW trial.
-2. RB-MF-GEN Mineral Fill — YELLOW trial.
-3. RB-MA-025 Masonry Aggregate — YELLOW trial.
-4. RB-FE-SCRAP Ferrous Scrap — GREEN for buyer validation, not yet sold.
-5. RB-REUSE-VER Verified Reuse Components — YELLOW selective.
+`ASSUMPTION -> PERSON/SOURCE -> QUESTION/MEASUREMENT -> EVIDENCE -> DECISION`
 
-Later: drainage/utility aggregate; paver/block trials.  
-RED: structural RCA.  
-RED/R&D: Re:Grow until validated.
+Evidence hierarchy remains public verified source -> local/site records -> written authority -> calibrated field measurement -> buyer/project specification -> lab report -> quote/contract evidence -> controlled pilot result.
 
-Detailed standards: `40_REBUILD/products/RB_PRODUCT_STANDARDS_VALIDATION_PACK_v0.1.md`.
+An interview pack or data protocol is not evidence of the underlying condition.
 
-## 8. Technical Study / Process Engineering
-One-way process: dispatch -> weigh/photo -> inspect -> tip -> sort -> quarantine exceptions -> mineral/metals/reuse/recyclables -> oversize reduction -> campaign crush -> magnet -> screen -> QA HOLD -> lab/release -> dispatch -> residual authorized disposal.
+Canonical acquisition packs:
+- `operations/RB_03C_AUTHORITY_VALIDATION_PACK_v0.1.md`;
+- `operations/RB_03C_FEEDSTOCK_CHARACTERIZATION_PROTOCOL_v0.1.md`;
+- `commercial/RB_03C_FIRST_OFFTAKE_SPRINT_v0.1.md`;
+- `people/RB_WORKFORCE_PARTNER_AND_FUNDING_MODEL_v0.1.md`;
+- `data/RB_KPI_DICTIONARY_v0.1.md`;
+- `data/RB_03C_MINIMUM_DATA_MODEL_v0.1.md`.
 
-**TARGET:** clean truck turnaround 30–45 min absent external queue; mixed 45–60 min.  
-**WORKING HYPOTHESIS:** 15–40 t/h effective mineral processing is adequate; RB-03B utilization model uses 25 t/h crusher / 30 t/h screen.
+---
 
-## 9. Location Study
-Registered **WORKING HYPOTHESES — FIELD VALIDATION REQUIRED**:
-- Santa Eduvigis / Urimare — **12,000 m²**.
-- Caraballeda / Los Corales — **5,000 m²**.
-- Catia La Mar — **25,000 m²**.
+# 4. Market Study
 
-**STRATEGIC DECISION:** test Architecture 1 first — Santa as the only staffed 90-day hub. Catia is primary fallback/large-hub alternative. Caraballeda is source-side intake/sort/characterization/transfer, not a permanent second plant by default. Three-node network is RED for initial pilot.
+## Feedstock
+**WORKING HYPOTHESIS:** RB-03B LOW/BASE/HIGH composition profiles remain planning scenarios, not measured La Guaira composition.
 
-Detailed comparison: `40_REBUILD/operations/RB_03B_THREE_SITE_COMPARISON_v0.1.md`.
+**TARGET:** 30 incoming loads / approximately 600 t across ≥5 materially different source strata where feasible. 10-load data is reconnaissance; 20-load data is downgraded pilot evidence; one-source data is source-specific only.
 
-## 10. Infrastructure
-### Santa 12,000 m²
-Full hub; practical 25–75 t/day pilot, 150 conditional. Controlled incoming stock ~1,200–1,800 t; finished ~1,500–2,200 t. Exact layout sums 12,000 m².
+## Buyers
+**STRATEGIC DECISION:** first three mineral archetypes are:
+1. active road/earthworks/public-works contractor;
+2. private civil/developer/logistics project with fill/access-road demand;
+3. aggregate/material distributor or technically credible material user.
 
-### Caraballeda 5,000 m²
-Compact intake/sort/transfer; 25–50 t/day. Full permanent crusher/screen train not recommended until site/receptor/traffic evidence supports it.
+Ferrous recycler/processor remains a separate lane.
 
-### Catia 25,000 m²
-Large processing/logistics alternative; 75–150 t/day spatially plausible; ~300 t/day only an expansion test.
+**Commercial proof required:** exact current material, specification, price, volume, technical approver, economic buyer, procurement path, trial criteria and haul responsibility.
 
-No site is GREEN without written authority, output rights, HSE/environment, drainage, traffic/bearing, hazardous route and emergency/security controls.
+---
 
-## 11. Machinery and Technology
-**STRATEGIC DECISION:** no heavy plant purchase.  
-At 25/50/75/150 t/day modeled crusher runtime is ~0.7/1.3/2.0/3.9 h/day. Approximate crusher utilization of an 8-h shift: 8%/16%/24%/49%.
+# 5. Business Model
 
-Therefore:
-- 25–75 t/day: shared/campaign/weekly duty first.
-- 150 t/day: dedicated rental can become rational if offtake and uptime require it.
-- ownership: RED until sustained utilization, multi-year feed/offtake and payback support it.
+**STRATEGIC DECISION:** three economic layers remain:
+1. recovery/service layer — authorized handling, segregation, traceability and public/recovery value;
+2. material layer — released mineral products, scrap/recyclables and selective reuse;
+3. impact/funding layer — approved public/recovery/in-kind/grant support where legally/accountingly eligible.
 
-RFQ pack: `40_REBUILD/procurement/RB_EQUIPMENT_RFQ_QUOTE_PACK_v0.1.md`.
+**PROHIBITED CLAIM:** material sales alone fund the pilot under current evidence.
 
-## 12. Logistics
-20-t truck is base planning payload. Re:Build must quote source->site, site->buyer and site->residual separately.
+---
 
-**WORKING HYPOTHESIS truck model:** base cost/load = $45 + $1.80 × round-trip km. This yields ~ $4.05/t at 10 km one-way, $5.85/t at 20 km, $7.65/t at 30 km, assuming full 20-t payload. Local quote required.
+# 6. Funding and Capital Strategy
 
-**Strategic implication:** Fill is likely fragile beyond ~10–20 km unless freight is buyer/publicly funded or service/avoided-disposal value pays for it.
+**WORKING HYPOTHESIS:** RB-03B steady-C resource envelope and cash-gap values remain ROM until site responsibilities, equipment support, workforce, transport, residual, lab and buyer data are replaced.
 
-## 13. Health, Safety and Environment
-Critical hazards: respirable silica/dust, noise, traffic/mobile plant, unstable debris, sharp metals, fuels/oils, runoff/sediment, flood/coast receptors, fire, suspect asbestos, chemicals/cylinders/medical waste, welfare/emergency access.
+**STRATEGIC DECISION:** first ask the host/public works/current contractors what they already provide before raising or buying replacements.
 
-**VERIFIED STANDARD BASIS:** COVENIN 2253:2001 desk research contains crystalline-silica occupational limits; an HSE specialist must confirm applicability/current compliance/monitoring. Re:Build does not process hazardous waste.
+**RED:** public fundraising, salary donations, tax-deductibility claims or restricted Workforce Fund collection until specialist/founder approval.
 
-STOP-WORK and load-rejection criteria are defined in the field-validation model.
+---
 
-## 14. Organization and Governance
-Roles to identify: site authority; debris-routing authority; output-rights decision maker; environmental authority; public-works authority; host contractor; equipment owners; HSE lead; materials engineer/lab; buyer technical/economic approvers; recycler; residual/hazardous contractor; funding institution.
+# 7. Product Portfolio
 
-Unknown identities are **DECISION-MAKER IDENTITY TBD — FIELD VALIDATION REQUIRED.**
+MVP remains:
+1. `RB-RB-040` Road Base 0–40 — YELLOW trial;
+2. `RB-MF-GEN` Mineral Fill — YELLOW trial;
+3. `RB-MA-025` Masonry Aggregate — YELLOW/later validation;
+4. `RB-FE-SCRAP` Ferrous Scrap — GREEN for buyer validation, not yet sale;
+5. `RB-REUSE-VER` Verified Reuse Components — YELLOW selective.
 
-## 15. Human Resources
-RB-03A planning retained: ~11.75 FTE at 25 t/day; ~13.5 at 50; ~15.5 at 75; 21 at 150. Wage and payroll are assumptions. Community ≥$600/month full-time equivalent is a TARGET, not market evidence or commercial-revenue promise.
+**STRATEGIC DECISION:** first mineral product is chosen from real buyer trial paths. If credible Road Base and Mineral Fill paths tie, Mineral Fill is the lower-complexity default planning choice; this remains a **WORKING HYPOTHESIS**, not final selection.
 
-## 16. Legal and Regulatory
-Preliminary desk research of Venezuela's Ley de Gestión Integral de la Basura treats escombros/chatarras as special-handling categories and creates authorization obligations. Final interpretation of site operation, output ownership, transport, sale/redeployment, tax and liability requires Venezuelan counsel.
+**PROHIBITED CLAIM:** generic COVENIN approval. `LOCAL ENGINEERING SPECIFICATION TBD` remains until qualified local/project acceptance exists.
 
-**PROHIBITED:** claiming government/environmental approval before written confirmation.
+---
 
-## 17. Commercial and Offtake Plan
-Minimum validation:
-- 3 technical interviews for Road Base/Fill.
-- exact buyer/project specification collected.
-- 50–100 t Road Base or Fill trial.
-- 3 ferrous recycler quotes + 10–20 t trial lot.
-- delivered vs ex-yard economics shown separately.
-- non-binding EOI only after real technical/commercial interest.
+# 8. Technical Study / Process Engineering
 
-## 18. MVP Operating Plan
-90-day commissioning target remains 25 -> 50 -> 75 t/day at 24 operating days/month = ~3,600 incoming t. Do not force ramp if buyer dwell, HSE or quality fails.
+**STRATEGIC DECISION:** process boundary:
 
-Formal scenario model remains P=25 t/day, C=65 t/day, O=150 t/day.
+`authorized source -> routing -> weigh/photo -> HSE gate -> controlled tip -> sort -> quarantine exceptions -> recover streams -> mineral processing as required -> sample/lab -> QA HOLD/PASS -> dispatch -> trial/use -> residual authorized route`
 
-## 19. Initial Investment
-Portable/reusable control envelope only. **WORKING HYPOTHESIS:** ~$36k LOW / ~$87k BASE / ~$162k HIGH before host in-kind offsets; includes weighing gap, skips/barriers, dust/water, welfare/PPE, QA, maintenance/spill/fire tools and site-prep controls. Avoid double counting in final quotes.
+**TARGET:** calibrated mass-balance closure generally within ±3–5% after method stabilization; unexplained mass difference is recorded, not mathematically hidden.
 
-Land and heavy equipment purchases are excluded/RED.
+---
 
-## 20. Operating Costs — RB-03B ROM
-| Monthly | P | C | O |
-|---|---:|---:|---:|
-|Cash OPEX|$43.0k|$78.9k|$164.6k|
-|Incoming t/mo|500|1,560|3,900|
-|OPEX/incoming t|$85.97|$50.56|$42.19|
+# 9. Location Study
 
-Main buckets: payroll; equipment; fuel/power/water; maintenance; testing; residual; transport; site/security/admin/HSE; contingency.
+**WORKING HYPOTHESES — FIELD VALIDATION REQUIRED:**
+- Santa Re:Build cell: 12,000 m² planning case;
+- Caraballeda/Los Corales: 5,000 m²;
+- Catia La Mar: 25,000 m².
 
-## 21. Revenue / Funding Recognition — RB-03B ROM
-Conservative core revenue includes saleable mineral + ferrous only; non-ferrous/reuse/other recyclables excluded until buyer evidence exists.
+**STRATEGIC DECISION:** no site is GREEN until authority, polygon, routing, output rights, HSE/environment, suspect/residual route and operational constraints are controllable.
 
-| Scenario | Material+ferrous revenue/mo | Revenue/incoming t |
-|---|---:|---:|
-|P|~$3.0k|$5.93|
-|C|~$17.7k|$11.37|
-|O|~$70.9k|$18.18|
+**RB-03C Santa evidence required:** valid signatory, site/control basis, GPS polygon, exclusions, operating hours, truck rules, current process/equipment, utilities/security and relationships.
 
-**PROHIBITED:** treat support, grants or in-kind as secured before documents exist.
+---
 
-## 22. Cash Flow
-Detailed cash-flow statement remains FIELD/QUOTE VALIDATION REQUIRED. Separate cash expense from fair-value in-kind resources; separate invoice date from collection date; model public/contractor payment terms explicitly.
+# 10. Infrastructure
 
-## 23. P&L and Balance Sheet
-SPECIALIST VALIDATION REQUIRED by accountant/tax advisor after legal entity, tax, grant recognition, depreciation and in-kind-accounting rules are known.
+**WORKING HYPOTHESIS:** prior RB-03B stock/space assumptions remain planning limits only.
 
-## 24. Commercial Break-even
-Under RB-03B pilot assumptions, material sales alone **do not break even**.
+**STRATEGIC DECISION:** infrastructure is validated against the actual host cell before sourcing new equipment/containers/water/security. Existing host assets can remove or downgrade Needs.
 
-Unsubsidized gap/service fee required per incoming t:
-- P: ~$80/t.
-- C: ~$39/t.
-- O: ~$24/t.
+---
 
-In C, even 100% saleable mineral at the current weighted mineral price plus modeled ferrous value remains below current OPEX/t. Volume/yield alone cannot fix the pilot; pricing/service/support and equipment/logistics structure matter.
+# 11. Machinery and Technology
 
-## 25. Financial Evaluation
-NPV/IRR/payback is **NOT YET DECISION-GRADE**. Do not calculate an investment return from ROM site rights, unquoted equipment, unvalidated prices and unfunded service economics as if they were facts.
+**STRATEGIC DECISION:** no heavy-equipment ownership for MVP.
 
-## 26. Scenario Analysis
-### P — 25 t/day
-LOW composition; 36.4 saleable mineral t/100 incoming; 2.7 saleable ferrous t/100; low prices; shared equipment; high residual. Material revenue ~$5.93/incoming t.
+**WORKING HYPOTHESIS:** 25–75 t/day remains low utilization for dedicated crusher/screen. Quote in this order:
+1. host existing access;
+2. public-works/contractor shared access;
+3. in-kind/loan;
+4. campaign/day rental;
+5. weekly/monthly rental only if reliability/offtake requires it.
 
-### C — 65 t/day
-BASE composition; 55.25 saleable mineral/100; 3.6 saleable ferrous/100; campaign/shared + reliable rental mix; material revenue ~$11.37/incoming t.
+Ownership remains RED until sustained utilization, multi-year feed/offtake and decision-grade payback evidence exist.
 
-### O — 150 t/day
-HIGH composition; 67.16 saleable mineral/100; 4.5 saleable ferrous/100; dedicated rental more plausible; strong offtake required; material revenue ~$18.18/incoming t. This is not a forecast.
+---
 
-## 27. Sensitivity Analysis
-Mandatory stresses: mineral fraction -20%; recovery -20%; prices -25%; diesel +30%; equipment +30%; truck +30%; dwell 2×; residual +20 pp; downtime 20%; only 50% institutional support; no grant; no equipment in-kind; mineral cannot sell.
+# 12. Logistics
 
-Highest-fatal sensitivities: authority/output rights; haul responsibility/radius; equipment cash burden at low utilization; offtake; institutional/service payer; residual/hazardous pathway.
+**WORKING HYPOTHESIS:** low-value mineral economics remain haul-sensitive; RB-03B formula is planning only.
 
-## 28. Impact Model
-Only auditable measures: incoming tonnes/source; recovered stream tonnes; residual/suspect; products released/redeployed; projects supplied; jobs/worker-months/wages/training; in-kind resources; cash by category; incidents/nonconformities. No carbon % claim until baseline/methodology exists.
+RB-03C must capture for every buyer route:
+- payload;
+- one-way/round-trip km;
+- travel/queue time;
+- $/load and $/t;
+- inbound/outbound responsibility;
+- rejected/return-load responsibility.
 
-## 29. Implementation Roadmap
-### RB-03B -> RB-03C gate sequence
-1. Authority/site validation.
-2. Exact polygons/traffic/environment screen.
-3. 30-load characterization.
-4. 3 buyer specs + 3 recycler quotes.
-5. Local lab/RFQ/haul/residual quotes.
-6. Make first trial batch.
-7. Lab + field trial.
-8. Rebuild economics from measured data.
-9. Founder GO/NO-GO for funded 90-day pilot.
+No buyer price is evaluated without delivered vs ex-yard separation.
 
-## 30. Risk Register — fatal
-- no written authorized site;
-- no debris routing;
-- no output right;
-- hazardous/residual pathway unavailable;
-- unacceptable drainage/coastal/receptor risk;
-- no approved product use;
-- no payer/funding route for the gap;
-- long haul destroys delivered economics;
-- crusher/screen only available on uneconomic dedicated terms;
-- buyer dwell causes unsafe stock accumulation.
+---
 
-## 31. Conclusions and Investment Gate
-**Current status: YELLOW — PRE-VALIDATION.**
+# 13. Health, Safety and Environment
 
-RB-03B makes the concept more credible by making it less flattering: site areas are hypotheses, product compliance is not assumed, transport is a first-order economic variable, and material sales alone do not fund the pilot under current evidence.
+**STRATEGIC DECISION:** Re:Build does not process hazardous waste. Suspect loads trigger stop/isolate/review/quarantine-or-reject/authorized specialist disposition.
 
-**GO to field/commercial validation:** YES.  
-**GO to heavy CAPEX/site lease/permanent staffing/public compliance claims:** NO.
+Fatal site/HSE evidence:
+- accountable HSE lead;
+- host rules/induction;
+- mobile-plant/traffic controls;
+- silica/dust controls;
+- drainage/runoff/receptor controls;
+- emergency/first aid;
+- authorized suspect pathway;
+- authorized residual pathway.
 
-## Canonical RB-03B annexes
-- `40_REBUILD/operations/RB_03B_FIELD_VALIDATION_MODEL_v0.1.md`
-- `40_REBUILD/operations/RB_03B_THREE_SITE_COMPARISON_v0.1.md`
-- `40_REBUILD/products/RB_PRODUCT_STANDARDS_VALIDATION_PACK_v0.1.md`
-- `40_REBUILD/commercial/RB_BUYER_OFFTAKE_VALIDATION_PACK_v0.1.md`
-- `40_REBUILD/procurement/RB_EQUIPMENT_RFQ_QUOTE_PACK_v0.1.md`
-- `40_REBUILD/finance/RB_03B_PILOT_ECONOMICS_v0.1.md`
-- governance assumption/evidence/decision registers.
+No throughput target overrides STOP-WORK criteria.
+
+---
+
+# 14. Organization and Governance
+
+Required named decision roles:
+- site owner/controller;
+- daily site operator;
+- debris-routing authority;
+- output-rights decision maker;
+- environmental/waste authority;
+- HSE lead;
+- equipment owners;
+- buyer technical/economic approvers;
+- lab/materials engineer;
+- residual/hazardous provider;
+- service/public payer authority;
+- funding/accounting/legal owners.
+
+**STRATEGIC DECISION:** a public official, senior stakeholder or meeting attendee is not automatically the authorized signer.
+
+---
+
+# 15. Human Resources
+
+**VERIFIED FOUNDER CONTEXT:** local engineer groups and cuadrillas have expressed interest and require financial support.
+
+**Classification:** `INTEREST IDENTIFIED`, not employment or funding.
+
+**WORKING HYPOTHESIS:** RB-03B staffing/payroll model remains provisional until Workforce Partner Intakes provide real crew size, role mix, rate basis, transport, PPE, insurance/contractor status, invoicing and HSE evidence.
+
+Public workforce units remain UNPRICED.
+
+---
+
+# 16. Legal and Regulatory
+
+**VERIFIED FACT / PRELIMINARY LEGAL DESK RESEARCH:** registered evidence indicates Venezuelan waste law creates authorization considerations for debris/scrap; final interpretation remains counsel work.
+
+Fatal legal questions:
+- who can authorize the site/cell;
+- debris routing/control;
+- output ownership after sorting/processing;
+- right to redeploy/sell mineral/metals/reuse;
+- service/gate-fee contracting authority;
+- residual/hazardous route;
+- workforce engagement model;
+- fundraising/payment/tax treatment.
+
+**RED:** public fundraising or binding site/workforce/commercial commitments without required approvals.
+
+---
+
+# 17. Commercial and Offtake Plan
+
+**STRATEGIC DECISION:** a generic LOI is not first offtake proof.
+
+Minimum mineral gate:
+- ≥3 technical buyer interviews;
+- exact current specs;
+- named technical/economic approvers;
+- current substitute price/volume;
+- trial tests/placement criteria;
+- one bounded 50–100 t path where practical;
+- delivered economics;
+- written final disposition.
+
+Ferrous:
+- ≥3 current recycler grade/price/terms responses;
+- title/right-to-sell;
+- safe dispatch;
+- one 10–20 t trial path where practical.
+
+---
+
+# 18. MVP Operating Plan
+
+**TARGET:** 90-day commissioning 25 -> 50 -> 75 t/day remains the first physical target.
+
+Do not force ramp if:
+- HSE/authority gate fails;
+- feedstock is unavailable or unsuitable;
+- mass-balance/data quality fails;
+- product remains on HOLD;
+- buyer/outbound dwell creates unsafe inventory;
+- funding/resources are inadequate.
+
+---
+
+# 19. Initial Investment
+
+**WORKING HYPOTHESIS:** prior portable/setup envelope remains ROM.
+
+RB-03C rule: validate host-provided assets first; then quote the residual gap. Heavy plant and land remain excluded/RED.
+
+---
+
+# 20. Operating Costs
+
+**WORKING HYPOTHESIS:** RB-03B P/C/O monthly OPEX remains planning input, not budget approval.
+
+RB-03C highest-value replacements:
+1. loader/excavator host/shared/rental terms;
+2. crusher/screen campaign terms;
+3. inbound/outbound trucking;
+4. residual/suspect pathway cost;
+5. water/dust/security/utilities;
+6. local lab package;
+7. real workforce rates/full cost;
+8. maintenance/wear/fuel responsibility.
+
+---
+
+# 21. Revenue / Funding Recognition
+
+**WORKING HYPOTHESIS:** RB-03B mineral/scrap prices remain unquoted planning values.
+
+RB-03C replaces them with:
+- buyer's current substitute ex-yard and delivered price;
+- acceptable recycled-material price logic;
+- actual ferrous grade quote;
+- service/gate-fee payer authority and contracting path;
+- only written eligible funding/in-kind commitments.
+
+Pledges, offers and grants are not revenue/secured funding until accounting/legal criteria say so.
+
+---
+
+# 22. Cash Flow
+
+**FIELD / QUOTE / ACCOUNTING VALIDATION REQUIRED.**
+
+Model separately:
+- cash vs in-kind resource value;
+- invoice vs collection date;
+- customer/public payment terms;
+- restricted funding vs unrestricted cash;
+- payroll/service payment timing;
+- working capital for stock/trial dwell.
+
+---
+
+# 23. P&L and Balance Sheet
+
+**SPECIALIST VALIDATION REQUIRED:** entity, taxes, payroll, restricted support, grant/donation treatment, in-kind valuation, depreciation and working capital.
+
+---
+
+# 24. Commercial Break-even
+
+**WORKING HYPOTHESIS / CURRENT STRATEGIC TRUTH:** under RB-03B planning economics, material sales alone do not break even.
+
+Do not improve the break-even story with assumed yield/price. Recalculate only from measured feedstock, buyer prices, real equipment/logistics/workforce and payer/support evidence.
+
+---
+
+# 25. Financial Evaluation
+
+**RED / NOT DECISION-GRADE:** NPV/IRR/payback for ownership/scale while site rights, feedstock, output use, costs and payer path remain unvalidated.
+
+---
+
+# 26. Scenario Analysis
+
+P=25 t/day, C=65 t/day, O=150 t/day remain **PLANNING SCENARIOS**, not forecasts.
+
+RB-03C adds evidence switches to each model:
+- `authority PASS?`;
+- `feedstock measured?`;
+- `product/buyer PASS?`;
+- `equipment support quoted?`;
+- `residual/hazard route PASS?`;
+- `workforce quoted/legal?`;
+- `payer/funding path documented?`.
+
+A scenario with a fatal `NO` cannot be presented as executable regardless of arithmetic.
+
+---
+
+# 27. Sensitivity Analysis
+
+Highest fatal sensitivities remain:
+- authority/output rights;
+- feedstock composition/yield;
+- approved product use;
+- haul responsibility/distance;
+- dedicated equipment burden at low utilization;
+- residual/hazard pathway;
+- service/funding payer;
+- workforce/legal treatment.
+
+RB-03C turns these from percentage stress tests into evidence gates first.
+
+---
+
+# 28. Impact Model
+
+**STRATEGIC DECISION:** canonical KPI definitions live in `data/RB_KPI_DICTIONARY_v0.1.md`.
+
+Priority public-ready categories after measurement/approval:
+- incoming/processed/recovered/released tonnes;
+- mass-balance quality;
+- workers paid/worker-days/training/payroll;
+- trials/projects/repeat offtake;
+- cash/in-kind/equipment-hours/Needs deployment;
+- approved aggregate HSE metrics.
+
+**PROHIBITED CLAIM:** carbon/CO2/diversion/environmental-benefit percentage without approved methodology.
+
+**PROHIBITED CLAIM:** `jobs generated in impacted local communities` until definition/privacy/work-payment methodology exists.
+
+---
+
+# 29. Digital / Public Participation Model
+
+**STRATEGIC DECISION:** `/rebuild/`, `/rebuild/needs/`, `/rebuild/impact/`, `/rebuild/transparency/`, `/rebuild/support/` are designed around approved exports from external master records.
+
+Needs CTA: `I can help with this` -> Contribution Offer Register -> review -> pledge -> receipt -> deployment.
+
+**RED:** raw live dashboard; automatic fulfillment; public salary donation; payment collection before approval.
+
+---
+
+# 30. Data Architecture
+
+**STRATEGIC DECISION:** spreadsheet/simple database first; no ERP.
+
+Canonical chains:
+- `SOURCE -> LOAD -> CHARACTERIZATION -> BATCH -> SAMPLE -> LAB/QA -> RELEASE -> DISPATCH -> TRIAL/PROJECT`;
+- `NEED -> OFFER -> REVIEW -> RECEIPT -> DEPLOYMENT -> KPI`;
+- `WORKFORCE PARTNER -> APPROVED ENGAGEMENT -> WORK RECORD -> PAYMENT -> FUND ALLOCATION -> KPI`.
+
+WordPress/WooCommerce is presentation/commercial workflow, not safety/accounting master data.
+
+---
+
+# 31. Implementation Roadmap — RB-03C
+
+## Exact gate order
+
+1. identify/meet Santa authority chain;
+2. obtain site/output/routing documents and exact polygon;
+3. validate suspect/residual/HSE/environment path;
+4. validate host equipment/scale/water/truck resources and Needs gaps;
+5. schedule/execute characterization campaign;
+6. run mineral buyer interviews + ferrous recycler validation in parallel;
+7. obtain local lab quotes/competence;
+8. select first product from strongest bounded trial path;
+9. make only the justified 50–100 t trial batch where authorized/practical;
+10. lab + HOLD/PASS + field trial + written buyer disposition;
+11. intake interested engineering/crew partners and validate costs/legal/HSE;
+12. rebuild economics and funding gap from evidence;
+13. founder GO/NO-GO for funded 90-day pilot;
+14. only afterward prepare public fundraising/support launch if specialist gates pass.
+
+---
+
+# 32. Current Fatal Gate Register
+
+| Gate | Current RB-03C status | Required proof |
+|---|---|---|
+|Santa site authority|OPEN / FATAL|written authority + valid signer|
+|Exact Santa polygon|OPEN / FATAL|GPS/survey + operational constraints|
+|Debris routing|OPEN / FATAL|written routing + source/load plan|
+|Output rights|OPEN / FATAL|written mineral/metals/reuse rights + counsel|
+|Hazardous/suspect path|OPEN / FATAL|authorized provider/route|
+|Residual path|OPEN / FATAL|authorized destination/ticket/cost|
+|HSE/environment site control|OPEN / FATAL|qualified review + host rules|
+|Measured feedstock|OPEN|characterization dataset|
+|Approved mineral trial path|OPEN / FATAL for material layer|buyer spec + approver + trial criteria|
+|Lab route|OPEN|local lab method/quote/turnaround|
+|Equipment/scale/utilities|OPEN|host inventory/access + gap quotes|
+|Workforce cost/legal/HSE|OPEN|intakes + specialist treatment|
+|Service/funding payer|OPEN / FATAL for 90-day funding|documented payer/support path|
+
+---
+
+# 33. GREEN / YELLOW / RED
+
+### GREEN — execute now
+Research/interviews/forms; authority/document requests; site walk/measurement with permission; buyer interviews; lab/vendor non-binding quote requests; workforce intake; internal Needs/KPI/data workbook; draft unpublished web architecture.
+
+### YELLOW — prepare/validate
+Santa pilot; first mineral product; trial batch; campaign equipment; public Needs/Impact pages; Workforce Fund; service-fee/funding stack.
+
+### RED — do not execute yet
+Heavy-equipment ownership; land/site lease/purchase; permanent staff; wage promises; public fundraising/salary donations; binding equipment orders; committed pricing; unverified KPI/compliance/environmental claims; paid ads; complex automation.
+
+---
+
+# 34. Conclusions and Investment Gate
+
+**STRATEGIC DECISION:** GO to RB-03C field/commercial validation = YES.
+
+**STRATEGIC DECISION:** GO to funded physical 90-day pilot = NOT YET.
+
+**STRATEGIC DECISION:** GO to heavy CAPEX/site lease/permanent staffing/public fundraising = NO.
+
+The next meaningful milestone is not another model. It is a **Field + Buyer Evidence Pack** containing: signed/validated authority path, exact Santa polygon, routing/output rights, HSE/residual path, first measured feedstock dataset, buyer/lab trial path, host/quote-backed resource plan and real workforce cost evidence.
+
+---
+
+## Canonical RB-03C annexes
+
+- `40_REBUILD/operations/RB_03C_AUTHORITY_VALIDATION_PACK_v0.1.md`
+- `40_REBUILD/operations/RB_03C_FEEDSTOCK_CHARACTERIZATION_PROTOCOL_v0.1.md`
+- `40_REBUILD/commercial/RB_03C_FIRST_OFFTAKE_SPRINT_v0.1.md`
+- `40_REBUILD/people/RB_WORKFORCE_PARTNER_AND_FUNDING_MODEL_v0.1.md`
+- `40_REBUILD/data/RB_KPI_DICTIONARY_v0.1.md`
+- `40_REBUILD/data/RB_03C_MINIMUM_DATA_MODEL_v0.1.md`
+- `40_REBUILD/procurement/RB_NEEDS_REGISTER_v0.1.md`
+- `40_REBUILD/digital/RB_PUBLIC_NEEDS_IMPACT_TRANSPARENCY_ARCHITECTURE_v0.1.md`
+- `40_REBUILD/governance/RB_ASSUMPTIONS_REGISTER_v0.1.md`
+- `40_REBUILD/governance/RB_EVIDENCE_REGISTER_v0.1.md`
+- `40_REBUILD/governance/RB_DECISION_LOG_v0.1.md`
