@@ -1,0 +1,430 @@
+TROPIK RE:BUILD — CLAUDE COMMERCE CONTEXT PACK
+Date: 2026-09-06
+Target Claude Project: 10 — Tropik Commerce
+Target conversation NOW: Tropik rebuild content stage
+Status: PRIVATE_WORKING
+
+==================================================
+0. READ THIS FIRST
+==================================================
+
+This pack exists because the Claude Commerce conversation does NOT have live GitHub access.
+
+Do not reconstruct project truth from old Artifact copy, stale theme files, or memory.
+
+Current authoritative operational/business state is maintained in:
+private GitHub repository gondelles/tropik-os
+under 40_REBUILD/.
+
+This pack summarizes the current web/content-relevant state so Content approval can continue safely.
+
+IMPORTANT NAMESPACE WARNING:
+Claude/Tropik-Commerce decisions named DEC-026 / DEC-027 / DEC-028 are Commerce/Page-System decisions in the Claude workspace.
+They are NOT the same identifiers as GitHub Re:Build decisions RB-D-026 / RB-D-027 / RB-D-028.
+Never merge their meanings.
+
+==================================================
+1. CURRENT WORKFLOW DECISION
+==================================================
+
+There are exactly three work lanes.
+
+LANE 1 — CURRENT CLAUDE COWORK CONVERSATION
+`Tropik rebuild content stage`
+
+Purpose:
+finish page-by-page Re:Build Content approval against the approved Page System / Artifact.
+
+DO HERE:
+- review and approve Home copy;
+- review Recovery, Process/How It Works, Materials, Rebuilding, Impact, Needs/Support, Work With Us, Transparency, About, FAQ, Contact and Updates copy;
+- reconcile all copy to current Re:Build claim controls;
+- fix Artifact/Page-System polish visible in the screenshot audit when the fix belongs to the prototype itself;
+- maintain the page/content build matrix;
+- create the approved content package that Claude Code will later implement.
+
+DO NOT DO HERE:
+- do not build the final WordPress theme ZIP;
+- do not build production PHP/backend architecture;
+- do not activate donations/payment collection;
+- do not invent Santa authority, buyer commitments, jobs, measured impact or operating data;
+- do not redesign the approved visual system.
+
+EXIT GATE:
+all required Re:Build page copy is founder-approved and the Page System has no blocking content/geometry defect.
+
+LANE 2 — LATER, NEW CLAUDE CODE SESSION
+
+Open ONLY after Content approval.
+
+Purpose:
+convert approved Artifact/Page System + approved Content into the installable/editable WordPress/WooCommerce implementation using version-controlled code.
+
+Required later inputs:
+- approved Artifact/reference;
+- approved page-content package/build matrix;
+- actual current Re:Build theme/codebase, NOT legacy apparel theme;
+- WordPress/WooCommerce architecture requirements;
+- Work With Us and subscriber/data requirements.
+
+Expected later outputs:
+- complete source;
+- installable WordPress theme ZIP;
+- editable WP pages/Gutenberg blocks;
+- WXR and/or deterministic page seed script;
+- Work With Us forms/data mappings;
+- Keep Updated subscriber/contact architecture;
+- README_INSTALL;
+- CHANGELOG;
+- IMPLEMENTATION_STATUS;
+- responsive QA screenshots.
+
+LANE 3 — CHATGPT / RB-03D EVIDENCE INGESTION
+
+Purpose:
+ingest real evidence from authorities, field visits, buyers, labs, recyclers, vendors and workforce partners.
+
+Current RB-03D decision in GitHub: HOLD.
+No new decision-grade evidence has yet closed the fatal Santa/feedstock/offtake/funding gates.
+
+Do not ask Claude to manufacture this evidence.
+
+==================================================
+2. CURRENT RE:BUILD BUSINESS / CLAIM STATE
+==================================================
+
+Re:Build does not perform demolition.
+
+Working scope:
+authorized debris source -> routing/loading coordination -> transport -> controlled receiving site -> safety inspection -> sorting -> recovery -> processing -> testing -> released product -> sale/redeployment/trial -> authorized residual pathway.
+
+CURRENT STRATEGIC POSITION:
+
+- validate one 90-day single-hub pilot before network scale;
+- Santa Eduvigis / Urimare is the preferred first validation target, using only a provisional 12,000 m2 planning cell;
+- Santa is NOT an authorized Re:Build operating site yet;
+- Catia La Mar remains fallback/large-hub alternative;
+- Caraballeda / Los Corales remains source-side intake/sort/transfer option;
+- commissioning target remains 25 -> 50 -> 75 t/day, subject to HSE/feedstock/QA/offtake gates;
+- no heavy-equipment purchase before pilot evidence;
+- material sales alone are NOT presented as self-funding;
+- public Needs Registry and measured Impact Dashboard are desired future public layers;
+- public financial donation/payment collection remains gated by legal/accounting/payment/founder approval;
+- the website MAY collect structured non-binding offers, capabilities, buyer interest/specifications, workforce interest, authority referrals and funding-partner inquiries;
+- a submission is interest/offer received, NOT verified evidence or a commitment.
+
+PROHIBITED PUBLIC CLAIMS UNTIL VERIFIED:
+
+- Santa is allocated/authorized to Re:Build;
+- assumed Santa area is a confirmed operating polygon;
+- Re:Build currently processes a stated tonnage;
+- a stated diversion/recovery percentage is achieved;
+- products are generally COVENIN-approved merely because benchmark standards are referenced;
+- jobs have already been generated without payroll/work evidence;
+- CO2/carbon/environmental benefit percentages;
+- donors/funders/equipment support are secured when only discussed;
+- pledged resources are received/deployed;
+- material sales alone finance the pilot;
+- donations are tax-deductible or charitable until approved.
+
+SAFE PRE-PILOT LANGUAGE EXAMPLES:
+
+- “Measurement begins with the pilot.”
+- “We are validating the first operating site.”
+- “Re:Build is building a safe, traceable way…”
+- “We are mapping the exact gaps before asking anyone to fill them.”
+- “One goal of the pilot is to create verified paid local work.”
+
+==================================================
+3. HOMEPAGE STORYTELLING DIRECTION
+==================================================
+
+The approved visual structure should now tell this story:
+
+LOSS
+-> POSSIBILITY
+-> METHOD
+-> PROOF
+-> WHAT WE NEED
+-> LOCAL WORK
+-> WAYS TO HELP
+-> STAY UPDATED
+
+Keep it emotionally strong, brief and credible.
+Do not turn Home into the business plan.
+
+WORKING HOME COPY DIRECTION:
+
+HERO EYEBROW
+TROPIK RE:BUILD — LA GUAIRA, VENEZUELA
+
+H1
+What fell can help us build again.
+
+LEAD
+The rubble is not the end of the story. Re:Build is building a safe, traceable way to recover useful material, fund local work and move resources back into reconstruction.
+
+PRIMARY CTA
+See what we need now
+
+SECONDARY CTA
+Follow the rebuild
+
+Do not make Shop the primary hero CTA.
+
+SCALE SECTION
+Heading:
+A recovery challenge measured in millions of tonnes.
+
+Use the verified external disaster-scale figure only with source/date/methodology and clearly state it is NOT Re:Build operating data.
+
+Bridge:
+That scale can feel overwhelming. Re:Build starts smaller: one controlled site, one measured stream, one tested use at a time.
+
+HOW IT WORKS
+Heading:
+From debris to something useful — with proof at every step.
+
+Concise steps:
+Receive safely
+Sort what can be recovered
+Process and test
+Put useful material back to work
+Publish what actually happened
+
+Support line:
+If we can’t trace it, test it or defend the claim, we don’t publish it.
+
+CURRENT NEEDS
+Heading:
+The next breakthrough may already exist.
+
+Copy:
+A weighbridge. A loader. Lab time. A contractor willing to test a batch. An engineer with the right specification. A crew ready to work. Re:Build is mapping the exact gaps before asking anyone to fill them.
+
+CTAs:
+See what Re:Build needs
+I can help with something
+
+Only render specific public Need cards after they pass public-ready validation.
+
+LOCAL WORK
+Heading:
+Recovery should create work where the damage happened.
+
+Copy:
+One goal of the pilot is to turn recovery activity into verified paid local work — from sorting and equipment operation to engineering, testing and site support.
+
+CTA:
+Work with Re:Build
+
+Do NOT imply these jobs already exist.
+
+IMPACT
+Heading:
+No vanity counters.
+
+Copy:
+When the pilot begins, we’ll report the numbers we can defend: tonnes received, material released, trials completed, worker-days paid, resources received and where they were deployed.
+
+CTA:
+See how impact will be measured
+
+If operational measurement has not started, do not show fake zero values.
+Use:
+Measurement begins with the pilot.
+
+WAYS TO HELP
+Heading:
+Pick the way you can move the rebuild forward.
+
+Cards/routes:
+Offer equipment or materials
+Bring technical expertise
+Work with the pilot
+Test recovered material
+Shop Re:Build merch
+Explore a funding partnership
+
+Financial donation checkout remains disabled until approved.
+Funding-partner inquiry is allowed.
+
+KEEP UPDATED
+Heading:
+Follow the rebuild, week by week.
+
+Copy:
+One short email with what changed: evidence collected, needs closed, trials run, what moved forward and what still needs help.
+
+CTA:
+Keep me updated
+
+==================================================
+4. WORK WITH US CONTENT / ROUTING
+==================================================
+
+Create/approve the page content and prototype routing for:
+/rebuild/work-with-us/
+
+Headline:
+What can you bring to the rebuild?
+
+Routes:
+1. Equipment / vehicles / site resources
+2. Materials / operating inputs
+3. Engineering / laboratory / HSE expertise
+4. Crew / operator / skilled work
+5. I can test or use recovered material
+6. I buy/recycle recovered material
+7. I can help with a debris source or routing
+8. I can help identify the right authority
+9. Funding / institutional partnership
+10. Something else
+
+Need-specific CTA:
+I can help with this
+
+The eventual production form will map these submissions to internal registers.
+At Content stage, approve labels, questions, explanatory copy and routing behavior only.
+Do not build the production backend yet.
+
+==================================================
+5. KEEP UPDATED / SUBSCRIBER CONTENT RULE
+==================================================
+
+Do not require a WordPress login account for newsletter signup.
+
+Future production architecture will create a durable supporter/contact record and later link it to wp_user_id only if the person creates an account/order.
+
+At Content stage, approve:
+- CTA language;
+- consent wording placeholder;
+- success/error states;
+- preference/language/interests wording if shown.
+
+Do not implement ESP/backend synchronization in this conversation.
+
+==================================================
+6. PAGE SYSTEM / SCREENSHOT AUDIT PUNCH LIST
+==================================================
+
+Use the attached file:
+RB_PAGE_SYSTEM_AUDIT_2026-09-06.md
+
+It is screenshot-derived and must be treated as an Artifact punch list, not a substitute for project source of truth.
+
+Prioritize these prototype-level fixes/reviews:
+
+1. Drawer: close on in-drawer navigation tap.
+2. Shop “Live” badge: remove/change if commerce is not actually live.
+3. Prevent Re:Build copy from cross-bleeding into a legacy apparel demo page.
+4. Remove unrelated demo bag item such as “Smell-Proof Container — Herb Keeper Jar” from review data.
+5. Rail arrows: vertically center at left/right rail edges.
+6. Mobile rail must preserve intentional swipe/next affordance; no accidental crop.
+7. Fix card text overflow.
+8. Use only approved accent tokens.
+9. Normalize section vertical rhythm/spacing.
+10. My Account mobile quick actions: use 2-column or stacked layout, not four cramped columns.
+11. Account terminology: prefer My Account unless a founder-approved naming decision says otherwise.
+12. Bag/Cart terminology must be consistent.
+13. Realign mobile Bag rows.
+14. Legacy apparel pages/content must not appear as current Re:Build content.
+15. Do not recreate Claude Artifact preview chrome (“Artifact by you”, “Todas las páginas / Viendo: …”) in production UI.
+
+Do not start decorative motion/background experiments until Content is approved unless they fix a blocking readability/usability issue.
+
+==================================================
+7. CONTENT APPROVAL ORDER
+==================================================
+
+Continue page-by-page in this order:
+
+1. Home /rebuild/
+2. Recovery
+3. How It Works / Process
+4. Materials landing + detail-page copy framework
+5. Rebuilding / application/trials
+6. Impact
+7. Needs / Support
+8. Work With Us
+9. Transparency
+10. About
+11. FAQ
+12. Contact
+13. Updates framework
+
+Where a page depends on real operational evidence that does not yet exist, approve the truthful PRE-PILOT state and clearly mark the future evidence-driven fields.
+
+Do not leave blank space merely because future data does not yet exist.
+Use honest placeholder/status copy where appropriate.
+
+==================================================
+8. WHAT RB-03D IS WAITING FOR — DO NOT GENERATE THESE
+==================================================
+
+These are real-world evidence packages, not copywriting deliverables:
+
+1. Authority meeting result
+Supplier: actual Santa authorities/host/operator.
+
+2. Document/status matrix
+Internal RB-03D control created from documents actually requested/received.
+
+3. Santa field polygon/site findings
+Supplier: qualified site/civil review + authorized site visit/GPS/survey evidence.
+
+4. Initial host-resource answers
+Supplier: Santa host/operator/public works/actual equipment owners.
+
+5. At least 3 buyer interviews/specs
+Supplier: real buyer technical/economic decision makers and their project specifications.
+
+6. Initial lab/recycler/workforce responses
+Suppliers: real laboratories, recyclers, engineering groups/crews/operators.
+
+7. First characterization loads
+Supplier: authorized field team after site/HSE/weighing approval.
+
+These packages feed ChatGPT RB-03D and GitHub, not this Content chat.
+
+==================================================
+9. CURRENT RB-03D STATUS
+==================================================
+
+HOLD.
+
+Current repository audit found no new decision-grade evidence sufficient to replace the fatal Santa/site/feedstock/offtake/funding assumptions.
+
+This does NOT mean Content must stop.
+It means Content must describe the project truthfully in its pre-pilot/validation state.
+
+==================================================
+10. WHAT I NEED YOU TO DO NOW
+==================================================
+
+Stay in this current `Tropik rebuild content stage` conversation.
+
+Do NOT build WordPress yet.
+Do NOT ask me again whether to override the stage gate.
+The stage gate is confirmed:
+CONTENT FIRST -> WORDPRESS IMPLEMENTATION SECOND.
+
+Now:
+
+A. Treat the current approved Page System / Artifact visual language as locked except for the audit punch-list fixes.
+
+B. Re-open the Home copy review using the homepage storytelling direction in Section 3 of this context pack.
+
+C. Show me only:
+- the proposed final Home copy by section;
+- what existing Artifact copy it replaces;
+- any copy field that must remain pre-pilot/TBD because real evidence does not yet exist;
+- any Artifact-level UI fix from the audit that is necessary for Home.
+
+D. Do not move to Recovery until I approve Home.
+
+E. After Home approval, continue page-by-page using Section 7.
+
+F. At the end of Content approval, produce a clean implementation handoff for the future Claude Code WordPress session.
+
+END CONTEXT PACK
