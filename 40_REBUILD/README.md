@@ -2,7 +2,7 @@
 
 **Status:** PRIVATE_WORKING  
 **Venture:** Tropik Re:Build  
-**Updated:** 2026-09-06
+**Updated:** 2026-09-06 — RB-03C
 
 ## Purpose
 
@@ -14,40 +14,80 @@ Re:Build does **not** perform demolition.
 
 Working scope:
 
-`authorized debris source -> collection/loading coordination -> transport -> controlled receiving site -> safety inspection -> sorting -> material recovery -> processing -> testing -> construction/recovery products -> sale/redeployment`
+`authorized debris source -> routing/loading coordination -> transport -> controlled receiving site -> safety inspection -> sorting -> material recovery -> processing -> testing -> released product -> sale/redeployment/trial -> authorized residual pathway`
 
-## Current principles
+## Current strategic position
 
-- Do not buy heavy equipment before pilot evidence and funding are secured.
-- Prefer co-location or partnership with an authorized existing debris-management site before creating a new independent facility.
-- Use public/recovery/philanthropic/in-kind funding for the public-good and pilot layers where legally appropriate.
-- Build commercial economics around recovered-material products and later service revenue.
-- Hazardous/suspect debris is quarantined or rejected and handled only by authorized specialists.
-- No structural-performance, diversion-rate, environmental-impact or charitable-use claims without evidence and approval.
-- Founder approval gates remain mandatory before capital commitments, public claims, fundraising launches, land agreements, equipment purchases or sensitive automations.
+- **STRATEGIC DECISION:** validate one 90-day single-hub pilot before network scale.
+- **WORKING HYPOTHESIS:** Santa Eduvigis / Urimare is the first validation target using a provisional 12,000 m² Re:Build cell; this is not an allocation or authorization.
+- **WORKING HYPOTHESIS:** Catia La Mar is the primary fallback/large-hub alternative; Caraballeda / Los Corales is a source-side intake/sorting/transfer option.
+- **TARGET:** physical commissioning remains 25 -> 50 -> 75 t/day, subject to HSE/feedstock/QA/offtake gates.
+- **STRATEGIC DECISION:** no heavy-equipment purchase before pilot evidence; use host/shared/in-kind/campaign rental first.
+- **STRATEGIC DECISION:** material sales alone are not presented as self-funding; current model requires an authorized service/payer + institutional/public/in-kind layer in addition to material/scrap value.
+- **STRATEGIC DECISION:** no site becomes GREEN while authority, output rights, hazardous/residual pathway or critical HSE/environment conditions remain unknown/uncontrolled.
+- **STRATEGIC DECISION:** public Needs Registry + measured Impact Dashboard are part of the future Re:Build public layer; fundraising/payment remains gated.
 
-## Current working documents
+## RB-03C purpose
 
-- `operations/RB_03_LA_GUAIRA_SITE_MVP_MODEL_v0.1.md` — candidate sites, minimum facility requirements, process, machinery, staffing, throughput and pilot timing.
-- `governance/RB_ASSUMPTIONS_REGISTER_v0.1.md` — assumptions requiring field validation.
-- `governance/RB_EVIDENCE_REGISTER_v0.1.md` — public evidence currently supporting the model.
-- `business_plan/RB_MASTER_BUSINESS_PLAN_BLUEPRINT_v0.1.md` — complete business-plan architecture adapted from the founder's prior thesis/business-plan model.
+Move the project from `ASSUMPTION -> PERSON/SOURCE -> QUESTION/MEASUREMENT -> EVIDENCE -> DECISION`.
+
+RB-03C does **not** upgrade a field/commercial assumption merely by producing a more precise estimate.
+
+## Canonical RB-03C working set
+
+### Operations
+- `operations/RB_03_LA_GUAIRA_SITE_MVP_MODEL_v0.2.md`
+- `operations/RB_03A_MVP_SITE_LAYOUT_v0.1.md`
+- `operations/RB_03A_ZONE_REGISTER_v0.1.md`
+- `operations/RB_03B_FIELD_VALIDATION_MODEL_v0.1.md`
+- `operations/RB_03B_THREE_SITE_COMPARISON_v0.1.md`
+- `operations/RB_03C_AUTHORITY_VALIDATION_PACK_v0.1.md`
+- `operations/RB_03C_FEEDSTOCK_CHARACTERIZATION_PROTOCOL_v0.1.md`
+
+### Products / Commercial
+- `products/RB_MVP_MATERIALS_CATALOG_v0.1.md`
+- `products/RB_PRODUCT_STANDARDS_VALIDATION_PACK_v0.1.md`
+- `commercial/RB_BUYER_OFFTAKE_VALIDATION_PACK_v0.1.md`
+- `commercial/RB_03C_FIRST_OFFTAKE_SPRINT_v0.1.md`
+
+### Procurement / Finance / People
+- `procurement/RB_EQUIPMENT_RFQ_QUOTE_PACK_v0.1.md`
+- `procurement/RB_NEEDS_REGISTER_v0.1.md`
+- `finance/RB_03B_PILOT_ECONOMICS_v0.1.md`
+- `finance/RB_03C_ECONOMICS_INPUT_VALIDATION_v0.1.md`
+- `people/RB_WORKFORCE_PARTNER_AND_FUNDING_MODEL_v0.1.md`
+
+### Data / Digital
+- `data/RB_03C_MINIMUM_DATA_MODEL_v0.1.md`
+- `data/RB_KPI_DICTIONARY_v0.1.md`
+- `digital/RB_WORDPRESS_WOOCOMMERCE_ARCHITECTURE_v0.1.md`
+- `digital/RB_PUBLIC_NEEDS_IMPACT_TRANSPARENCY_ARCHITECTURE_v0.1.md`
+- `digital/RB_WEBSITE_SITEMAP_v0.1.md`
+
+### Governance / Business Plan
+- `governance/RB_ASSUMPTIONS_REGISTER_v0.1.md`
+- `governance/RB_EVIDENCE_REGISTER_v0.1.md`
+- `governance/RB_DECISION_LOG_v0.1.md`
+- `business_plan/RB_MASTER_BUSINESS_PLAN_BLUEPRINT_v0.1.md`
+
+All remain **PRIVATE_WORKING** unless the founder explicitly approves another status.
 
 ## Current milestone
 
 **RB-M1 — Commercially and operationally validated pilot**
 
 The milestone is unlocked only when Re:Build has:
-
-1. an authorized receiving/processing location;
-2. a defined feedstock stream and routing authority;
-3. a funded or in-kind equipment/logistics plan;
-4. a safe operating protocol;
-5. measured recovery yields;
-6. tested initial products;
-7. at least one credible output buyer/use case;
-8. a defensible pilot cost per tonne and scale model.
+1. written valid authority for a defined receiving/processing cell;
+2. exact usable polygon and critical HSE/environment constraints;
+3. defined feedstock stream/routing authority and measured characterization;
+4. authorized hazardous/suspect and residual pathways;
+5. funded/in-kind/quoted equipment and logistics plan without heavy-equipment ownership;
+6. safe operating protocol and data traceability;
+7. tested/released first product against a real buyer/project requirement;
+8. at least one credible trial/offtake path with technical disposition;
+9. validated workforce cost/engagement model;
+10. a defensible quote/measurement-backed pilot cost per tonne and funding/payer path.
 
 ## Operating rule
 
-**Public evidence -> assumption -> field validation -> decision -> pilot -> SOP -> funded scale.**
+**Public evidence -> assumption -> evidence request/measurement -> field/commercial validation -> decision -> pilot -> SOP -> funded scale.**
