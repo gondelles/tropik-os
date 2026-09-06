@@ -2,7 +2,7 @@
 
 **Status:** PRIVATE_WORKING  
 **Venture:** Tropik Re:Build  
-**Updated:** 2026-09-06 — RB-03D evidence reconstruction
+**Updated:** 2026-09-06 — RB-03D evidence reconstruction + web execution control
 
 ## Purpose
 
@@ -28,6 +28,8 @@ Working scope:
 - **STRATEGIC DECISION:** public Needs Registry + measured Impact Dashboard are part of the future Re:Build public layer; fundraising/payment remains gated.
 - **STRATEGIC DECISION:** the website may actively collect structured non-binding offers, capabilities, buyer specifications, workforce interest, authority referrals and funding-partner inquiries through `Work With Us`, but self-reported submissions remain unverified until reviewed.
 - **STRATEGIC DECISION:** the approved Claude Artifact is a visual/navigation reference; operational facts and public claims continue to come from this GitHub source of truth.
+- **STRATEGIC DECISION:** web execution follows `Content approval -> Claude Code WordPress implementation -> staging QA -> manual founder promotion`. WordPress engineering does not start before Content approval.
+- **STRATEGIC DECISION:** missing field/commercial evidence is collected from real external sources and ingested into the existing RB-03D workflow; do not create one AI conversation per evidence item.
 
 ## RB-03C purpose
 
@@ -41,6 +43,9 @@ RB-03C does **not** upgrade a field/commercial assumption merely by producing a 
 
 Canonical RB-03D reconstruction:
 - `governance/RB_03D_EVIDENCE_RECONSTRUCTION_v0.1.md`
+
+Evidence collection routing:
+- `governance/RB_03D_EVIDENCE_COLLECTION_ROUTER_v0.1.md`
 
 ## Canonical working set
 
@@ -74,6 +79,7 @@ Canonical RB-03D reconstruction:
 - `digital/RB_WEBSITE_SITEMAP_v0.1.md`
 - `digital/RB_CLAUDE_COWORK_WEBSITE_HANDOFF_v0.1.md`
 - `digital/RB_WORK_WITH_US_EVIDENCE_ACQUISITION_ARCHITECTURE_v0.1.md`
+- `digital/RB_WEB_CONTENT_TO_WORDPRESS_EXECUTION_CONTROL_v0.1.md`
 
 ### Governance / Business Plan
 - `governance/RB_ASSUMPTIONS_REGISTER_v0.1.md`
@@ -81,7 +87,11 @@ Canonical RB-03D reconstruction:
 - `governance/RB_DECISION_LOG_v0.1.md`
 - `governance/RB_03D_CONTINUATION_PROMPT_v0.1.md`
 - `governance/RB_03D_EVIDENCE_RECONSTRUCTION_v0.1.md`
+- `governance/RB_03D_EVIDENCE_COLLECTION_ROUTER_v0.1.md`
 - `business_plan/RB_MASTER_BUSINESS_PLAN_BLUEPRINT_v0.1.md`
+
+### AI / Handoffs
+- `../90_AI_SYSTEM/handoffs/RB_CLAUDE_COMMERCE_CONTEXT_PACK_2026-09-06.txt`
 
 All remain **PRIVATE_WORKING** unless the founder explicitly approves another status.
 
