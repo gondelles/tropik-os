@@ -2,394 +2,409 @@
 
 **Status:** PRIVATE_WORKING  
 **Venture:** Tropik Re:Build  
-**Updated:** 2026-09-06 — post RB-03B founder direction
+**Updated:** 2026-09-06 — RB-03C
 
-## 1. Purpose
+# 1. Purpose
 
-Define the minimum public architecture for Re:Build to show, from the public website/homepage:
+Define the minimum data/product requirements for future public participation pages without launching fundraising or publishing unverified operational claims.
 
-1. what physical materials, equipment, services and labor support the project currently needs;
-2. what has been pledged, funded, delivered and deployed;
-3. how an interested person/company can offer an in-kind contribution or approved financial support;
-4. how verified project KPIs are progressing;
-5. how workforce/payroll support can be transparently funded without misleading donors or exposing workers.
+The public layer must answer:
+1. What is Re:Build doing now?
+2. What resources are genuinely needed now?
+3. How can a person/company offer an item, equipment, service or professional support against a specific `NEED-ID`?
+4. What measured impact has actually occurred?
+5. How are cash/in-kind/restricted resources accounted for?
+6. How could local work eventually be supported through an approved restricted Workforce Fund?
 
-This document does **not** authorize public fundraising, donation claims, tax-deductibility claims, beneficiary promises or payment collection.
+This document does **not** authorize public fundraising, donation claims, tax-deductibility, beneficiary percentages, public payroll data or payment collection.
 
 ---
 
-## 2. Strategic principles
+# 2. Strategic principles
 
-- **STRATEGIC DECISION:** a public `Re:Build Needs Registry` must be directly reachable from the Re:Build homepage.
+- **STRATEGIC DECISION:** a public `Re:Build Needs Registry` must be directly reachable from `/rebuild/`.
 - **STRATEGIC DECISION:** needs are grouped by project use, not as an unstructured wishlist.
-- **STRATEGIC DECISION:** every public need must show quantity/unit, priority, current status, intended use and last-updated date.
-- **STRATEGIC DECISION:** in-kind interest uses a simple contact/offer workflow before any commitment is accepted.
-- **STRATEGIC DECISION:** public impact metrics may show only measured/approved values with methodology and reporting period.
-- **STRATEGIC DECISION:** workforce support should be structured as a restricted `Re:Build Workforce Fund` / worker-day / crew-week support layer rather than donor-to-individual payments by default.
-- **STRATEGIC DECISION:** operational, HSE, payroll, accounting and donor master records remain outside WooCommerce; the website displays approved summaries.
-- **PROHIBITED CLAIM:** no item shown as `FUNDED`, `DONATED`, `DEPLOYED`, no salary shown as `PAID`, and no KPI shown as achieved without a supporting record.
+- **STRATEGIC DECISION:** an internal planning need does not become a public ask until host/public-works/contractor availability is checked.
+- **STRATEGIC DECISION:** every public need shows Need ID, purpose, quantity/unit, priority, status and last-updated date.
+- **STRATEGIC DECISION:** `I can help with this` captures an offer; it does not automatically accept a donation or commitment.
+- **STRATEGIC DECISION:** public impact metrics show only measured/approved values with reporting period and methodology.
+- **STRATEGIC DECISION:** workforce support should use a restricted `Re:Build Workforce Fund` / worker-day / crew-week model rather than donor-to-named-worker payments by default.
+- **STRATEGIC DECISION:** accounting, payroll, HSE, load/batch, QA, funding and contribution master records remain outside WooCommerce/WordPress; the site displays approved summaries.
+- **PROHIBITED CLAIM:** no item may appear as `PLEDGED / FULFILLED / DEPLOYED`, no wage as paid, and no KPI as achieved without source evidence.
+- **PROHIBITED CLAIM:** no `jobs generated in impacted local communities` until the geography/eligibility definition, privacy rule and paid-work evidence are approved.
 
 ---
 
-## 3. Public Needs Registry
+# 3. Canonical internal sources
 
-### 3.1 Needs taxonomy
+- Needs: `40_REBUILD/procurement/RB_NEEDS_REGISTER_v0.1.md`
+- Data schema: `40_REBUILD/data/RB_03C_MINIMUM_DATA_MODEL_v0.1.md`
+- KPI formulas: `40_REBUILD/data/RB_KPI_DICTIONARY_v0.1.md`
+- Workforce/funding model: `40_REBUILD/people/RB_WORKFORCE_PARTNER_AND_FUNDING_MODEL_v0.1.md`
+- WordPress/WooCommerce architecture: `40_REBUILD/digital/RB_WORDPRESS_WOOCOMMERCE_ARCHITECTURE_v0.1.md`
 
-#### A. Site Setup & Safety
-- barriers / traffic cones / signs;
-- PPE;
-- hard hats / boots / gloves / eye and hearing protection;
-- respirator/RPE equipment as specified by HSE;
-- first-aid / eyewash / emergency equipment;
-- spill kits / extinguishers;
-- lighting;
-- toilets / changing / wash facilities;
-- office and welfare containers;
-- shade / hydration;
-- fencing / security equipment.
+WordPress receives only a controlled approved export/view from these sources.
 
-#### B. Intake, Weighing & Traceability
-- weighbridge access;
-- portable axle scales;
-- tablets / phones;
-- cameras;
-- printers / labels;
-- radios / communications;
-- power banks / UPS;
-- data connectivity.
+---
 
-#### C. Sorting & Material Recovery
-- skips / bins;
-- sorting tables;
-- pallets / racks;
-- hand tools;
-- grapples / attachments;
-- metal collection containers;
-- magnets / magnetic-separation support.
+# 4. `/rebuild/` — homepage product requirements
 
-#### D. Heavy Equipment & Processing
-- wheel loader;
-- excavator;
-- hydraulic breaker;
-- jaw crusher;
-- screen;
-- magnetic separator;
-- conveyors only where justified;
-- skid steer;
-- water bowser;
-- mist/dust suppression;
-- generator;
-- trucks / low-bed mobilization.
+## Objective
+Give a first-time visitor a truthful current-state view and one clear path to participate.
 
-**MVP preference:** access, rental, operated equipment, campaign use or in-kind support before purchase.
+## Required blocks
 
-#### E. Quality Control & Laboratory
-- sieves / scales / moisture tools;
-- sampling containers / bags / tags;
-- laboratory testing;
-- field density / compaction testing;
-- materials/pavement engineering review;
-- sample transport.
+### A. Current project status
+Fields:
+- stage/status label;
+- current pilot geography only if public-safe/approved;
+- one-sentence current activity;
+- last updated;
+- link to latest update/evidence.
 
-#### F. Logistics, Maintenance & Operating Inputs
-- fuel;
-- truck hours / haulage;
-- water;
-- lubricants / filters / hoses / wear parts;
-- maintenance labor;
-- authorized residual disposal;
-- hazardous-material specialist services;
-- security;
-- communications.
+Do not show an assumed Santa cell as an authorized operating site.
 
-#### G. Workforce & Technical People
-- sorting crew worker-days;
-- crew-weeks;
-- equipment operator-days;
-- site supervisor time;
-- HSE specialist time;
-- materials/QC technician time;
-- local civil/materials engineer hours;
-- mechanic hours;
-- training hours;
-- PPE allocation for workers.
+### B. KPI strip — 4–6 metrics only
+Preferred order once approved data exists:
+1. incoming or processed tonnes — boundary explicitly named;
+2. product/recovered tonnes released by approved stream;
+3. worker-days;
+4. local payroll/labor paid after accounting approval;
+5. technical trials completed / projects supplied;
+6. equipment-hours received or Needs deployed.
 
-#### H. Professional / Institutional Support
-- Venezuelan legal review;
-- environmental review;
-- accounting/tax support;
-- procurement/equipment support;
-- grant/funding support;
-- communications/documentation support.
+Every KPI card includes value, unit, reporting period, updated date and methodology link.
 
-### 3.2 Need record — minimum fields
+If measurement has not started, use `Measurement begins with the pilot` rather than turning targets/assumptions into `0` impact.
 
-`NEED-ID`  
-Public title  
-Category / subcategory  
-Project use  
-Priority: CRITICAL / HIGH / MEDIUM / LATER  
-Unit  
-Quantity needed  
-Quantity pledged  
-Quantity received  
-Quantity deployed  
-Estimated reference value  
-Cash / in-kind / service  
-Location/site if public-safe  
-Needed-by date/window  
-Status  
-Technical requirement/spec  
-Acceptable equivalent?  
-Evidence/quote basis  
-Last updated  
-Public notes  
-Internal owner  
+### C. `What we need right now`
+Show 4–8 highest-priority **public-ready** needs only.
 
-### 3.3 Public statuses
+Card fields:
+- Need ID;
+- short public title;
+- project use;
+- quantity/unit still needed;
+- priority;
+- status;
+- needed-by window;
+- last updated;
+- CTA `I can help with this`.
+
+No estimated price is required on the homepage. Do not expose sensitive security/site/procurement details.
+
+### D. Workforce Fund teaser
+**YELLOW / PREPARE ONLY.**
+
+Before approval, the block may explain that Re:Build is designing a transparent way to support verified local work, but must not collect money or show worker-day prices.
+
+After legal/accounting/labor/payment approval, potential CTA: `Support local work`.
+
+### E. Current material / trial status
+Show only current lifecycle/status such as `FIELD TRIAL / HOLD / TESTED / AVAILABLE` tied to evidence. No generic compliance claim.
+
+### F. Latest update
+Date, headline, 2–3 sentence summary, link.
+
+### G. Primary CTAs
+- `See all needs`
+- `Offer equipment/material`
+- `View impact`
+- `Partner with Re:Build`
+- future `Support local work` only after gate.
+
+## Approved criterion
+Homepage can render only approved source values and public-ready Needs; no estimate is visually indistinguishable from achieved impact.
+
+---
+
+# 5. `/rebuild/needs/` — public Needs Registry
+
+## Grouping by project use
+
+1. Site Setup & Safety
+2. Intake, Weighing & Traceability
+3. Sorting & Material Recovery
+4. Heavy Equipment & Processing
+5. Water / Runoff / Environmental Controls
+6. Quality Control / Laboratory / Engineering
+7. Logistics / Maintenance / Operating Inputs
+8. Workforce & Technical People
+9. Professional / Institutional Support
+
+## Public Need record
+
+`need_id, public_title, category, subcategory, use, unit, qty_needed, qty_pledged, qty_received, qty_deployed, priority, status, needed_by, public_spec, acceptable_equivalent, last_updated, public_notes`
+
+Internal-only fields remain hidden:
+- vendor negotiations;
+- sensitive site/security information;
+- contributor personal data;
+- internal quote documents;
+- worker identities/payroll;
+- unresolved legal notes.
+
+## Public statuses
 
 `NEEDED -> OFFER RECEIVED -> UNDER REVIEW -> PLEDGED -> PARTIALLY FULFILLED -> FULFILLED -> DEPLOYED -> CLOSED`
 
 Additional: `PAUSED / NO LONGER NEEDED`.
 
-An offer is not a donation until formally accepted and received.
+An offer is not a donation; a pledge is not receipt; receipt is not deployment.
 
-### 3.4 Public CTA
+## Filter requirements
 
-Each need should have one primary CTA:
+- category;
+- priority;
+- status;
+- contribution type: equipment / material / service / professional / workforce-related;
+- needed-by window where useful.
 
-**`I can help with this`**
+Do not build complex marketplace logic in MVP.
 
-Form captures:
-- name / organization;
-- email / phone;
-- NEED-ID;
-- what is being offered;
-- quantity;
-- make/model/condition if equipment;
+---
+
+# 6. `I can help with this` — Contribution Offer product requirements
+
+Form fields:
+- name;
+- organization;
+- email/phone;
+- Need ID auto-filled;
+- what is offered;
+- quantity/unit;
+- make/model/spec if equipment;
+- condition;
 - dates/availability;
 - transport/mobilization included?;
-- operator/fuel included?;
-- estimated value optional;
+- operator included?;
+- fuel included?;
 - restrictions/notes;
-- permission to contact.
+- estimated value optional;
+- permission to contact;
+- public acknowledgement permission optional.
 
-No automatic acceptance or public donor acknowledgement without review.
+Data writes to Contribution Offer Register with status `RECEIVED/UNDER REVIEW`; it never updates Need fulfillment automatically.
 
----
+Review flow:
 
-## 4. Workforce Support Architecture
+`FORM -> OFFER RECEIVED -> TECHNICAL/LEGAL/OPS REVIEW -> ACCEPT/DECLINE -> PLEDGED -> RECEIPT EVIDENCE -> FULFILLED -> DEPLOYMENT EVIDENCE -> DEPLOYED`
 
-### Preferred model
-
-Create a restricted support category named provisionally:
-
-**`Re:Build Workforce Fund`**
-
-Purpose: finance verified payroll and worker-support costs required for approved Re:Build operations.
-
-Public support units may include, after legal/accounting approval:
-- `Support 1 sorting worker-day`;
-- `Support 1 crew-week`;
-- `Support 1 equipment operator-day`;
-- `Support HSE supervision`;
-- `Support materials/testing staff`;
-- `Support local engineering hours`.
-
-The website must not imply that a donor directly employs, controls or pays a named worker unless a legally structured mechanism specifically permits that.
-
-### Workforce transparency KPIs
-
-Only after payroll/HR verification:
-- worker-days funded;
-- worker-days worked;
-- FTE-equivalent jobs;
-- number of paid workers;
-- percentage/count from defined impacted local communities only where collection methodology and privacy rules are approved;
-- gross payroll paid;
-- training hours;
-- PPE/training coverage.
-
-**PROHIBITED CLAIM:** `jobs generated for impacted communities` without a documented definition of `impacted community`, worker consent/privacy controls where applicable, and auditable payroll/work records.
-
-### Mandatory specialist gate
-
-Before collecting restricted salary donations/funding publicly validate:
-- legal entity receiving funds;
-- employment/payroll responsibility;
-- Venezuelan labor-law treatment;
-- tax/accounting treatment;
-- donor restrictions;
-- payment processor rules;
-- restricted-fund accounting;
-- refunds/unused restricted funds;
-- privacy and public reporting rules;
-- whether receipts can legally be described as donations and whether any tax deductibility exists.
+No automated donor acknowledgement until permissions/data QA are proven.
 
 ---
 
-## 5. Public Impact Dashboard
+# 7. `/rebuild/impact/` — public dashboard
 
-### 5.1 Homepage KPI strip — first version
+Canonical KPI definitions: `RB_KPI_DICTIONARY_v0.1.md`.
 
-Show only 4–6 top metrics:
-1. **Tonnes of debris received / processed**;
-2. **Tonnes recovered / released by material stream**;
-3. **Worker-days / FTE-equivalent jobs paid**;
-4. **Local payroll paid**;
-5. **Reconstruction/material trials or projects supplied**;
-6. **In-kind resources received / deployed**.
-
-Every metric includes:
-- reporting period;
-- last updated date;
-- measurement boundary;
-- link to methodology.
-
-### 5.2 Full dashboard
-
-#### Materials / Operations
+## Operations
 - incoming tonnes;
 - loads received;
-- concrete/mineral tonnes;
-- masonry tonnes;
-- ferrous/non-ferrous recovered;
-- reuse components released;
-- suspect/quarantine tonnes;
+- processed tonnes;
+- recovered tonnes by approved stream;
 - residual tonnes;
-- saleable/redeployed tonnes;
-- mass-balance closure;
-- product batches created/tested/released;
-- processing machine hours and downtime where useful.
+- suspect/quarantined tonnes;
+- product tonnes released;
+- product tonnes redeployed/supplied;
+- batches tested/released;
+- mass-balance closure/error where methodology is useful to show.
 
-#### People / Livelihoods
+## Jobs / Community
+Public-first metrics:
 - workers paid;
 - worker-days;
-- FTE-equivalent;
-- payroll paid;
-- training hours;
-- local/impacted-community employment only under approved definition/methodology.
+- FTE-equivalent only after methodology/legal review;
+- local payroll/labor paid after accounting approval;
+- training hours.
 
-#### Reconstruction / Offtake
-- buyer trials;
+**RED until definition/privacy gate:** workers/jobs from `impacted local communities`.
+
+## Reconstruction / Offtake
+- technical trials started/completed;
 - trial tonnes;
 - projects supplied;
-- material tonnes redeployed;
-- repeat buyers/offtakers when public-safe.
+- repeat offtake events/tonnes.
 
-#### Funding / Resource Transparency
-- cash received by approved support category;
-- in-kind fair-value received;
-- needs fully/partially funded;
-- workforce support received;
-- payroll actually paid;
-- testing/HSE/equipment support spent;
-- restricted vs unrestricted funds;
-- remaining approved funding need.
+## Funding / Resources
+After legal/accounting approval:
+- cash support received;
+- in-kind value received under approved valuation method;
+- equipment-hours received;
+- Needs fulfilled/deployed;
+- Workforce Fund received/deployed only after the mechanism is approved;
+- verified payroll/labor funded at aggregate level.
 
-#### HSE / Environmental
-- working hours;
-- incidents / near misses / corrective actions at an approved aggregation level;
+## HSE / Environment
+- incidents at approved aggregation/classification;
+- near misses where useful and safe;
 - rejected/quarantined loads;
-- water used for dust control if measured;
-- no carbon/diversion/environmental-benefit percentage until methodology is approved.
+- suspect-material tonnes with correct wording;
+- measured water use where useful.
+
+**RED:** carbon avoided, CO2 reduction, landfill-diversion %, coastal pollution avoided, circularity % or other environmental-benefit % until a specialist-approved baseline/methodology exists.
 
 ---
 
-## 6. Website information architecture
+# 8. `/rebuild/transparency/`
 
-### Homepage `/rebuild/`
-Recommended blocks:
-1. Re:Build mission/current status;
-2. live/approved KPI strip;
-3. `What we need right now` — 4–8 highest-priority needs;
-4. `Help fund local work` — Workforce Fund teaser only after legal/accounting gate;
-5. current material/output status;
-6. recent project update;
-7. CTAs: `See all needs`, `Offer equipment/material`, `View impact`, `Partner with Re:Build`.
+## Objective
+Reconcile what was received, restricted, deployed and reported without turning the website into the accounting ledger.
 
-### Dedicated routes
-- `/rebuild/needs/` — full Needs Registry;
-- `/rebuild/needs/equipment/`;
-- `/rebuild/needs/site-safety/`;
-- `/rebuild/needs/operations/`;
-- `/rebuild/needs/testing-engineering/`;
-- `/rebuild/needs/workforce/`;
-- `/rebuild/impact/` — public dashboard;
-- `/rebuild/methodology/`;
-- `/rebuild/transparency/`;
-- `/rebuild/support/` — approved support routes;
-- `/rebuild/partners/`.
+## Future sections
 
-### Data architecture
+1. reporting period/current status;
+2. cash received by approved support category;
+3. restricted vs unrestricted funds;
+4. in-kind resources received and valuation methodology;
+5. deployed resources by approved category;
+6. Workforce Fund summary only after approval;
+7. reconciliation/report downloads or approved summaries;
+8. correction/version notes;
+9. methodology and governance links.
 
-MVP source of truth should be spreadsheet/simple database first:
+## Required controls
 
-`Needs Register -> Contribution/Offer Register -> Donation/Funding Register -> Deployment/Expense records -> approved public summary`
-
-`Load/Batch/Payroll/Trials -> KPI calculation sheet -> approved public dashboard`
-
-WordPress displays approved data; it is not the accounting, payroll or HSE master database.
+- cash receipt ≠ pledge;
+- invoice/estimated reference value ≠ fair-value accounting automatically;
+- in-kind value must have an approved valuation basis;
+- restrictions must follow funds into deployment records;
+- unused restricted balances require approved treatment;
+- no named worker/payroll detail publicly;
+- corrections are versioned, not silently overwritten.
 
 ---
 
-## 7. Minimal dashboard/needs data tables
+# 9. `/rebuild/support/`
 
-### Needs Register
-`need_id, category, subcategory, title, use, unit, qty_needed, qty_pledged, qty_received, qty_deployed, priority, status, reference_value, evidence_id, needed_by, owner, last_updated, public_notes`
+## Before fundraising approval — allowed
 
-### Contribution Offer Register
-`offer_id, need_id, contributor, organization, contact, offer_type, qty, make_model, condition, availability, transport, operator, fuel, restrictions, review_status, accepted_by, received_date`
+- explain non-financial partnership categories;
+- link to Needs Registry;
+- accept `I can help with this` in-kind/service offers;
+- accept `Partner with Re:Build` contact requests;
+- explain that approved financial support mechanisms are in preparation without implying tax deductibility.
 
-### Workforce Funding Register
-`workforce_fund_id, support_category, amount_received, restrictions, reporting_period, payroll_cost_eligible, amount_deployed, balance, accounting_reference`
+## RED until specialist/founder approval
 
-### KPI Register
-`metric_id, metric_name, unit, period_start, period_end, value, source_table, methodology_version, evidence_reference, approved_by, publish_status, published_at`
-
----
-
-## 8. GREEN / YELLOW / RED
-
-### GREEN — execute now
-- design Needs Register;
-- maintain equipment/material/service/workforce needs internally;
-- add unpublished homepage/needs/dashboard wireframe requirements;
-- create in-kind interest form;
-- define KPI formulas and source records;
-- prepare Workforce Fund accounting/legal questions;
-- record existing interested engineers/crews as potential workforce suppliers/partners, not employees until contracted.
-
-### YELLOW — prepare/validate
-- public Needs Registry;
-- public KPI dashboard;
-- donor acknowledgement;
-- workforce-funding public pages;
-- restricted-fund reporting.
-
-### RED — do not launch yet
-- collect public donations without approved legal/accounting/payment route;
+- public donation checkout;
+- restricted salary donations;
 - tax-deductibility claims;
-- donor-to-named-worker direct salary claims;
-- guaranteed job/beneficiary promises;
-- public payroll/personally identifiable worker data;
-- publishing KPI values from estimates/targets;
-- displaying pledged items as received/deployed;
-- automated live dashboard before data QA is reliable.
+- charitable receipts;
+- donor-to-named-worker payments;
+- beneficiary percentages;
+- guaranteed worker/job outcomes;
+- public pricing of worker-day/crew-week support units.
 
 ---
 
-## 9. Approval criterion
+# 10. Workforce Fund public architecture — PREPARE ONLY
 
-This architecture becomes public-launch ready only when:
-1. legal/accounting support mechanism is approved;
-2. privacy/workforce reporting rules are approved;
-3. Needs Registry statuses and owner workflow are working manually;
-4. KPI source tables and formulas are tested;
-5. every public metric has methodology/date/source;
-6. contribution offers can be reviewed before acceptance;
-7. financial/in-kind/restricted-fund records reconcile.
+Provisionally named `Re:Build Workforce Fund`.
 
-## 10. Exact next action
+Potential future support units:
+- one sorting worker-day;
+- one crew-day;
+- one crew-week;
+- one equipment-operator day;
+- one HSE day;
+- local engineering hours;
+- worker PPE/training support.
 
-During RB-03C, create the first internal `NEEDS REGISTER v0.1` using the Santa-only pilot as the planning case and populate it with all physical, equipment, HSE, testing, logistics, workforce and professional-support requirements needed to execute the first 90-day pilot. Do not publish or collect funds yet.
+**Do not define amounts yet.** Unit prices require real workforce intakes/rates plus Venezuelan labor/legal, tax/accounting, HSE and payment-mechanism approval.
+
+Data flow:
+`approved receipt -> restriction -> eligible workforce cost -> payroll/service evidence -> deployment -> reconciliation -> approved aggregate KPI`.
+
+---
+
+# 11. Public data architecture
+
+## Needs Register
+`need_id, category, subcategory, title, use, unit, qty_needed, qty_pledged, qty_received, qty_deployed, priority, status, reference_value, quote/evidence, owner, needed_by, last_updated`
+
+## Contribution Offer Register
+`offer_id, need_id, contributor, organization, offer, qty, condition, availability, transport, operator, fuel, restrictions, review_status, received_date`
+
+## Workforce Partner Register
+`workforce_id, organization/person, crew_size, roles, rate_basis, expected_rate, availability, HSE, legal/contractor_status, references, status`
+
+## Workforce Funding Register
+`fund_id, category, amount_received, restriction, eligible_cost, amount_deployed, payroll_reference, balance`
+
+## KPI Register
+`metric_id, name, definition, unit, formula, source, period, value, methodology_version, approved_by, publish_status`
+
+Expanded canonical schemas live in `RB_03C_MINIMUM_DATA_MODEL_v0.1.md`.
+
+---
+
+# 12. Publication workflow
+
+`MASTER RECORD -> PERIOD/STATUS CLOSE -> DATA QA -> SPECIALIST APPROVAL IF REQUIRED -> FOUNDER/PUBLICATION APPROVAL -> PUBLIC EXPORT -> WORDPRESS DISPLAY`
+
+Do not connect raw operational tables directly to a live public dashboard during MVP.
+
+---
+
+# 13. Top future homepage Needs — source rule
+
+Candidate shortlist is maintained in `RB_NEEDS_REGISTER_v0.1.md` Section K. It is **not** public-ready merely because it appears there.
+
+Homepage can show a candidate only when:
+- still required = YES;
+- host/public-works provision checked;
+- validated quantity/spec exists;
+- owner/date exists;
+- public-safe description exists;
+- status evidence is current;
+- financial CTA absent unless separately approved.
+
+---
+
+# 14. GREEN / YELLOW / RED
+
+## GREEN — execute now
+- maintain internal Needs Register;
+- validate host/contractor availability;
+- build Contribution Offer form as draft/unpublished;
+- create KPI Register and formulas;
+- create public-page wireframes/drafts with placeholder states;
+- define Workforce Fund legal/accounting questions;
+- record interested engineers/crews as workforce partners, not employees;
+- test manual data-to-approved-summary workflow.
+
+## YELLOW — prepare/validate
+- public Needs Registry;
+- public Impact Dashboard;
+- public transparency reports;
+- donor/partner acknowledgement;
+- Workforce Fund public pages;
+- restricted-fund reporting;
+- read-only semi-automated approved exports after manual QA is stable.
+
+## RED — do not launch
+- public financial fundraising/payment collection before approval;
+- salary donation collection;
+- tax-deductibility/charitable receipt claims;
+- donor-to-named-worker salary model;
+- unverified KPI publication;
+- public payroll/PII;
+- live raw-data dashboard;
+- displaying pledged resources as received/deployed;
+- carbon/diversion/environmental benefit claims without methodology.
+
+---
+
+# 15. Major implementation block
+
+**Objective:** make public participation transparent and useful without publishing assumptions or creating accounting/HSE risk.  
+**Expected result:** approved data contract for `/rebuild/`, `/needs/`, `/impact/`, `/transparency/` and `/support/`, ready for later WordPress implementation.  
+**Recommended tools:** current WordPress stack; simple forms; Google Sheets/simple database; manual approved export; no paid plugin required yet.  
+**Concrete steps:** validate top Needs -> create internal registers -> calculate KPI test records -> create unpublished page wireframes -> test `I can help with this` review flow -> obtain legal/accounting/workforce gates -> only then expose financial support.  
+**Validation checklist:** every Need has owner/evidence/status; every KPI has formula/source/period; offer does not auto-fulfill; workforce PII hidden; cash/in-kind/restrictions reconcile; publication owner approves.  
+**Approved:** a random public card/KPI can be traced to an approved internal record without manual inference.  
+**Not approved:** targets appear as impact, Needs are sourced before host check, payment is enabled before legal/accounting approval, or raw operational data is public.  
+**Risks/common errors:** wishlist publishing; status inflation; duplicate data stores; donor-value inflation; public wage detail; mixing pledges/receipts; live automation before QA.  
+**Delegation:** data owner; accountant/tax; labor/legal counsel; HSE; WordPress implementer only after data/publication rules are stable.  
+**Exact next action:** build the internal spreadsheet registers and one unpublished homepage/Needs/Impact data mock using **dummy values clearly labeled TEST**, then confirm every displayed field maps to a source column before any real values are exposed.
