@@ -10,6 +10,7 @@ Private canonical operating system for **Tropik Goods**.
 - **Tropik** — current commerce / merch brand.
 - **Habit App** — software venture, working name; prior context pending migration.
 - **Tropik Academy** — internal working label for education; public brand not locked.
+- **Tropik Re:Build** — post-disaster debris recovery and circular reconstruction venture; current documents remain PRIVATE_WORKING until founder approval and field validation.
 
 ## Current portfolio
 
@@ -19,6 +20,7 @@ Private canonical operating system for **Tropik Goods**.
 | Tropik Commerce | GREEN | WooCommerce audit and controlled relaunch |
 | Habit App | YELLOW | Context migration and validation before build |
 | Education | YELLOW | Bootcamp asset inventory and one-course opportunity selection |
+| Tropik Re:Build | YELLOW | La Guaira site/facility MVP, funding architecture, debris-to-material validation |
 | Amazon scale | RED | Future channel after product/operations validation |
 
 ## Repository map
@@ -28,6 +30,7 @@ Private canonical operating system for **Tropik Goods**.
 10_COMMERCE/      Tropik commerce venture
 20_HABIT_APP/     Habit software venture
 30_EDUCATION/     Education / Udemy venture
+40_REBUILD/       Re:Build recovery / circular reconstruction venture
 80_SHARED/        Reusable templates and Build in Public assets
 90_AI_SYSTEM/     AI prompts, handoffs, skills and schemas
 ```
