@@ -2,7 +2,7 @@
 
 **Status:** PRIVATE_WORKING  
 **Venture:** Tropik Re:Build  
-**Updated:** 2026-09-06 — RB-03D evidence reconstruction + web execution control
+**Updated:** 2026-09-07 — RB-03D + WordPress Artifact fidelity control
 
 ## Purpose
 
@@ -27,8 +27,9 @@ Working scope:
 - **STRATEGIC DECISION:** no site becomes GREEN while authority, output rights, hazardous/residual pathway or critical HSE/environment conditions remain unknown/uncontrolled.
 - **STRATEGIC DECISION:** public Needs Registry + measured Impact Dashboard are part of the future Re:Build public layer; fundraising/payment remains gated.
 - **STRATEGIC DECISION:** the website may actively collect structured non-binding offers, capabilities, buyer specifications, workforce interest, authority referrals and funding-partner inquiries through `Work With Us`, but self-reported submissions remain unverified until reviewed.
-- **STRATEGIC DECISION:** the approved Claude Artifact is a visual/navigation reference; operational facts and public claims continue to come from this GitHub source of truth.
-- **STRATEGIC DECISION:** web execution follows `Content approval -> Claude Code WordPress implementation -> staging QA -> manual founder promotion`. WordPress engineering does not start before Content approval.
+- **STRATEGIC DECISION:** the approved Claude Artifact is the **visual/interaction golden master** for the Re:Build WordPress implementation; operational facts and public claims continue to come from this GitHub source of truth.
+- **STRATEGIC DECISION:** web execution follows `Content approval + Artifact golden-master freeze -> Claude Code WordPress reconstruction -> visual-regression/staging QA -> manual founder promotion`.
+- **STRATEGIC DECISION:** the founder-supplied WordPress v2 theme is reusable code but is not accepted as final visual-fidelity baseline until it passes the Artifact parity gate.
 - **STRATEGIC DECISION:** missing field/commercial evidence is collected from real external sources and ingested into the existing RB-03D workflow; do not create one AI conversation per evidence item.
 
 ## RB-03C purpose
@@ -46,6 +47,17 @@ Canonical RB-03D reconstruction:
 
 Evidence collection routing:
 - `governance/RB_03D_EVIDENCE_COLLECTION_ROUTER_v0.1.md`
+
+## Web implementation current decision
+
+The current v2 WordPress theme is **not accepted as visually complete**. The final Lane-2 build must use:
+
+- `digital/RB_WORDPRESS_ARTIFACT_FIDELITY_REBUILD_BRIEF_v0.1.md`
+- the founder-approved Artifact golden-master reference package;
+- approved page content;
+- screenshot parity QA at 1440 / 1024 / 768 / 480 / 390.
+
+Do not produce or promote another approximate WordPress theme from the v2 ZIP alone.
 
 ## Canonical working set
 
@@ -80,6 +92,7 @@ Evidence collection routing:
 - `digital/RB_CLAUDE_COWORK_WEBSITE_HANDOFF_v0.1.md`
 - `digital/RB_WORK_WITH_US_EVIDENCE_ACQUISITION_ARCHITECTURE_v0.1.md`
 - `digital/RB_WEB_CONTENT_TO_WORDPRESS_EXECUTION_CONTROL_v0.1.md`
+- `digital/RB_WORDPRESS_ARTIFACT_FIDELITY_REBUILD_BRIEF_v0.1.md`
 
 ### Governance / Business Plan
 - `governance/RB_ASSUMPTIONS_REGISTER_v0.1.md`
