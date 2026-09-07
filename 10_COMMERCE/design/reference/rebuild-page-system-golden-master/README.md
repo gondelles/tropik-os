@@ -1,115 +1,71 @@
-# Re:Build Page System — Golden Master Reference
+# Re:Build Page System — Golden Master
 
-**Status:** WAITING_FOR_COWORK_EXPORT  
-**Updated:** 2026-09-07  
-**Purpose:** freeze the founder-approved Claude Re:Build Artifact/Page System under version control so Claude Code can reconstruct WordPress without visual drift.
+Status: FROZEN REFERENCE — visual/interaction authority for the Lane 2 (Claude Code) WordPress rebuild.
+Frozen: 2026-09-07
+Source: "Tropik Design System" Artifact — https://claude.ai/code/artifact/6cab347c-e8b7-4baf-b864-601894782c25
+Founder approval chain: DEC-025 (design tokens/typography/header-drawer-cart shell) → DEC-026 (IA +
+component system v1, same artifact) → DEC-027 (mobile QA fixes) → DEC-028 (PII scrub) → DEC-031
+(explicitly supersedes the DEC-029 `tropik-rebuild-theme-v2.zip` as the visual-fidelity baseline — this
+package is the real one).
 
-## Governing rule
+## What this package is
 
-This folder is the **visual/interaction reference**, not the source of operational facts.
+A frozen, read-only snapshot of the founder-approved Artifact's actual source: exact CSS custom
+properties (design tokens), the real component/class inventory, an explicit mapping of the 8 minimum
+reusable patterns the founder's context pack requires (Hero/intro, evidence/stat, narrative zone, card
+rail, CTA band, Need/Work With Us teaser, Impact/Update teaser, editorial/policy section) to the actual
+markup that already exists in the Artifact, documented interaction behavior (drawer/cart, carousels,
+accordion, checkout collapse steps, gallery, search), and breakpoint screenshots at the widths this
+project has used for QA since DEC-025/027 (390 / 768 / 1440px).
 
-- Visual geometry/components/interactions: this Golden Master / founder-approved Artifact.
-- Re:Build facts/claims/statuses: `40_REBUILD/`.
-- WordPress implementation contract: `40_REBUILD/digital/RB_WORDPRESS_ARTIFACT_FIDELITY_REBUILD_BRIEF_v0.1.md`.
-- Founder UX/navigation/mobile/editability override: `40_REBUILD/digital/RB_WEB_UX_NAVIGATION_COLLECTIONS_EDITABILITY_OVERRIDES_v0.1.md`.
+## What this package is NOT
 
-Where the current Artifact still shows an older navigation grouping or unresolved behavior that conflicts with the founder override, export the source faithfully **and document the required founder-approved delta** in `REFERENCE_NOTES.md`; do not silently preserve the stale behavior as canonical.
+- Not a redesign. Every token, class and pattern below is copied verbatim from the live Artifact HTML
+  as of this freeze — nothing here was invented or improved.
+- Not a WordPress build. No PHP, no theme.json, no Gutenberg block registration. That is Lane 2
+  (Claude Code)'s job, using this package as its ground truth.
+- Not the `tropik-rebuild-theme-v2.zip` (DEC-029). That zip is an earlier, narrower chrome-only port
+  built directly to PHP without this intermediate freeze step, and the founder's 2026-09-07
+  synchronized context pack explicitly rejects it as the final visual-fidelity baseline. This package
+  supersedes it as the reference Lane 2 should build against.
 
-## Cowork action required
+## Files in this package
 
-From the Claude Cowork conversation that can access the approved Artifact, export/commit as much of the actual source as the Artifact environment permits.
+- `TOKENS.md` — every CSS custom property in the Artifact's `:root`, verbatim, with the exact hex/value
+  and its semantic role (per the founder's Sun/Leaf/Coral/Ivory accent rule). **Coral is
+  `--tk-signal-coral: #F25B66`** — already frozen since DEC-025, re-confirmed unchanged in this pass.
+- `COMPONENT_INVENTORY.md` — every reusable `.tk-*` component class found in the Artifact's CSS, grouped
+  by function (buttons, header/drawer/cart, cards, forms, accordion/collapse, carousels, tables,
+  modal/toast, page-level layout classes).
+- `PATTERN_MAP.md` — the founder's required 8 minimum patterns, each mapped to real existing markup in
+  the Artifact (which route, which classes), or explicitly flagged as a gap if no equivalent exists yet.
+  One gap found: **Impact/Update teaser** has no dedicated pattern in the Artifact today — flagged, not
+  invented.
+- `INTERACTIONS.md` — every JS-driven behavior in the Artifact (panel open/close, carousels, accordion,
+  checkout step collapse, quantity stepper, variant selection, gallery, search overlay, scroll-spy TOC,
+  back-to-top), described in plain language with the exact trigger/selector contract Lane 2 needs to
+  reproduce it.
+- `screenshots/` — full-page screenshots of the Artifact's current Re:Build routes at 390px, 768px and
+  1440px, captured from the live published URL after the DEC-028 PII scrub.
 
-Preferred contents:
+## Known gap between these screenshots and the 2026-09-07 IA (DEC-031)
 
-```text
-rebuild-page-system-golden-master/
-  README.md
-  REFERENCE_NOTES.md
-  source/
-    index-or-router.*
-    styles-or-tokens.*
-    components-or-rendered-html/*
-    interactions.*
-    assets/*
-  screenshots/
-    1440-home.png
-    1440-drawer.png
-    1440-bag-populated.png
-    1440-shop.png
-    1440-checkout.png
-    1440-account.png
-    1024-*.png
-    768-*.png
-    480-*.png
-    390-*.png
-```
+The Artifact's footer/drawer nav frozen in these screenshots still reflects DEC-026's structure
+(Explore Re:Build cluster missing "Rebuilding," a standalone "Project" group with About/FAQ/Contact,
+and a "Legal" group with only Terms/Privacy) — it has **not** been updated to the founder's 2026-09-07
+synchronized-context IA (Explore Re:Build without Support, a single Support mega-group absorbing
+About/FAQ/Contact/Updates/Transparency/Work With Us plus the new Shipping/Terms/Privacy/Return-Policy
+pages, "Project" removed). This freeze intentionally did not edit the Artifact to match — the task was
+to capture what's approved and live, not to redesign it. **Lane 2 should build nav against the IA in
+`90_AI_SYSTEM/handoffs/COM_TROPIK_COMMERCE_PROJECT_CONTEXT_PACK_2026-09-07.txt` (the current authority
+per DEC-031), using the structural nav *patterns* (drawer, footer groups, mega-group styling) frozen
+here, not the specific link list shown in the screenshots.**
 
-Exact filenames may differ according to the Artifact technology. Preserve the underlying source rather than translating it into a different framework merely for this export.
+## How Lane 2 (Claude Code) should use this
 
-## Mandatory reference surfaces
-
-- Header — desktop + mobile
-- Left drawer — open state, with grouping hierarchy visible
-- Bag drawer — populated + empty
-- Home
-- One horizontal rail/carousel — desktop + mobile one-card state
-- Shop landing showing the Merch / Products collection architecture if implemented in Artifact
-- Product detail/gallery if present in approved Artifact
-- Checkout
-- My Account
-- One long editorial/Re:Build content page showing section accent/rhythm behavior
-
-## Founder-approved deltas that REFERENCE_NOTES must preserve
-
-The Golden Master package must explicitly identify these current founder rules even if the Artifact source still needs a small polish pass to reflect them:
-
-1. `PROJECT` drawer group is removed.
-2. `SHOP` is a group heading at the same hierarchy level as `EXPLORE RE:BUILD` and `SUPPORT`, with `Merch` and `Products` below it.
-3. `SUPPORT` contains Support Re:Build, Work With Us, Transparency as readiness permits, About Us, Updates, FAQ, Contact Us, Shipping, Terms & Conditions, Privacy Policy and Return Policy.
-4. Mobile narrative rails show one primary card at a time, with visible left/right arrows vertically centered on rail edges; card 2/3/4 are not stacked vertically on landing pages.
-5. Dedicated collection pages may use normal vertical catalog scrolling.
-6. Primary content pages use at least four intentional narrative/content zones where scope permits, with semantic accents from approved Sun / Leaf / Coral / Ivory-White tokens rather than arbitrary rainbow cards.
-7. Shop has two current first-level collections: Merch and Products.
-8. Current Re:Build Products web collection is limited to Road Base, Mineral Fill, Ferrous Scrap and Masonry Aggregate, with truthful lifecycle/status labels. Verified Reuse Components remains outside the primary Products collection until separately approved.
-9. New/editable WordPress pages must later be reproducible with Gutenberg patterns; no Divi dependency is part of the Golden Master contract.
-
-## REFERENCE_NOTES must also identify
-
-- Artifact route/version/date;
-- fonts actually rendered;
-- core color tokens, including the exact Golden Master Coral token if present;
-- container/header/drawer/bag dimensions where available;
-- desktop/mobile behavior differences;
-- section accent semantic usage;
-- rail/card width and mobile snap behavior;
-- anything visible that belongs to Claude preview chrome and MUST NOT ship, including `Artifact by you` and `Todas las páginas / Viendo: ...` style preview controls;
-- known founder-approved exceptions or unresolved items.
-
-## PASS for Golden Master freeze
-
-- Cowork confirms source/screenshots correspond to the current founder-approved Artifact state;
-- founder confirms no outdated/cached version was exported;
-- screenshots cover required breakpoints/surfaces;
-- founder UX deltas above are either reflected in the Artifact or explicitly documented as required deltas;
-- Code can inspect the source without needing access to the private Claude session.
-
-## FAIL
-
-- only screenshots with no source even though Cowork can access source;
-- screenshots from an older Artifact state;
-- WordPress theme v2 copied into this folder and mislabeled as Artifact reference;
-- Claude preview chrome treated as production UI;
-- stale `PROJECT` navigation retained without being flagged;
-- mobile card sections exported as vertically stacked behavior when the founder-approved target is one-card horizontal rails.
-
-## Next handoff
-
-Once populated/frozen, start Claude Code with:
-
-`90_AI_SYSTEM/handoffs/RB_CLAUDE_CODE_WORDPRESS_FIDELITY_PROMPT_2026-09-07.txt`
-
-and require compliance with:
-
-- `40_REBUILD/digital/RB_WORDPRESS_ARTIFACT_FIDELITY_REBUILD_BRIEF_v0.1.md`
-- `40_REBUILD/digital/RB_WEB_UX_NAVIGATION_COLLECTIONS_EDITABILITY_OVERRIDES_v0.1.md`
-- `40_REBUILD/digital/RB_WORDPRESS_PLUGIN_RATIONALIZATION_AND_REPO_PRIVACY_GATE_v0.1.md`
+Read this package before writing any theme code. Reproduce the tokens as CSS custom properties in
+`theme.json`/global styles exactly as listed in `TOKENS.md` — do not re-derive or approximate any hex
+value, especially Coral. Build the 8 required Gutenberg patterns against `PATTERN_MAP.md`'s real markup,
+not from imagination. Use `INTERACTIONS.md` as the contract for what each interactive component must do
+before calling it done. Compare rendered output against `screenshots/` at the same three widths as part
+of the Golden Master Parity Matrix (Claude Code's own required doc #3).
