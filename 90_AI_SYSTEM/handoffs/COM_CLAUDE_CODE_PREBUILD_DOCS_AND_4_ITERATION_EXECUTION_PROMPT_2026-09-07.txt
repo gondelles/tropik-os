@@ -1,0 +1,474 @@
+TROPIK COMMERCE / RE:BUILD — CLAUDE CODE PRE-BUILD DOCUMENTATION + FOUR-ITERATION EXECUTION
+Date: 2026-09-07
+Repository: gondelles/tropik-os
+Current repository visibility: temporarily PUBLIC for tool access
+Status: EXECUTE DOCUMENTATION NOW / FINAL BUILD ONLY AFTER GATES
+
+==================================================
+0. FOUNDER QUALITY INSTRUCTION — PRESERVE VERBATIM
+==================================================
+
+"finish the website perfectly, high standards and amazing outcome, making no mistakes. Provide 4 iterations of reviews and improve each time so the las one is the best outcome."
+
+Operational requirement:
+Treat this as a demand for exceptionally high standards, four documented review/fix cycles, objective QA evidence, and no known P0/P1 defects at the final staging handoff. Do not merely claim perfection or say you reviewed it four times.
+
+==================================================
+1. PURPOSE OF THIS SESSION
+==================================================
+
+First, align yourself with the actual repository and create the complete pre-build documentation package required to finish the Tropik Re:Build WordPress/WooCommerce website faithfully.
+
+Do NOT begin another approximate theme rewrite from the current v2 theme alone.
+
+The founder-approved Re:Build Claude Artifact/Page System is the visual/interaction Golden Master. The v2 WordPress theme is reusable code only.
+
+PHASE A — DO NOW:
+- read the source-of-truth files;
+- inspect the actual current theme/code in the repo if present;
+- generate the required implementation/audit documents;
+- identify exactly what is missing from the Golden Master/content inputs;
+- commit the documents in small reviewable commits.
+
+PHASE B — IMPLEMENT ONLY WHEN THE GATES ARE SATISFIED:
+- Golden Master source/reference package exists;
+- founder-approved content package/build matrix exists or the page status is explicitly approved/pre-pilot;
+- no unresolved source-of-truth conflict blocks implementation.
+
+If those gates are not satisfied, STOP after Phase A and return the exact missing inputs. Do not guess.
+
+==================================================
+2. READ FIRST — CURRENT ORDER
+==================================================
+
+Read these files first:
+
+10_COMMERCE/context/COM_WEB_CURRENT_STATE_2026-09-07.md
+10_COMMERCE/brand/COM_09_CURRENT_CREATIVE_APPROVAL_OVERRIDE_2026-09-07.md
+10_COMMERCE/brand/COM_08_DESIGN_SYSTEM_v0.1.md
+40_REBUILD/README.md
+40_REBUILD/digital/RB_WORDPRESS_ARTIFACT_FIDELITY_REBUILD_BRIEF_v0.2.md
+40_REBUILD/digital/RB_WORDPRESS_ARTIFACT_FIDELITY_REBUILD_BRIEF_v0.1.md
+40_REBUILD/digital/RB_WEB_UX_NAVIGATION_COLLECTIONS_EDITABILITY_OVERRIDES_v0.1.md
+40_REBUILD/digital/RB_WORDPRESS_PLUGIN_RATIONALIZATION_AND_REPO_PRIVACY_GATE_v0.1.md
+40_REBUILD/digital/RB_WEB_CONTENT_TO_WORDPRESS_EXECUTION_CONTROL_v0.1.md
+40_REBUILD/digital/RB_WORDPRESS_WOOCOMMERCE_ARCHITECTURE_v0.1.md
+40_REBUILD/digital/RB_WORK_WITH_US_EVIDENCE_ACQUISITION_ARCHITECTURE_v0.1.md
+40_REBUILD/digital/RB_PUBLIC_NEEDS_IMPACT_TRANSPARENCY_ARCHITECTURE_v0.1.md
+40_REBUILD/products/RB_MVP_MATERIALS_CATALOG_v0.1.md
+10_COMMERCE/design/reference/rebuild-page-system-golden-master/README.md
+90_AI_SYSTEM/handoffs/COM_TROPIK_COMMERCE_PROJECT_CONTEXT_PACK_2026-09-07.txt
+
+Then inspect the actual current WordPress/Re:Build theme source available in the repository.
+
+If a file conflicts with the newer 2026-09-07 founder override/current-state files, the newer current-state/override wins for the affected issue.
+
+==================================================
+3. CURRENT CREATIVE MERCH STATUS — DO NOT MISS THIS
+==================================================
+
+`Qué Manguangua` and `Estás todo timbrao` shirt designs/visual directions are NOT current approved launch/catalog items.
+
+Status:
+CREATIVE BACKLOG — REQUIRES NEW FOUNDER APPROVAL
+
+Historical approval records remain historical only.
+Do not seed these products into current Merch.
+Do not use their mockups as current product truth.
+Do not silently restore them because an older COM-09 file says approved.
+
+==================================================
+4. CURRENT DRAWER IA
+==================================================
+
+EXPLORE RE:BUILD
+- Recovery
+- How It Works
+- Materials
+- Rebuilding
+- Impact
+
+SUPPORT
+- Support Re:Build
+- Work With Us
+- Transparency only when public-ready
+- About Us
+- Updates
+- FAQ
+- Contact Us
+- Shipping
+- Terms & Conditions
+- Privacy Policy
+- Return Policy
+
+SHOP
+- Merch
+- Products
+
+MY ACCOUNT
+- My Account
+- Orders
+- Bag
+
+Remove PROJECT completely.
+SHOP is a heading, not a redundant child route.
+
+==================================================
+5. CURRENT SHOP MODEL
+==================================================
+
+Two first-level collections only:
+Merch
+Products
+
+Current Re:Build Products web collection:
+- Road Base 0–40
+- Mineral Fill
+- Ferrous Scrap
+- Masonry Aggregate 0–25
+
+Do not silently add Verified Reuse Components to the primary collection.
+Use truthful lifecycle/status language.
+Recovered Products remain quote/inquiry-led until evidence supports standard availability/pricing.
+
+==================================================
+6. CURRENT RESPONSIVE / VISUAL NON-NEGOTIABLES
+==================================================
+
+Header desktop target:
+[hamburger] — [true centered toucan] — [ES/EN pill] [search] [account] [bag + count]
+
+Header mobile target:
+[hamburger] — [true centered toucan] — [search] [account] [bag]
+
+No country flags.
+No textual Support header button.
+One custom Woo-backed Bag drawer; no nested Mini-Cart drawer.
+
+Mobile narrative rails:
+- one primary card visible at a time;
+- visible left/right arrows centered on rail edges;
+- one-card advancement;
+- swipe optional;
+- do not vertically stack remaining cards.
+
+Primary pages:
+minimum four intentional narrative/content zones where scope supports it.
+Semantic accents only from approved Golden Master palette:
+Sun=action/progress
+Leaf=recovery/material/process
+Coral=people/work/support
+Ivory/White=evidence/methodology/policy
+
+Do not invent the Coral hex if it is not yet frozen in the Golden Master.
+
+==================================================
+7. WORDPRESS ARCHITECTURE
+==================================================
+
+No new Divi dependency.
+Do not hard-code final marketing copy into PHP.
+
+Use:
+- native Pages;
+- Gutenberg/core blocks;
+- reusable registered patterns;
+- global design tokens;
+- rb-* component/style system;
+- WooCommerce functionality/templates as needed.
+
+A non-developer must be able to create/edit pages without code and inherit the correct design/responsive system.
+
+==================================================
+8. REQUIRED DOCUMENTS — CREATE THESE FIRST
+==================================================
+
+Create a version-controlled implementation documentation folder, recommended:
+
+10_COMMERCE/design/implementation/rebuild-wordpress-vNext/
+
+Create these ten documents with repo-specific findings, not generic templates:
+
+1. `01_SOURCE_OF_TRUTH_AND_INPUT_STATUS.md`
+Must include:
+- exact files/commits inspected;
+- current theme/code path;
+- Golden Master status and missing artifacts;
+- content approval/package status;
+- conflicting/stale files;
+- blockers;
+- GO/HOLD for final implementation.
+
+2. `02_THEME_CODE_GAP_AUDIT.md`
+Audit actual current code vs target:
+- tokens/geometry;
+- header;
+- language;
+- search/account;
+- left drawer;
+- bag architecture;
+- mobile rails;
+- cards/forms/buttons;
+- Shop/collections;
+- product detail/gallery;
+- checkout;
+- My Account;
+- Gutenberg/editability;
+- stale/demo content;
+- accessibility/performance.
+For each: KEEP / REFACTOR / REPLACE + file/component + severity.
+
+3. `03_GOLDEN_MASTER_PARITY_MATRIX.md`
+Columns:
+- Surface/component
+- Golden Master/founder target
+- Current WordPress state
+- Required delta
+- Breakpoints
+- Verification method
+- Severity
+- Status
+
+4. `04_RESPONSIVE_TEST_MATRIX.md`
+Mandatory widths:
+1440 / 1024 / 768 / 480 / 390
+Surfaces:
+Header, Drawer, Bag populated/empty, Home, one rail, Shop landing, Merch collection, Products collection, Product detail, Checkout, My Account, long editorial page.
+Define expected result and evidence to capture.
+
+5. `05_WOOCOMMERCE_COMPONENT_CONTRACT.md`
+Define:
+- Shop > Merch / Products routing;
+- archive/card behavior;
+- recovered-product inquiry path;
+- product gallery;
+- one custom Woo-backed Bag drawer;
+- quantity/remove/fragments/AJAX;
+- cart/bag terminology;
+- checkout;
+- account;
+- what default Woo UI must never leak.
+
+6. `06_WORDPRESS_EDITABILITY_AND_PATTERN_MAP.md`
+Define:
+- page templates/types;
+- editor-visible Gutenberg patterns;
+- editable fields;
+- allowed accents;
+- global token inheritance;
+- how founder creates a new congruent page without code;
+- how content is seeded/imported;
+- how to avoid hard-coded marketing copy.
+
+Minimum patterns:
+Hero / evidence-stat / narrative zone / card rail / CTA band / Need-Work-With-Us teaser / Impact-Update teaser / editorial-policy section.
+
+7. `07_PLUGIN_AUDIT.md`
+If actual WordPress plugin inventory is available, audit every plugin.
+If not available, create the exact inventory request/import format and clearly mark data missing.
+Columns:
+Plugin / Version / Active? / Purpose / Dependency / KEEP|KEEP TEMP|DEACTIVATE|REMOVE / Removal risk / Native alternative / Founder action.
+
+Special Divi rule:
+Do not retain/renew Divi merely for the old design. Audit `et_pb_` dependencies first, migrate needed content, then recommend deactivation/removal if safe.
+
+8. `08_CONTENT_AND_CLAIM_GATE_MAP.md`
+Map:
+- approved page copy;
+- PRE-PILOT/TBD fields;
+- prohibited Re:Build claims;
+- Needs/Impact readiness;
+- financial donation gating;
+- Manguangua/Timbrao backlog state;
+- four current Re:Build Products status truth;
+- stale/demo content to remove.
+
+9. `09_IMPLEMENTATION_PLAN_4_ITERATIONS.md`
+Define the four iteration plan from Section 10 below including:
+- exact components/files;
+- test gates;
+- expected screenshots;
+- severity thresholds;
+- commit strategy;
+- exit criteria per iteration.
+
+10. `10_MIGRATION_ROLLBACK_AND_STAGING_PLAN.md`
+Define:
+- backup/preconditions;
+- theme activation strategy;
+- legacy/Divi content migration;
+- plugin changes;
+- content import/seed;
+- rollback path;
+- staging smoke tests;
+- founder gate;
+- no automatic production promotion.
+
+==================================================
+9. RETURN AFTER DOCUMENTATION PHASE
+==================================================
+
+After creating/committing the ten docs, return:
+
+A. commit SHAs;
+B. 10-file document index;
+C. top 10 findings;
+D. P0/P1 blockers;
+E. exact Golden Master files still missing, if any;
+F. exact content files/status still missing, if any;
+G. whether final implementation is GO or HOLD;
+H. no code-change claims if you only completed documentation.
+
+Do not start the final rebuild if Golden Master/content inputs are genuinely absent.
+
+==================================================
+10. FOUR ITERATIONS — WHEN IMPLEMENTATION GATE IS GREEN
+==================================================
+
+ITERATION 1 — ARCHITECTURE + SHELL FIDELITY
+Build/refactor:
+- design tokens;
+- canonical container/sections;
+- header;
+- language/search/account/bag utilities;
+- left drawer;
+- single Bag architecture;
+- shared buttons/forms/cards/status labels.
+
+Then REVIEW #1:
+- compare against Golden Master;
+- capture screenshots;
+- create issue list by severity;
+- fix all P0/P1 and high-value P2 issues before moving on.
+
+ITERATION 2 — RESPONSIVE + COMMERCE
+Build/refactor:
+- all breakpoints;
+- one-card mobile rails;
+- Shop landing;
+- Merch/Products collections;
+- product detail/gallery;
+- Bag AJAX;
+- checkout;
+- My Account.
+
+Then REVIEW #2:
+- regression-test Iteration 1;
+- capture 1440/1024/768/480/390 evidence;
+- compare against Golden Master;
+- fix defects;
+- document why Iteration 2 is better.
+
+ITERATION 3 — CONTENT + EDITABILITY + QUALITY
+Build/refactor:
+- approved editorial pages;
+- Gutenberg patterns;
+- four-zone page rhythm;
+- semantic accents;
+- Work With Us;
+- Keep Updated surfaces;
+- keyboard/focus/accessibility;
+- reduced motion;
+- editor usability;
+- performance/plugin leakage.
+
+Then REVIEW #3:
+- founder-content truth check;
+- editor creation/edit test;
+- accessibility/performance inspection;
+- responsive regression;
+- fix issues;
+- document measurable improvement.
+
+ITERATION 4 — FINAL REGRESSION + POLISH
+Review the WHOLE site as a system:
+- Golden Master overlays/side-by-side;
+- header/drawers;
+- typography;
+- spacing;
+- proportional geometry;
+- card harmony;
+- all Woo surfaces;
+- all required pages;
+- stale/demo contamination;
+- mobile/tablet/desktop;
+- plugin/dependency sanity;
+- installability;
+- content editability;
+- functional smoke tests.
+
+Fix every known P0/P1 defect and all reasonable visual/functional P2 defects before handoff.
+
+Final REVIEW #4 evidence must show why this is the best of the four outcomes.
+
+==================================================
+11. REQUIRED REVIEW ARTIFACT PER ITERATION
+==================================================
+
+For each iteration create:
+`ITERATION_0X_REVIEW.md`
+
+Include:
+- commit/build tested;
+- test environment;
+- viewports;
+- surfaces tested;
+- screenshots/evidence;
+- defects found;
+- severity P0/P1/P2/P3;
+- fixes made;
+- retest result;
+- unresolved issues;
+- comparison to prior iteration;
+- exit gate PASS/HOLD.
+
+Do not merely state "review completed".
+
+==================================================
+12. FINAL DELIVERY — ONLY AFTER ITERATION 4
+==================================================
+
+Return/commit:
+- complete source;
+- installable theme ZIP;
+- WXR and/or deterministic seed package;
+- Gutenberg patterns;
+- README_INSTALL;
+- CHANGELOG;
+- IMPLEMENTATION_STATUS;
+- plugin/config list;
+- PLUGIN_AUDIT.md;
+- all 4 ITERATION review documents;
+- breakpoint screenshots;
+- Golden Master comparison evidence;
+- test evidence for Bag AJAX/count/remove/qty;
+- language-route test;
+- content editability test;
+- mobile one-card rail test;
+- Shop Merch/Products hierarchy test;
+- unresolved P2/P3 issues with recommendation.
+
+Do NOT promote to production.
+Founder manual staging approval remains required.
+
+==================================================
+13. SECURITY / REPOSITORY VISIBILITY
+==================================================
+
+The repo is temporarily public for access.
+Do not commit credentials, secrets, personal workforce data, confidential buyer terms or private RB-03D evidence.
+
+Flag when the context/Golden Master handoff is sufficient so the founder can return the repository to PRIVATE.
+
+==================================================
+14. COMPLETION STANDARD
+==================================================
+
+Do not optimize for speed at the expense of fidelity.
+Do not declare success because the theme installs or uses similar dark colors.
+Do not hide unresolved defects.
+Do not make production changes without approval.
+
+The final staging candidate should be cohesive, proportional, responsive, accessible, editable, technically clean and materially faithful to the approved Artifact/founder decisions.
+
+END PROMPT
