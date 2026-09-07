@@ -21,19 +21,26 @@ Read in this order:
 
 40_REBUILD/README.md
 40_REBUILD/digital/RB_WORDPRESS_ARTIFACT_FIDELITY_REBUILD_BRIEF_v0.1.md
+40_REBUILD/digital/RB_WEB_UX_NAVIGATION_COLLECTIONS_EDITABILITY_OVERRIDES_v0.1.md
+40_REBUILD/digital/RB_WORDPRESS_PLUGIN_RATIONALIZATION_AND_REPO_PRIVACY_GATE_v0.1.md
 40_REBUILD/digital/RB_WEB_CONTENT_TO_WORDPRESS_EXECUTION_CONTROL_v0.1.md
 40_REBUILD/digital/RB_CLAUDE_COWORK_WEBSITE_HANDOFF_v0.1.md
 40_REBUILD/digital/RB_WEBSITE_SITEMAP_v0.1.md
 40_REBUILD/digital/RB_WORDPRESS_WOOCOMMERCE_ARCHITECTURE_v0.1.md
 40_REBUILD/digital/RB_WORK_WITH_US_EVIDENCE_ACQUISITION_ARCHITECTURE_v0.1.md
 40_REBUILD/digital/RB_PUBLIC_NEEDS_IMPACT_TRANSPARENCY_ARCHITECTURE_v0.1.md
+40_REBUILD/products/RB_MVP_MATERIALS_CATALOG_v0.1.md
 40_REBUILD/governance/RB_DECISION_LOG_v0.1.md
 
 Then read the final founder-approved page-content package/build matrix.
 
-Then locate/read the committed Re:Build Artifact GOLDEN MASTER package under `10_COMMERCE/design/reference/`.
+Then locate/read the committed Re:Build Artifact GOLDEN MASTER package under:
+10_COMMERCE/design/reference/rebuild-page-system-golden-master/
 
 STOP if the golden-master source/reference screenshots or final approved content package do not exist yet. Report the missing input instead of guessing.
+
+IMPORTANT:
+If an older sitemap/drawer grouping conflicts with `RB_WEB_UX_NAVIGATION_COLLECTIONS_EDITABILITY_OVERRIDES_v0.1.md`, the newer founder override wins for drawer structure and responsive collection behavior.
 
 ==================================================
 2. VISUAL AUTHORITY
@@ -42,6 +49,7 @@ STOP if the golden-master source/reference screenshots or final approved content
 For Re:Build:
 
 APPROVED ARTIFACT = visual/interaction authority.
+FOUNDER UX OVERRIDE = required deltas where the Artifact still shows an older unresolved state.
 GITHUB 40_REBUILD = facts/claims/data/governance authority.
 CURRENT V2 THEME = reusable code only.
 
@@ -62,15 +70,17 @@ Work in this order and commit in small reviewable steps:
 5. language/search/account/bag utility controls;
 6. shared buttons/forms/cards/status labels;
 7. horizontal rails/carousels;
-8. Woo Shop/archive;
-9. product detail/gallery;
-10. cart/bag page;
-11. checkout;
-12. My Account;
-13. approved editorial pages/Gutenberg patterns;
-14. Work With Us;
-15. Keep Updated subscriber/contact architecture;
-16. responsive + visual regression QA.
+8. Shop landing + Merch / Products collection architecture;
+9. Woo Shop/archive/collection templates;
+10. product detail/gallery;
+11. cart/bag page;
+12. checkout;
+13. My Account;
+14. approved editorial pages/Gutenberg patterns;
+15. Work With Us;
+16. Keep Updated subscriber/contact architecture;
+17. plugin audit/dependency cleanup recommendations;
+18. responsive + visual regression QA.
 
 Do not attempt a single giant CSS patch over v2.
 Refactor shared primitives first.
@@ -135,15 +145,44 @@ Required behaviors:
 - no second Woo drawer appears.
 
 ==================================================
-7. DRAWER
+7. DRAWER — FOUNDER STRUCTURE
 ==================================================
 
-Preserve approved grouped navigation:
-Explore Re:Build
-Support
-Merch
-Project
-My Account utility area
+Do NOT keep the old `PROJECT` group.
+Do NOT keep `MERCH` as a group title when the founder has approved `SHOP` as the group title.
+
+Final working grouping:
+
+EXPLORE RE:BUILD
+- Recovery
+- How It Works
+- Materials
+- Rebuilding
+- Impact
+
+SUPPORT
+- Support Re:Build
+- Work With Us
+- Transparency only according to readiness state
+- About Us
+- Updates
+- FAQ
+- Contact Us
+- Shipping
+- Terms & Conditions
+- Privacy Policy
+- Return Policy
+
+SHOP
+- Merch
+- Products
+
+MY ACCOUNT
+- My Account
+- Orders
+- Bag
+
+SHOP is a group heading at the same hierarchy level as EXPLORE RE:BUILD and SUPPORT. Do not add a redundant child called Shop just to repeat the heading.
 
 Do not expose Design Reference/Component Library/dev routes in production.
 
@@ -153,17 +192,83 @@ Use separate group menu locations or another editable structured approach.
 Drawer closes on X, scrim, ESC AND in-drawer route click.
 
 ==================================================
-8. RAILS
+8. CONTENT ZONES / ACCENT SEMANTICS
+==================================================
+
+Primary public pages should use at least four clear content/narrative zones where the page scope supports it.
+
+Use only Golden Master-approved accent tokens.
+Do not invent new hex values.
+Do not create random rainbow cards.
+
+Semantic accent guidance:
+- Sun/Yellow = action, active state, progress, primary CTA, commerce action.
+- Leaf/Green = recovery, materials, process, validated/positive operational progress.
+- Coral = people, community, work, participation, warm urgency/support.
+- Ivory/White = evidence, methodology, transparency, policy/neutral explanation.
+
+Accent should usually appear as eyebrow/bullet, small border/rule, status detail, icon or CTA detail — not as arbitrary full-card background changes.
+
+Equivalent cards keep the same base surface, radius, padding and typography regardless of accent.
+
+==================================================
+9. RAILS — MOBILE ONE-CARD RULE
 ==================================================
 
 Delete the v2 rule that hides arrows on mobile.
 
-Desktop: arrows + horizontal rail.
-Mobile: swipe + safe visible arrows.
-Arrows centered on rail edges, never floating in the heading and never covering text.
+For landing-page narrative/card rails:
+
+Desktop:
+- horizontal rail;
+- multiple cards visible as Golden Master allows;
+- left/right arrows vertically centered on rail edges.
+
+Tablet:
+- horizontal rail;
+- swipe + arrows;
+- no accidental clipping.
+
+Mobile:
+- ONE primary card visible at a time per rail;
+- do NOT vertically stack card 2/3/4;
+- left/right arrows visible and vertically centered at safe left/right rail edges;
+- each arrow advances exactly one card;
+- touch swipe may remain as secondary navigation;
+- use scroll-snap/equivalent deterministic positioning;
+- arrows never cover copy.
+
+Exception:
+Dedicated collection/catalog pages may use normal vertical product browsing/scrolling. The one-card rule is for narrative/landing-page rails.
 
 ==================================================
-9. WOO SURFACES
+10. SHOP / COLLECTIONS
+==================================================
+
+The current Shop has exactly two first-level collections:
+
+1. Merch
+2. Products
+
+MERCH:
+Normal support/lifestyle WooCommerce products according to real availability/fulfillment state.
+
+PRODUCTS:
+Current Re:Build recovered-material/byproduct web collection is limited to:
+- Re:Build Road Base 0–40 — RB-RB-040
+- Re:Build Mineral Fill — RB-MF-GEN
+- Re:Build Ferrous Scrap — RB-FE-SCRAP
+- Re:Build Masonry Aggregate 0–25 — RB-MA-025
+
+Do not silently add Re:Build Verified Reuse Components as a fifth live Products item. Its current source-of-truth status remains selective/YELLOW hold until separately approved.
+
+IMPORTANT STATUS TRUTH:
+Masonry Aggregate is currently GREEN/YELLOW pending variability testing. It may appear as an MVP validation product, but must not be visually labeled tested/available/commercial until evidence supports it.
+
+Recovered Products remain quote/inquiry-led until batch availability/spec/price stabilize. Do not make them ordinary consumer Add-to-Cart items by default.
+
+==================================================
+11. WOO SURFACES
 ==================================================
 
 Shop/product/cart/checkout/account must read as the same Page System as Re:Build editorial pages.
@@ -176,20 +281,81 @@ My Account quick actions must not become four cramped mobile columns.
 Use one final terminology: Bag/Cart according to founder-approved content; do not mix both arbitrarily.
 
 ==================================================
-10. CONTENT / EDITABILITY
+12. CONTENT / WORDPRESS EDITABILITY
 ==================================================
 
 Do not hard-code final marketing copy in PHP.
+Do not introduce a Divi dependency.
 
-Use editable WordPress pages/Gutenberg patterns/blocks.
+Use:
+- native WordPress Pages;
+- Gutenberg/core blocks;
+- reusable registered block patterns;
+- `rb-*` style variations/component classes;
+- global theme design tokens;
+- WooCommerce templates only for commerce functionality.
+
 Theme owns shell and functional components.
+Editor owns page copy/content/media/order of normal sections.
+
+Create editor-visible reusable patterns for at least:
+- Hero / intro;
+- evidence/stat block;
+- multi-zone narrative section;
+- card rail;
+- CTA band;
+- Need / Work With Us teaser;
+- update/impact teaser;
+- policy/editorial section.
+
+A non-developer must be able to create a page from these patterns and inherit the correct container, typography, spacing, card geometry, accents and responsive behavior without touching code.
 
 Include WXR and/or deterministic content seed script.
 
 No stale Re:Aggregate / Myco:Skin / Re:Build Hub / unrelated demo content may bleed into current Re:Build pages unless explicitly approved.
 
 ==================================================
-11. RESPONSIVE QA
+13. PLUGIN AUDIT
+==================================================
+
+The new Re:Build implementation must not keep plugins merely because the old Divi-based design used them.
+
+Do not mass-delete blindly.
+Audit dependency first.
+
+Before final delivery create `PLUGIN_AUDIT.md` with:
+- Plugin
+- Version
+- Active?
+- Purpose today
+- Dependency/page using it
+- KEEP / KEEP TEMP / DEACTIVATE / REMOVE
+- Risk of removal
+- Native/replacement alternative
+- Founder action required?
+
+Divi/Divi Builder:
+- no new Re:Build page may depend on Divi;
+- identify any legacy `et_pb_` shortcode/meta dependency before removal;
+- if no current relevant page depends on it after migration, recommend removal rather than a license renewal solely to support an abandoned design.
+
+Favor native WordPress + WooCommerce + one forms solution + one translation layer when needed + non-duplicated SEO/cache/security tooling.
+
+==================================================
+14. REPOSITORY PRIVACY GATE
+==================================================
+
+The repository may currently be PUBLIC temporarily for tool access.
+Treat that as temporary.
+
+Do not commit secrets/private field evidence/personal workforce data/confidential buyer terms while public.
+
+After the Golden Master/context handoff is secured — or private GitHub access is restored — founder must return the repository to PRIVATE before sensitive RB-03D evidence is added.
+
+Do not assume public visibility is the permanent architecture.
+
+==================================================
+15. RESPONSIVE QA
 ==================================================
 
 Mandatory widths:
@@ -205,7 +371,9 @@ Left drawer
 Populated bag
 Empty bag
 One rail
-Shop
+Shop landing
+Merch collection
+Products collection
 Product detail
 Checkout
 My Account
@@ -217,7 +385,7 @@ GOLDEN MASTER screenshot -> WordPress screenshot -> side-by-side/overlay -> fix 
 Do not self-approve based on code review.
 
 ==================================================
-12. DELIVERY
+16. DELIVERY
 ==================================================
 
 Return/commit:
@@ -225,6 +393,7 @@ Return/commit:
 - installable theme ZIP;
 - WXR/seed package;
 - plugin/config list;
+- PLUGIN_AUDIT.md;
 - README_INSTALL;
 - CHANGELOG;
 - IMPLEMENTATION_STATUS;
@@ -233,13 +402,15 @@ Return/commit:
 - unresolved blockers;
 - test evidence for cart quantity/remove/count refresh;
 - test evidence for language routes;
-- test evidence that content is editable.
+- test evidence that content is editable via WordPress patterns without code;
+- test evidence that mobile landing rails show one card at a time with working arrows;
+- test evidence that Shop exposes only the approved Merch / Products hierarchy.
 
 Do NOT deploy/promote to production.
 Founder approval is required after staging QA.
 
 ==================================================
-13. COMPLETION DEFINITION
+17. COMPLETION DEFINITION
 ==================================================
 
 The work is NOT complete because:
@@ -248,6 +419,6 @@ The work is NOT complete because:
 - WooCommerce functions;
 - the homepage roughly resembles the Artifact.
 
-PASS means the shared shell, navigation, bag, responsive geometry and Woo surfaces are materially faithful to the Artifact at all required breakpoints AND remain functional/editable in WordPress.
+PASS means the shared shell, navigation, bag, responsive geometry, content-zone rhythm, mobile rails, Shop collections and Woo surfaces are materially faithful to the Golden Master/founder overrides at all required breakpoints AND remain functional/editable in WordPress.
 
 END PROMPT
