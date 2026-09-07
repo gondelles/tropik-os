@@ -1,7 +1,7 @@
 # RB_DECISION_LOG_v0.1
 
 **Status:** PRIVATE_WORKING  
-**Updated:** 2026-09-06 — RB-03C
+**Updated:** 2026-09-07 — RB-03D + web fidelity control
 
 | ID | Decision | Classification | Status | Founder gate |
 |---|---|---|---|---|
@@ -39,3 +39,7 @@
 |RB-D-032|Do not publish `jobs generated in impacted local communities` until impacted-community boundary, privacy-safe worker eligibility evidence and auditable paid-work records are approved. Use workers paid, worker-days and payroll/labor paid first.|STRATEGIC DECISION|ACTIVE|legal/privacy/accounting/data gate|
 |RB-D-033|The RB-03C minimum data architecture remains spreadsheet/simple database first with explicit source/load/batch/QA/trial, need/offer/deployment and workforce/funding/KPI traceability. No ERP or automated live dashboard yet.|STRATEGIC DECISION|ACTIVE|manual workflow proof before automation|
 |RB-D-034|Needs Registry items remain internal/public-ready drafts until host/public-system availability is checked. A need can be removed or downgraded if Santa/contractor/public works can already provide it.|STRATEGIC DECISION|ACTIVE|public publication founder/data gate|
+|RB-D-035|For the Re:Build WordPress implementation, the founder-approved Claude Artifact/Page System is the visual/interaction golden master. The theme may reuse code from prior builds but may not redefine header, drawer, bag, component geometry or responsive behavior from approximation.|STRATEGIC DECISION|ACTIVE|founder visual approval required to change golden master|
+|RB-D-036|A final Claude Code WordPress build is not accepted without a version-controlled Artifact reference package and side-by-side/overlay QA at 1440/1024/768/480/390 for the shared shell and key WooCommerce surfaces.|STRATEGIC DECISION|ACTIVE|founder staging acceptance|
+|RB-D-037|The founder-supplied `tropik-rebuild-theme-v2.zip` (SHA-256 `d8626bb2e2f1aa8013489f8228b32f27db7955df2e286f9f81507e98554b2e11`) is reusable code but REJECTED as the final visual-fidelity baseline because header/language/cart/rails/navigation/Woo surfaces materially drift from the approved Artifact.|STRATEGIC DECISION / IMPLEMENTATION STATUS|ACTIVE|replace only after a newer build passes fidelity gate|
+|RB-D-038|The Re:Build bag must be one custom Artifact-matching drawer backed by WooCommerce cart data/AJAX; do not nest the WooCommerce Mini-Cart block inside a second custom drawer. Header utilities must use the real Artifact shell and language rendering must not show country flags where the approved control is ES/EN text.|STRATEGIC DECISION / IMPLEMENTATION CONTRACT|ACTIVE|founder visual + staging functional QA|
