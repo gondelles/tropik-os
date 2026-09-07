@@ -1,0 +1,100 @@
+TROPIK COMMERCE / RE:BUILD — COWORK HOME RECONCILIATION + GOLDEN MASTER SUPPLEMENT
+Date: 2026-09-07
+Target: existing `Tropik rebuild content stage` conversation
+
+Stay in Lane 1. Do not build WordPress.
+Do not search the founder's PC for a Tropik OS folder.
+Use the current Project context + the Artifact you can access directly.
+
+Read the synchronized context pack already added to Project 10 — Tropik Commerce.
+Also apply the following resolved founder decisions:
+
+1. MOBILE NARRATIVE RAILS
+The founder override is final: on mobile show exactly one primary card at a time, horizontal rail, visible vertically-centered left/right arrows, one-card advance, swipe secondary. The frozen Artifact's `<=640px hide arrows` behavior is stale for Lane 2 and is not an open founder question.
+
+2. GREEN SEMANTICS
+- `--tk-leaf #0F5A46` = recovery/material/process editorial/section accent.
+- `--tk-signal-green #2FB98F` = verified/tested/commercial/success/status signal.
+Do not ask the founder to choose one globally.
+
+3. IMPACT/UPDATE TEASER
+Reuse `.tk-media-card` as the base Update/field-report teaser pattern. An update modifier is allowed only if it preserves the same visual family. Do not invent a new card family.
+
+==================================================
+TASK A — HOME CONTENT RECONCILIATION
+==================================================
+
+Before asking for Home approval, compare all three sources:
+
+A. current Home copy in the live/frozen Artifact (`rebuild-home.html`);
+B. Home page copy contained in the existing `tropik-rebuild-content-v2.xml` / DEC-030 content export available in this Claude Project;
+C. the current synchronized Home storytelling/context direction.
+
+Do not assume the XML wins because it is longer or newer.
+
+Return:
+1. a section-by-section table:
+   - section;
+   - Artifact wording;
+   - XML wording;
+   - current-context requirement;
+   - conflict/risk;
+   - recommended canonical wording/action.
+2. explicitly identify any unsupported fact, stale navigation/CTA, claim-risk or duplicate narrative.
+3. provide ONE final recommended Home copy after reconciliation.
+4. clearly mark any field that must remain pre-pilot/TBD.
+5. stop and wait for founder approval of Home before moving to Recovery.
+
+==================================================
+TASK B — GOLDEN MASTER SUPPLEMENTAL COVERAGE
+==================================================
+
+Create a supplemental downloadable package. Do not replace the existing frozen package or rewrite history.
+
+Capture the missing reference widths:
+- 1024
+- 480
+
+Priority surfaces at 1440 / 1024 / 768 / 480 / 390 where the current Artifact supports them:
+- shared header/shell;
+- left drawer OPEN;
+- Bag populated;
+- Bag empty;
+- Shop landing;
+- Product Detail / gallery;
+- Checkout;
+- My Account;
+- one narrative rail/card section.
+
+IMPORTANT:
+If the current Artifact does NOT yet reflect a newer founder override, do not fabricate a screenshot.
+Capture the real current state and record the required delta in `SUPPLEMENT_REFERENCE_NOTES.md`.
+
+The notes must explicitly document:
+- current Artifact rail behavior vs founder-required mobile one-card + visible-arrow behavior;
+- current frozen drawer IA vs current founder IA;
+- `--tk-leaf` editorial accent vs `--tk-signal-green` status semantics;
+- Update teaser decision = reuse `.tk-media-card` family;
+- any preview chrome that must not ship;
+- which surfaces cannot be captured and why.
+
+Package target:
+`rebuild-page-system-golden-master-supplement-2026-09-07.zip`
+
+Return:
+- downloadable package;
+- exact included files;
+- coverage matrix showing which width/surface combinations now exist;
+- remaining gaps, if any.
+
+==================================================
+DO NOT
+==================================================
+
+- do not build PHP/WordPress;
+- do not approve Home on the founder's behalf;
+- do not revive Manguangua/Timbrao as approved Merch;
+- do not modify Re:Build operational facts;
+- do not invent screenshots for newer founder deltas that the Artifact does not yet render.
+
+After completing Tasks A and B, wait for founder Home approval.
