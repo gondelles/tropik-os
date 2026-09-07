@@ -1,0 +1,76 @@
+TROPIK COMMERCE / RE:BUILD — CLAUDE CODE V2 SOURCE INTAKE + CODE-LEVEL AUDIT
+Date: 2026-09-07
+Repository: gondelles/tropik-os
+Target branch/context: use the branch containing the Golden Master and 10 pre-build docs.
+
+PURPOSE
+Close the remaining code-audit gap without starting the final reconstruction prematurely.
+
+The pre-build gate remains HOLD for final implementation until Content + Golden Master coverage gates close.
+This task is allowed in parallel because it is analysis/intake of the rejected baseline, not final implementation.
+
+INPUT REQUIRED FROM FOUNDER
+`tropik-rebuild-theme-v2.zip` or its extracted source.
+
+IMPORTANT
+The v2 theme remains REJECTED AS THE VISUAL AUTHORITY.
+Use it only to identify reusable WordPress/WooCommerce functionality, defects and migration risks.
+The Golden Master + current founder UX override remain visual/interaction authority.
+
+READ FIRST
+- `40_REBUILD/digital/RB_LANE2_GATE_RESOLUTION_2026-09-07_v0.1.md`
+- existing 10 pre-build documents under `10_COMMERCE/design/implementation/rebuild-wordpress-vNext/`
+- Golden Master package under `10_COMMERCE/design/reference/rebuild-page-system-golden-master/`
+- synchronized 10 — Tropik Commerce context pack.
+
+DO NOW
+
+1. Unpack/inspect the supplied v2 theme safely.
+2. Do NOT copy secrets, `.env`, credentials or production configuration into GitHub.
+3. If committing source for audit, place it under:
+   `10_COMMERCE/design/implementation/rebuild-wordpress-vNext/input/theme-v2-rejected-baseline/`
+   and label it clearly as rejected/reference-only.
+4. Update `02_THEME_CODE_GAP_AUDIT.md` from documented inference to VERIFIED CODE-LEVEL AUDIT.
+5. Identify file/function/selectors responsible for at least:
+   - header mismatch;
+   - missing Search/Account utilities;
+   - language flags/default Polylang UI;
+   - textual Support header control;
+   - nested Woo Mini-Cart/double-drawer architecture;
+   - Bag layout drift;
+   - drawer route click not closing;
+   - generic menu flattening/grouping issues;
+   - mobile carousel arrows hidden;
+   - rail step logic not matching one-card mobile requirement;
+   - sticky/admin-bar offset;
+   - Woo default styling leakage;
+   - content hard-coding/editability risks;
+   - Divi/plugin dependencies if present.
+6. For each issue document:
+   - file/path;
+   - exact responsible code/selector/function;
+   - severity;
+   - REUSE / REFACTOR / REPLACE;
+   - Golden Master/current founder target;
+   - intended fix strategy for Iteration 1/2;
+   - regression risk.
+7. Update `01_SOURCE_OF_TRUTH_AND_INPUT_STATUS.md` to mark the v2 source as present and code-audited.
+8. Do not begin Iteration 1 unless the existing final-implementation gate has separately turned GREEN.
+
+RESOLVED FOUNDER ITEMS — DO NOT REOPEN
+
+- Mobile narrative rails: one card at a time, visible centered arrows, one-card advance; frozen hide-arrows rule is stale.
+- Green semantics: Leaf `#0F5A46` for editorial recovery/material/process accents; Signal Green `#2FB98F` for verified/tested/commercial/success/status signals.
+- Impact/Update teaser: reuse `.tk-media-card` visual family; do not invent a new family.
+
+OUTPUT
+
+Return:
+- updated `02_THEME_CODE_GAP_AUDIT.md`;
+- updated `01_SOURCE_OF_TRUTH_AND_INPUT_STATUS.md`;
+- optional `V2_REUSABLE_CODE_MAP.md` if it materially improves clarity;
+- commit SHA(s);
+- top reusable modules;
+- top code-level blockers;
+- confirmation that no final theme reconstruction was started;
+- current GO/HOLD status unchanged unless the Content/Golden Master gates have independently changed.
