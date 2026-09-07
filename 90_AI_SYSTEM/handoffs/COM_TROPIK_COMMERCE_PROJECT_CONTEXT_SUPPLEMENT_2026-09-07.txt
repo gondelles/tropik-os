@@ -1,0 +1,106 @@
+TROPIK COMMERCE — PROJECT CONTEXT SUPPLEMENT
+Date: 2026-09-07
+Applies after: COM_TROPIK_COMMERCE_PROJECT_CONTEXT_PACK_2026-09-07.txt
+Status: PRIVATE_WORKING
+
+PURPOSE
+Close the open items discovered after the Cowork Golden Master freeze and Claude Code pre-build audit. This supplement does not replace the synchronized context pack; it resolves specific ambiguities and defines the next work sequence.
+
+CURRENT GATE
+Final WordPress implementation remains HOLD.
+Reasons:
+1. Content is not founder-approved page-by-page.
+2. Golden Master screenshot coverage is incomplete for required widths/surfaces.
+
+The Golden Master source itself is valid and frozen. Its screenshot coverage is supplemental work, not a reason to discard the package.
+
+RESOLVED — DO NOT REOPEN WITHOUT NEW FOUNDER DECISION
+
+1. MOBILE NARRATIVE RAILS
+The 2026-09-07 founder override wins over frozen legacy CSS.
+Mobile narrative/landing rails must show exactly one primary card at a time, remain horizontal, retain visible vertically-centered left/right arrows, advance one card per arrow, and support swipe as secondary navigation.
+Do not reproduce the Artifact's historical `<=640px hide arrows` rule.
+Collection/catalog pages may browse vertically.
+
+2. GREEN TOKEN SEMANTICS
+Use both greens with distinct roles:
+- `--tk-leaf #0F5A46` = editorial/section accent for recovery/material/process content.
+- `--tk-signal-green #2FB98F` = verified/tested/commercial/success/status signal.
+Do not ask the founder to choose one global green.
+
+3. IMPACT / UPDATE TEASER
+Reuse `.tk-media-card` as the base Update/field-report teaser family. An update-specific modifier may be added only if base geometry/style remains consistent. Do not invent a new card family.
+
+HOME CONTENT RECONCILIATION — REQUIRED BEFORE APPROVAL
+Cowork identified a second Home content source: `tropik-rebuild-content-v2.xml` / DEC-030, containing a longer WordPress content export.
+Before Home is approved, Cowork must compare:
+A. Artifact Home (`rebuild-home.html`)
+B. XML Home from DEC-030
+C. current synchronized Home storytelling direction
+
+Required output:
+- section-by-section delta table;
+- unsupported/stale/claim-risk wording;
+- recommended canonical wording;
+- one final proposed Home copy;
+- pre-pilot/TBD fields clearly marked.
+The XML does not win merely because it is longer or newer.
+
+GOLDEN MASTER SUPPLEMENT — REQUIRED
+Existing frozen package includes full source/tokens/components/interactions plus screenshots at 390/768/1440 for Home/Process/Material/FAQ/Contact/Terms.
+
+Supplemental capture required:
+Missing widths: 1024 and 480.
+Priority surfaces at 1440/1024/768/480/390 where Artifact supports them:
+- shared header/shell;
+- left drawer open;
+- Bag populated;
+- Bag empty;
+- Shop landing;
+- Product Detail/gallery;
+- Checkout;
+- My Account;
+- narrative card rail.
+
+If the current Artifact has an older state than the founder override, capture reality and document the delta. Do not fabricate a screenshot.
+
+V2 THEME SOURCE — CLAUDE CODE INPUT REQUIRED
+Claude Code confirmed the actual `tropik-rebuild-theme-v2` PHP/CSS source is not committed to the repository. Therefore its `02_THEME_CODE_GAP_AUDIT.md` is currently evidence-based but not line-by-line verified.
+
+Supply the v2 ZIP/source directly to Claude Code before Iteration 1 if code reuse is expected.
+It remains a REJECTED visual baseline and may only be mined for reusable WordPress/Woo functionality.
+
+PLUGIN AUDIT
+`07_PLUGIN_AUDIT.md` cannot be completed until actual WordPress plugin name/version/active-state inventory is supplied.
+Capture `Plugins > Installed Plugins` from staging or provide an equivalent list.
+Do not mass-delete plugins until dependency audit + backup.
+
+CURRENT CREATIVE MERCH STATUS
+Qué Manguangua and Estás todo timbrao remain:
+CREATIVE BACKLOG — REQUIRES NEW FOUNDER APPROVAL.
+Do not seed, publish, manufacture or treat their prior design work as current approved Merch.
+
+NEXT WORK — PARALLEL
+LANE 1 / COWORK:
+- compare Home Artifact vs XML vs current context;
+- return final Home recommendation for founder approval;
+- produce supplemental Golden Master coverage;
+- then continue Content page-by-page after Home approval.
+
+LANE 2 / CLAUDE CODE:
+- remain HOLD for final implementation;
+- once given v2 source, perform verified code-level audit and update docs;
+- do not start Iteration 1 until Content + Golden Master implementation gates turn GREEN.
+
+FOUNDER:
+- approve reconciled Home;
+- provide v2 theme source to Claude Code;
+- provide WordPress plugin inventory;
+- return repository to PRIVATE once AI handoff no longer requires public access and before sensitive RB-03D evidence.
+
+FOUR-ITERATION QUALITY LOOP REMAINS BINDING
+Iteration 1: architecture + shell fidelity.
+Iteration 2: responsive + WooCommerce functionality.
+Iteration 3: content + editability + accessibility/performance.
+Iteration 4: full-site visual regression + final polish.
+Each iteration must document issues, severity, fixes, retest and measurable improvement. No known P0/P1 defect at final staging handoff. Founder approval before production.
