@@ -1,0 +1,253 @@
+TROPIK RE:BUILD — CLAUDE CODE WORDPRESS FIDELITY RECONSTRUCTION
+Date: 2026-09-07
+Status: PRIVATE_WORKING / EXECUTE AFTER CONTENT + GOLDEN MASTER GATE
+Repository: gondelles/tropik-os
+
+==================================================
+0. PURPOSE
+==================================================
+
+Reconstruct the Tropik Re:Build WordPress/WooCommerce theme so it is visually and behaviorally faithful to the founder-approved Re:Build Page System Artifact.
+
+This is NOT a redesign and NOT another approximation from an old ZIP.
+
+The current founder-supplied `tropik-rebuild-theme-v2.zip` is reusable code only and has been formally rejected as the final visual-fidelity baseline.
+
+==================================================
+1. READ FIRST
+==================================================
+
+Read in this order:
+
+40_REBUILD/README.md
+40_REBUILD/digital/RB_WORDPRESS_ARTIFACT_FIDELITY_REBUILD_BRIEF_v0.1.md
+40_REBUILD/digital/RB_WEB_CONTENT_TO_WORDPRESS_EXECUTION_CONTROL_v0.1.md
+40_REBUILD/digital/RB_CLAUDE_COWORK_WEBSITE_HANDOFF_v0.1.md
+40_REBUILD/digital/RB_WEBSITE_SITEMAP_v0.1.md
+40_REBUILD/digital/RB_WORDPRESS_WOOCOMMERCE_ARCHITECTURE_v0.1.md
+40_REBUILD/digital/RB_WORK_WITH_US_EVIDENCE_ACQUISITION_ARCHITECTURE_v0.1.md
+40_REBUILD/digital/RB_PUBLIC_NEEDS_IMPACT_TRANSPARENCY_ARCHITECTURE_v0.1.md
+40_REBUILD/governance/RB_DECISION_LOG_v0.1.md
+
+Then read the final founder-approved page-content package/build matrix.
+
+Then locate/read the committed Re:Build Artifact GOLDEN MASTER package under `10_COMMERCE/design/reference/`.
+
+STOP if the golden-master source/reference screenshots or final approved content package do not exist yet. Report the missing input instead of guessing.
+
+==================================================
+2. VISUAL AUTHORITY
+==================================================
+
+For Re:Build:
+
+APPROVED ARTIFACT = visual/interaction authority.
+GITHUB 40_REBUILD = facts/claims/data/governance authority.
+CURRENT V2 THEME = reusable code only.
+
+Do not redesign the shell.
+Do not substitute generic WooCommerce UI.
+Do not infer the approved header/cart from the v2 theme.
+
+==================================================
+3. REBUILD ORDER
+==================================================
+
+Work in this order and commit in small reviewable steps:
+
+1. design tokens + canonical container/section geometry;
+2. header shell;
+3. left navigation drawer;
+4. right Woo-backed bag drawer;
+5. language/search/account/bag utility controls;
+6. shared buttons/forms/cards/status labels;
+7. horizontal rails/carousels;
+8. Woo Shop/archive;
+9. product detail/gallery;
+10. cart/bag page;
+11. checkout;
+12. My Account;
+13. approved editorial pages/Gutenberg patterns;
+14. Work With Us;
+15. Keep Updated subscriber/contact architecture;
+16. responsive + visual regression QA.
+
+Do not attempt a single giant CSS patch over v2.
+Refactor shared primitives first.
+
+==================================================
+4. NON-NEGOTIABLE HEADER
+==================================================
+
+Desktop target:
+[hamburger] — [true centered toucan] — [ES/EN pill] [search] [account] [bag + count]
+
+Mobile target:
+[hamburger] — [true centered toucan] — [search] [account] [bag]
+with lower-priority language behavior following the golden master.
+
+REMOVE the textual Support button from the header unless the golden master explicitly contains it.
+
+All utility circles use one size/stroke/hit-area system.
+Every visible control works.
+Handle WordPress admin-bar sticky offset.
+
+==================================================
+5. LANGUAGE
+==================================================
+
+Do not output Polylang default flags + names.
+
+Render the approved custom ES/EN segmented text pill from real Polylang routes.
+No country flags.
+No fake unavailable translation.
+
+==================================================
+6. BAG / CART — REPLACE CURRENT ARCHITECTURE
+==================================================
+
+Do NOT embed the WooCommerce Mini-Cart block inside the custom Re:Build drawer.
+
+Build ONE custom Artifact-matching drawer backed by WooCommerce cart data/AJAX.
+
+Required populated layout:
+- Your bag (N)
+- X
+- thumbnail
+- title
+- variation
+- line price
+- minus / qty / plus
+- trash/remove
+- subtotal
+- shipping/tax note
+- View my bag
+- Checkout
+
+Required behaviors:
+- add-to-cart refreshes drawer/count;
+- quantity change refreshes totals/count;
+- remove refreshes drawer/count;
+- empty state is intentional;
+- internal scroll works;
+- footer remains reachable;
+- focus trap/ESC/scrim/return focus work;
+- no second Woo drawer appears.
+
+==================================================
+7. DRAWER
+==================================================
+
+Preserve approved grouped navigation:
+Explore Re:Build
+Support
+Merch
+Project
+My Account utility area
+
+Do not expose Design Reference/Component Library/dev routes in production.
+
+Do not flatten the structure through a generic single `wp_nav_menu()`.
+Use separate group menu locations or another editable structured approach.
+
+Drawer closes on X, scrim, ESC AND in-drawer route click.
+
+==================================================
+8. RAILS
+==================================================
+
+Delete the v2 rule that hides arrows on mobile.
+
+Desktop: arrows + horizontal rail.
+Mobile: swipe + safe visible arrows.
+Arrows centered on rail edges, never floating in the heading and never covering text.
+
+==================================================
+9. WOO SURFACES
+==================================================
+
+Shop/product/cart/checkout/account must read as the same Page System as Re:Build editorial pages.
+
+No default Woo visual leakage.
+No unexplained blank product placeholders.
+No giant empty header zones.
+Product gallery must be proportional/aligned and actually scrollable.
+My Account quick actions must not become four cramped mobile columns.
+Use one final terminology: Bag/Cart according to founder-approved content; do not mix both arbitrarily.
+
+==================================================
+10. CONTENT / EDITABILITY
+==================================================
+
+Do not hard-code final marketing copy in PHP.
+
+Use editable WordPress pages/Gutenberg patterns/blocks.
+Theme owns shell and functional components.
+
+Include WXR and/or deterministic content seed script.
+
+No stale Re:Aggregate / Myco:Skin / Re:Build Hub / unrelated demo content may bleed into current Re:Build pages unless explicitly approved.
+
+==================================================
+11. RESPONSIVE QA
+==================================================
+
+Mandatory widths:
+1440
+1024
+768
+480
+390
+
+Required comparison surfaces:
+Home/header
+Left drawer
+Populated bag
+Empty bag
+One rail
+Shop
+Product detail
+Checkout
+My Account
+One long editorial page
+
+For each:
+GOLDEN MASTER screenshot -> WordPress screenshot -> side-by-side/overlay -> fix -> repeat.
+
+Do not self-approve based on code review.
+
+==================================================
+12. DELIVERY
+==================================================
+
+Return/commit:
+- complete source;
+- installable theme ZIP;
+- WXR/seed package;
+- plugin/config list;
+- README_INSTALL;
+- CHANGELOG;
+- IMPLEMENTATION_STATUS;
+- breakpoint screenshots;
+- golden-master comparison screenshots;
+- unresolved blockers;
+- test evidence for cart quantity/remove/count refresh;
+- test evidence for language routes;
+- test evidence that content is editable.
+
+Do NOT deploy/promote to production.
+Founder approval is required after staging QA.
+
+==================================================
+13. COMPLETION DEFINITION
+==================================================
+
+The work is NOT complete because:
+- the dark colors are similar;
+- the theme installs;
+- WooCommerce functions;
+- the homepage roughly resembles the Artifact.
+
+PASS means the shared shell, navigation, bag, responsive geometry and Woo surfaces are materially faithful to the Artifact at all required breakpoints AND remain functional/editable in WordPress.
+
+END PROMPT
