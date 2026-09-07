@@ -1,0 +1,519 @@
+TROPIK COMMERCE — SYNCHRONIZED CLAUDE PROJECT CONTEXT PACK
+Date: 2026-09-07
+Target Claude Project: 10 — Tropik Commerce
+Status: PRIVATE_WORKING / CURRENT HANDOFF
+Repository: gondelles/tropik-os
+
+==================================================
+0. HOW TO USE THIS PACK
+==================================================
+
+This file is the current bridge for Claude Cowork/Project conversations that do not have reliable live GitHub access.
+
+Do NOT search the founder's PC for a local Tropik OS folder unless the founder explicitly provides a path and asks you to use it.
+Do NOT reconstruct project truth from old Claude memory, stale Artifact copy, legacy themes or prior apparel mockups.
+
+Treat this pack as the current project-level context for 10 — Tropik Commerce, while Re:Build operational facts continue to be governed by 40_REBUILD.
+
+When a later founder instruction conflicts with older material, the later explicit founder instruction wins and should be documented rather than silently merged.
+
+==================================================
+1. PROJECT IDENTITY
+==================================================
+
+Tropik Goods = umbrella / venture system.
+Tropik = consumer-facing commerce/lifestyle brand.
+Re:Build = current high-priority recovery/reconstruction initiative with a public website experience being implemented through Tropik's WordPress/WooCommerce platform.
+
+Commerce operating tracks remain conceptually separate:
+- LATAM limited-stock merch;
+- USA print-on-demand later/when validated;
+- WooCommerce owned storefront;
+- Amazon later, after validation.
+
+Current web execution priority is NOT another generic storefront redesign.
+It is to finish the Re:Build/Tropik website to a very high visual, responsive, functional and editor-friendly standard using the founder-approved Claude Artifact/Page System as Golden Master.
+
+==================================================
+2. SOURCE OF TRUTH HIERARCHY
+==================================================
+
+For the current Re:Build web experience:
+
+1. Founder-approved/current Claude Re:Build Artifact + founder screenshot annotations
+   = visual geometry, component appearance, interaction language, responsive behavior.
+
+2. Current founder UX overrides in this pack
+   = mandatory deltas when an older Artifact state conflicts.
+
+3. Founder-approved page-content package/build matrix
+   = public copy and section order.
+
+4. 40_REBUILD source-of-truth
+   = Re:Build facts, evidence, claims, statuses, operational/commercial truth.
+
+5. 10_COMMERCE brand/design context
+   = general Tropik brand/design background where not superseded by the Re:Build Golden Master.
+
+6. Old WordPress themes, legacy apparel demos, stale mockups
+   = reusable implementation/reference material only; never visual or factual authority.
+
+Current theme `tropik-rebuild-theme-v2.zip` is NOT accepted as final visual-fidelity baseline.
+
+==================================================
+3. APPROVED / WORKING DESIGN LANGUAGE
+==================================================
+
+General Tropik Commerce working tokens from COM_08 include:
+- Ink #171717
+- Ivory #F6F2E8
+- Sun #F6B218
+- Leaf #0F5A46
+- White #FFFFFF
+- Mist #ECEBE7
+
+Typography working direction:
+- Display: Bricolage Grotesque 700/800
+- Body/UI: Lexend 300/400/500
+
+IMPORTANT:
+The Re:Build Artifact Golden Master may contain later/specific visual decisions. Those win for Re:Build.
+The exact Coral token must be extracted from the approved current Artifact; do NOT invent a coral hex value from memory.
+
+Core visual discipline:
+- strong, intentional negative space;
+- consistent container geometry;
+- true hierarchy;
+- restrained accents;
+- cards as one consistent family;
+- no arbitrary rainbow card backgrounds;
+- no noisy borders, random offsets or one-off spacing hacks;
+- responsive behavior is designed component-by-component, not desktop CSS merely stacked on mobile.
+
+==================================================
+4. HEADER — REQUIRED TARGET
+==================================================
+
+Desktop target:
+[hamburger] — [true centered toucan] — [ES/EN pill] [search] [account] [bag + count]
+
+Mobile target:
+[hamburger] — [true centered toucan] — [search] [account] [bag]
+with language lower-priority according to the Golden Master.
+
+Rules:
+- no country flags;
+- ES/EN uses real translated routes only;
+- all utility buttons share size/stroke/hit-area language;
+- Bag count is accurate;
+- no textual Support button in the header unless a later founder-approved Golden Master explicitly restores it;
+- header remains structurally correct under WordPress admin bar on staging;
+- every visible control must work.
+
+==================================================
+5. LEFT DRAWER — CURRENT FINAL WORKING IA
+==================================================
+
+EXPLORE RE:BUILD
+- Recovery
+- How It Works
+- Materials
+- Rebuilding
+- Impact
+
+SUPPORT
+- Support Re:Build
+- Work With Us
+- Transparency — only when public-ready
+- About Us
+- Updates
+- FAQ
+- Contact Us
+- Shipping
+- Terms & Conditions
+- Privacy Policy
+- Return Policy
+
+SHOP
+- Merch
+- Products
+
+MY ACCOUNT
+- My Account
+- Orders
+- Bag
+
+CURRENT FOUNDER DECISIONS:
+- `PROJECT` disappears completely.
+- `SHOP` is a section heading at the same hierarchy level as EXPLORE RE:BUILD and SUPPORT.
+- Do not add a redundant child named Shop merely to repeat the heading.
+- About/Updates/FAQ/Contact and policy/support pages live under SUPPORT.
+- Do not expose Design Reference, Component Library, Claude preview controls or dev routes in production.
+
+Drawer behavior:
+- closes on X, scrim, ESC and route/link activation;
+- scrolls independently;
+- bottom CTA/support region never overlaps menu content;
+- hierarchy must not be flattened by one generic menu implementation.
+
+==================================================
+6. BAG / CART — NON-NEGOTIABLE
+==================================================
+
+Use ONE custom Artifact-matching Bag drawer backed by WooCommerce data/AJAX.
+Do NOT place a WooCommerce Mini-Cart drawer/block inside another custom drawer.
+
+Populated structure:
+- Your bag (N)
+- close X
+- thumbnail
+- product title
+- variation/attributes
+- line price
+- minus / qty / plus
+- trash/remove
+- subtotal
+- shipping/tax/discount note
+- View my bag
+- Checkout
+
+Behaviors:
+- add-to-cart updates drawer/count;
+- quantity changes update totals/count;
+- remove updates drawer/count;
+- intentional empty state;
+- internal scroll;
+- footer reachable;
+- focus trap, ESC, scrim, return focus;
+- no second Woo mini-cart UI appears.
+
+==================================================
+7. MOBILE CARD RAILS
+==================================================
+
+For landing-page/narrative card sections:
+- ONE primary card visible at a time on mobile;
+- cards remain in a horizontal rail;
+- card 2/3/4 are NOT vertically stacked;
+- visible left/right arrows centered vertically at safe rail edges;
+- each arrow advances exactly one card;
+- swipe may remain as secondary gesture;
+- use deterministic snap/positioning;
+- arrows never cover copy.
+
+On dedicated collection/catalog pages, normal vertical product browsing is allowed.
+
+==================================================
+8. CONTENT ZONES + SEMANTIC ACCENTS
+==================================================
+
+Where page scope supports it, primary public pages should use at least four intentional narrative/content zones.
+
+Use only Golden Master-approved accent tokens.
+
+Semantic mapping:
+- Sun/Yellow = action, active state, progress, primary CTA, commerce action.
+- Leaf/Green = recovery, materials, process, positive/validated progress.
+- Coral = people, work, support, community, participation, warm urgency.
+- Ivory/White = evidence, methodology, transparency, policy, neutral explanation.
+
+Accent is usually a restrained eyebrow/bullet/rule/status/icon/CTA detail — not a different full-card color for every adjacent card.
+Equivalent card types keep one base geometry/surface family.
+
+==================================================
+9. SHOP INFORMATION ARCHITECTURE
+==================================================
+
+Two first-level collections only for the current build:
+
+1. Merch
+2. Products
+
+MERCH
+Normal Tropik/Re:Build support/lifestyle merchandise only when actually approved and ready.
+
+PRODUCTS
+Current Re:Build recovered-material/byproduct web collection:
+- Re:Build Road Base 0–40 — RB-RB-040
+- Re:Build Mineral Fill — RB-MF-GEN
+- Re:Build Ferrous Scrap — RB-FE-SCRAP
+- Re:Build Masonry Aggregate 0–25 — RB-MA-025
+
+Status discipline:
+- Masonry remains conditional/validation status; do not present it as tested/commercially available beyond evidence.
+- Verified Reuse Components stays outside the primary Products collection for now.
+- Recovered Products are quote/inquiry-led until batch/spec/pricing availability is validated; do not make them ordinary consumer Add-to-Cart products by default.
+
+==================================================
+10. CURRENT CREATIVE MERCH OVERRIDE — IMPORTANT
+==================================================
+
+Historical creative work exists around:
+- `Qué Manguangua`
+- `Estás todo timbrao`
+
+CURRENT FOUNDER DECISION AS OF 2026-09-07:
+
+Both shirt designs/visual directions are moved to:
+
+CREATIVE BACKLOG — REQUIRES NEW FOUNDER APPROVAL
+
+This does NOT erase history.
+It means previous approval language cannot be treated as current approval to execute, seed, publish, manufacture, advertise or launch these products.
+
+Do not use earlier Manguangua/Timbrao mockups as current catalog truth.
+Do not seed them into Merch as approved products.
+They may only appear in an internal backlog/reference context explicitly marked not approved.
+
+Other COM-09 concepts retain their own current status; do not infer a blanket cancellation of every prior phrase/concept.
+
+==================================================
+11. HOME / PUBLIC CONTENT DIRECTION
+==================================================
+
+Re:Build public storytelling should move roughly through:
+LOSS -> POSSIBILITY -> METHOD -> PROOF -> WHAT WE NEED -> LOCAL WORK -> WAYS TO HELP -> STAY UPDATED
+
+Key current working Home direction:
+
+Eyebrow:
+TROPIK RE:BUILD — LA GUAIRA, VENEZUELA
+
+H1:
+What fell can help us build again.
+
+Lead:
+The rubble is not the end of the story. Re:Build is building a safe, traceable way to recover useful material, fund local work and move resources back into reconstruction.
+
+Primary CTA:
+See what we need now
+
+Secondary CTA:
+Follow the rebuild
+
+Do not make Shop the primary hero action.
+
+Public content must remain truthful to the pre-pilot state. Missing field evidence does not block honest content, but it blocks unsupported claims.
+
+==================================================
+12. RE:BUILD CLAIM CONTROL
+==================================================
+
+Do NOT publish as achieved facts unless supported by current source-of-truth evidence:
+- Santa authorization/confirmed Re:Build polygon;
+- current Re:Build processing tonnage;
+- achieved recovery/diversion percentages;
+- generic COVENIN approval;
+- jobs generated without paid-work evidence;
+- carbon/CO2/environmental-benefit percentages;
+- unsecured donations/funding/equipment as committed;
+- pledged resources as received/deployed;
+- material sales as self-funding;
+- tax-deductible donation claims.
+
+Safe pre-pilot examples:
+- Measurement begins with the pilot.
+- We are validating the first operating site.
+- We are mapping the exact gaps before asking anyone to fill them.
+- One goal of the pilot is to create verified paid local work.
+
+==================================================
+13. WORK WITH US
+==================================================
+
+Page intent:
+What can you bring to the rebuild?
+
+Routes:
+1. Equipment / vehicles / site resources
+2. Materials / operating inputs
+3. Engineering / laboratory / HSE expertise
+4. Crew / operator / skilled work
+5. I can test or use recovered material
+6. I buy/recycle recovered material
+7. I can help with a debris source or routing
+8. I can help identify the right authority
+9. Funding / institutional partnership
+10. Something else
+
+Need-specific CTA:
+I can help with this
+
+A submission = interest/offer received, NOT employment, donation, vendor award, buyer commitment, authority or Need fulfillment.
+
+==================================================
+14. KEEP UPDATED / EMAIL
+==================================================
+
+Do not create a WordPress login account for every newsletter signup.
+Future architecture uses a durable supporter/contact record and links to wp_user_id only when relevant later.
+
+At current content/design stage approve CTA, consent wording/status messages and preference language. Production ESP/backend sync belongs to implementation.
+
+==================================================
+15. WORDPRESS EDITABILITY
+==================================================
+
+New Re:Build pages must NOT depend on Divi.
+
+Use:
+- native WordPress Pages;
+- Gutenberg/core blocks;
+- reusable registered block patterns;
+- rb-* style variations/component classes;
+- global design tokens;
+- WooCommerce templates/components for commerce functionality.
+
+Theme code owns shell and functional components.
+WordPress editor owns normal page copy, headings, media, links and section order.
+Final marketing copy must not be hard-coded in PHP.
+
+Minimum reusable patterns:
+- Hero/intro
+- evidence/stat
+- narrative zone
+- card rail
+- CTA band
+- Need/Work With Us teaser
+- Impact/Update teaser
+- editorial/policy section
+
+A non-developer must be able to create/edit pages and inherit correct container geometry, typography, spacing, cards, accents and responsive behavior without custom code.
+
+==================================================
+16. PLUGIN / DIVI DIRECTION
+==================================================
+
+Do not keep plugins merely because the old Divi design used them.
+Do not mass-delete before dependency audit and staging backup.
+
+Every plugin must be classified:
+KEEP / KEEP TEMP / DEACTIVATE / REMOVE
+
+Divi:
+- no new Re:Build page may depend on Divi;
+- do not renew a Divi license solely to preserve an abandoned design;
+- inspect legacy et_pb_ shortcodes/meta/content before removal;
+- migrate necessary content;
+- deactivate on staging;
+- smoke-test;
+- remove if no required dependency remains.
+
+==================================================
+17. TEMPORARY PUBLIC REPOSITORY
+==================================================
+
+gondelles/tropik-os is temporarily PUBLIC as an access bridge for Claude tools.
+This is not a permanent decision.
+
+While public:
+- no secrets/API keys/.env;
+- no private authority evidence;
+- no personal workforce data;
+- no confidential buyer terms;
+- no private contracts/financial evidence.
+
+Return the repository to PRIVATE as soon as Golden Master/context handoff is secured or private access is restored, and before sensitive RB-03D evidence is committed.
+
+==================================================
+18. CURRENT WORK LANES
+==================================================
+
+LANE 1 — CLAUDE COWORK / CURRENT TROPIC COMMERCE PROJECT
+Purpose:
+- finish page-by-page content approval;
+- polish the existing Artifact only where founder punch-list fixes require it;
+- freeze/export the Re:Build Artifact Golden Master with source/screenshots/reference notes.
+
+Do NOT build final WordPress production code here.
+
+LANE 2 — CLAUDE CODE
+Purpose:
+- inspect current public repo/current code;
+- first create the required pre-build audit/implementation documents;
+- when Golden Master + approved content gates are satisfied, reconstruct the WordPress/WooCommerce theme in version-controlled code;
+- execute four documented review/improvement iterations;
+- deliver staging-ready source/package, not auto-promote production.
+
+LANE 3 — CHATGPT / RB-03D
+Purpose:
+- ingest real authority/site/buyer/lab/recycler/workforce/feedstock evidence;
+- update assumptions/economics/GO-HOLD-PIVOT-STOP.
+Current RB-03D status remains HOLD until real decision-grade evidence arrives.
+
+==================================================
+19. CLAUDE CODE PRE-BUILD DOCUMENTS REQUIRED
+==================================================
+
+Before final implementation Claude Code must create:
+
+1. 01_SOURCE_OF_TRUTH_AND_INPUT_STATUS.md
+2. 02_THEME_CODE_GAP_AUDIT.md
+3. 03_GOLDEN_MASTER_PARITY_MATRIX.md
+4. 04_RESPONSIVE_TEST_MATRIX.md
+5. 05_WOOCOMMERCE_COMPONENT_CONTRACT.md
+6. 06_WORDPRESS_EDITABILITY_AND_PATTERN_MAP.md
+7. 07_PLUGIN_AUDIT.md
+8. 08_CONTENT_AND_CLAIM_GATE_MAP.md
+9. 09_IMPLEMENTATION_PLAN_4_ITERATIONS.md
+10. 10_MIGRATION_ROLLBACK_AND_STAGING_PLAN.md
+
+These documents must be version-controlled and specific to the actual repo/theme, not generic templates.
+
+==================================================
+20. FOUR ITERATIONS — REQUIRED QUALITY LOOP
+==================================================
+
+The founder's instruction must be passed to Claude Code verbatim:
+
+"finish the website perfectly, high standards and amazing outcome, making no mistakes. Provide 4 iterations of reviews and improve each time so the las one is the best outcome."
+
+Interpret this operationally as four evidence-based review/fix loops:
+
+Iteration 1 — architecture + Golden Master shell fidelity.
+Iteration 2 — responsive + WooCommerce functional fidelity.
+Iteration 3 — content + editability + accessibility/performance.
+Iteration 4 — final visual regression + cross-page polish + full smoke test.
+
+Each iteration must record what was tested, defects found, severity, changes made, retests, remaining defects and why the iteration is measurably better than the previous one.
+
+Do not merely state “reviewed four times.”
+No known P0/P1 defects should remain in the final candidate handoff.
+Founder staging review remains mandatory before production.
+
+==================================================
+21. WHAT CLAUDE COWORK SHOULD DO NOW
+==================================================
+
+If this context pack is added to the 10 — Tropik Commerce Claude Project:
+
+1. acknowledge this as the current synchronized project context;
+2. do not search the founder's PC for GitHub files;
+3. continue the current Content workflow;
+4. freeze/export the Golden Master from the Artifact when requested;
+5. preserve Manguangua/Timbrao as creative backlog, not current approval;
+6. do not build WordPress in Cowork;
+7. provide the Golden Master package/files to the founder for Claude Code handoff.
+
+==================================================
+22. SUCCESS DEFINITION
+==================================================
+
+The website is not complete because the colors are similar or WordPress installs.
+
+Success means:
+- Page System visual/interaction fidelity;
+- current founder IA;
+- correct Bag architecture;
+- intentional responsive behavior;
+- one-card mobile narrative rails;
+- coherent Shop > Merch / Products model;
+- truthful Re:Build status/claims;
+- editable Gutenberg/pattern architecture;
+- minimal justified plugin footprint;
+- no stale/demo product contamination;
+- four documented Claude Code improvement iterations;
+- no known P0/P1 defects at staging handoff;
+- founder manual approval before production.
+
+END CONTEXT PACK

@@ -1,5 +1,7 @@
 # COM_09_3_DROP_01_PRODUCT_CONCEPTS_v0.1
 
+> **CURRENT-STATE OVERRIDE — 2026-09-07:** Historical founder approvals recorded below remain part of the project record, but `C3 / P04 — Qué Manguangua` and any `P14 — Estás todo timbrao` shirt design/visual direction are now `CREATIVE BACKLOG — REQUIRES NEW FOUNDER APPROVAL`. They are not approved for current execution, catalog seeding, production, advertising or launch. See `COM_09_CURRENT_CREATIVE_APPROVAL_OVERRIDE_2026-09-07.md`. This banner overrides older approval wording for current-state use without deleting history.
+
 Status: PRIVATE_WORKING
 Version: 0.1
 Updated: 2026-08-29
@@ -72,6 +74,7 @@ Founder proposed a real-world motorsport crash moment as inspiration. Do not use
 
 ### C3 — P04 `Qué Manguangua`
 
+- **Current status override:** `CREATIVE BACKLOG — REQUIRES NEW FOUNDER APPROVAL` as of 2026-09-07. Historical concept approval below remains archival context only.
 - **Product:** T-shirt; potentially extensible to poster/campaign surfaces later.
 - **Lane:** C — Type System.
 - **Placement:** repeated/stacked phrase; one repetition may receive accent emphasis.
@@ -91,6 +94,7 @@ Founder-provided repeated-type references are evidence of the desired genre/trea
 
 `P14 — Estás todo timbrao`
 
+- **Current status override:** any shirt design/visual direction is `CREATIVE BACKLOG — REQUIRES NEW FOUNDER APPROVAL` as of 2026-09-07.
 - Founder-approved for future concept development on 2026-08-29.
 - Portability: `REGION-LIMITED`.
 - Score: **NOT SCORED** under the standard eight-criterion COM-09.2 rubric; founder direct-approval override.
@@ -111,12 +115,15 @@ Founder-provided repeated-type references are evidence of the desired genre/trea
 1. **C1 photo/likeness route:** rights/publicity/copyright clearance for any identifiable real-person image before commercial use.
 2. **C2 real motorsport route:** rights/publicity/trademark/team/sponsor clearance before any recognizable real-driver/team/sponsor treatment. The safe generic/original route does not require waiting for this gate.
 3. **COM-09.4 founder gate:** each visual direction must be explicitly approved before being treated as final.
+4. **Current Manguangua/Timbrao re-approval gate:** no current visual direction/product execution for P04/P14 without a new founder decision.
 
 ## 6. COM-09.4 Scope
 
-COM-09.4 may generate visual directions only for:
+Historical scope allowed visual directions for:
 - C1 — P07 `Pura bulla lo tuyo`;
 - C2 — P13 `Si no te gusta la velocidad, oríllate`;
 - C3 — P04 `Qué Manguangua`.
 
-Safe paths are the default. Do not silently expand to P14 or deferred concepts. COM-09.4 should produce original visual directions, founder validation and a handoff to production/mockups plus the asset/supplier work required by the launch sprint.
+**Current override:** C3/P04 is no longer active for execution and must return to founder re-approval before any further current-project visual/product development. P14 remains outside active scope and also requires new founder approval.
+
+Safe paths are the default. Do not silently expand to P14 or deferred concepts. Any future active COM-09.4 work must follow current founder approvals rather than historical approval state alone.

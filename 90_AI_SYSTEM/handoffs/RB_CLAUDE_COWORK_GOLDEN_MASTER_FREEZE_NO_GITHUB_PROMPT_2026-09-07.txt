@@ -1,0 +1,145 @@
+TROPIK RE:BUILD — COWORK GOLDEN MASTER FREEZE / NO GITHUB ACCESS
+Date: 2026-09-07
+Status: PRIVATE_WORKING
+Target conversation: Tropik rebuild content stage
+
+==================================================
+0. ACCESS MODE
+==================================================
+
+You do NOT need a local `Tropik OS` folder or live GitHub access for this step.
+
+Use the attached context files supplied by the founder/ChatGPT as your source package.
+
+Expected attachments:
+1. RB_README_CONTEXT_2026-09-07.txt
+2. RB_WORDPRESS_ARTIFACT_FIDELITY_REBUILD_BRIEF_v0.1.txt
+3. RB_WEB_UX_NAVIGATION_COLLECTIONS_EDITABILITY_OVERRIDES_v0.1.txt
+4. RB_WORDPRESS_PLUGIN_RATIONALIZATION_AND_REPO_PRIVACY_GATE_v0.1.txt
+5. RB_GOLDEN_MASTER_README_2026-09-07.txt
+
+If any are missing, continue with the available files and report exactly which missing file prevents which action. Do not search the founder's PC for the repository.
+
+==================================================
+1. PURPOSE
+==================================================
+
+Keep the current Content stage active, but freeze the founder-approved Re:Build Artifact/Page System so a later Claude Code WordPress build can reproduce it without visual drift.
+
+This is NOT the WordPress build.
+This is NOT a redesign.
+This is NOT permission to change project facts.
+
+Your job is to export/package the Artifact source/reference that YOU can access from this Cowork conversation.
+
+==================================================
+2. VISUAL SOURCE
+==================================================
+
+Use the current founder-approved Re:Build Artifact/Page System accessible in this project/conversation as the visual/interaction source.
+
+Where the Artifact still contains an older unresolved state, use the attached founder UX override as a REQUIRED DELTA and document it in REFERENCE_NOTES.
+
+Important current deltas include:
+- remove PROJECT drawer group;
+- SHOP becomes a group heading like EXPLORE RE:BUILD and SUPPORT;
+- SHOP children = Merch / Products;
+- SUPPORT absorbs About Us, Updates, FAQ, Contact Us, Shipping, Terms & Conditions, Privacy Policy and Return Policy, plus Support Re:Build, Work With Us and readiness-gated Transparency;
+- mobile landing-page card rails show one card at a time, not vertical stacks;
+- arrows remain visible and centered at left/right rail edges;
+- primary pages use at least four intentional content zones where appropriate, with semantic Sun/Green/Coral/Ivory accents from the approved palette;
+- WordPress implementation later must be Gutenberg/pattern editable and not depend on Divi;
+- Products collection = Road Base, Mineral Fill, Ferrous Scrap, Masonry Aggregate with truthful current statuses; Verified Reuse Components stays outside the primary Products collection for now.
+
+==================================================
+3. CREATE THE GOLDEN MASTER PACKAGE
+==================================================
+
+Create a downloadable folder/ZIP named approximately:
+
+rebuild-page-system-golden-master-2026-09-07/
+
+Include, as the Artifact environment permits:
+
+README.md
+REFERENCE_NOTES.md
+source/
+  artifact source/router/components/html
+  styles/tokens
+  interactions/js
+  assets/toucan and other required local assets
+screenshots/
+  1440-home.png
+  1440-drawer.png
+  1440-bag-populated.png
+  1440-shop.png
+  1440-checkout.png
+  1440-account.png
+  1024 equivalents
+  768 equivalents
+  480 equivalents
+  390 equivalents
+
+Also capture:
+- mobile drawer;
+- empty bag;
+- one rail in mobile one-card state;
+- Product Detail/gallery if available;
+- one long editorial page showing section rhythm/accent behavior.
+
+Do not translate the Artifact into WordPress or another framework during export. Preserve source as closely as possible.
+
+==================================================
+4. REFERENCE_NOTES REQUIREMENTS
+==================================================
+
+Record:
+- Artifact route/version/date;
+- fonts actually rendered;
+- exact color tokens available, including Coral if present;
+- header/container/drawer/bag dimensions where available;
+- utility icon sizing/hit areas;
+- desktop/mobile differences;
+- rail card widths and snap behavior;
+- current navigation structure in source;
+- every founder-approved delta still pending in source;
+- which elements are Claude preview chrome and MUST NOT ship;
+- any unresolved visual/content item.
+
+Do not hide differences between current Artifact source and founder overrides. Document them.
+
+==================================================
+5. DO NOT BUILD WORDPRESS HERE
+==================================================
+
+Do not create:
+- final WordPress theme ZIP;
+- production PHP templates;
+- WooCommerce backend logic;
+- forms backend;
+- subscriber integration;
+- plugin changes.
+
+Those belong to the later Claude Code Lane-2 session after Content + Golden Master gate.
+
+==================================================
+6. CONTENT STAGE
+==================================================
+
+After the Golden Master package is prepared, return to the current Home content approval task.
+
+Do not move to Recovery before founder approves Home.
+
+==================================================
+7. REQUIRED RESPONSE
+==================================================
+
+Return:
+A. downloadable Golden Master ZIP/folder;
+B. inventory of included source/assets/screenshots;
+C. REFERENCE_NOTES summary;
+D. list of founder-approved deltas already reflected vs still pending in Artifact;
+E. confirmation that no WordPress build was performed;
+F. then return to Home Content approval.
+
+END PROMPT
