@@ -1,0 +1,1556 @@
+/*
+Theme Name: Tropik Re:Build
+Theme URI: https://tropikgoods.com
+Author: Tropik Goods
+Author URI: https://tropikgoods.com
+Description: Re:Build Page System theme, Iteration 1 (architecture + Golden Master shell fidelity). Design tokens, header, left navigation drawer, single WooCommerce-backed bag drawer and shared primitives, ported verbatim from the founder-approved Re:Build Artifact Golden Master (10_COMMERCE/design/reference/rebuild-page-system-golden-master/), frozen 2026-09-07. Page copy is NOT included — every content zone renders an honest "content pending founder approval" placeholder until Lane 1 Content approval lands, per 08_CONTENT_AND_CLAIM_GATE_MAP.md. Requires WooCommerce. Polylang optional (ES/EN switch degrades gracefully if inactive).
+Version: 0.1.0-iteration1
+Requires at least: 6.4
+Requires PHP: 8.0
+Tested up to: 6.6
+WC requires at least: 8.0
+Text Domain: tropik-rebuild
+Tags: full-site-editing-not-used, e-commerce, custom-colors
+*/
+
+/* ==========================================================================
+   Everything below this line is ported VERBATIM from the founder-approved
+   Golden Master (ARTIFACT_SOURCE.html), commit 262bed1, with exactly one
+   change: the "demo-only chrome" block (Claude Artifact preview bar) is
+   removed per the Golden Master's own instruction that this chrome must
+   never ship to production. See 02_ITERATION_01_NOTES.md in this folder
+   for the itemized diff against source.
+   ========================================================================== */
+
+<style>
+
+/* ---- tokens.css ---- */
+/* ==========================================================================
+   TROPIK STATIC STOREFRONT v1 — DESIGN TOKENS
+   COM-WEB-011A. Candidate tokens, pending founder approval.
+   ========================================================================== */
+
+:root{
+  /* ---- Core brand colors (approved) ---- */
+  --tk-ink:        #171717;
+  --tk-ivory:      #F6F2E8;
+  --tk-sun:        #F6B218;
+  --tk-leaf:       #0F5A46;
+  --tk-white:      #FFFFFF;
+  --tk-mist:       #ECEBE7;
+
+  /* ---- Neutral ramp (new candidate — lighter dark-mode system) ---- */
+  --tk-night:      #1D201F;
+  --tk-graphite:   #272B29;
+  --tk-charcoal:   #323735;
+  --tk-soft-graphite: #3C423F;
+  --tk-fog:        #D9DAD6;
+
+  /* ---- Tertiary accents (approved references, candidate hex) ---- */
+  --tk-signal-green: #2FB98F;
+  --tk-signal-coral: #F25B66;
+
+  /* ---- Re:Build status & claim tokens (DEC-026, added 2026-09-06) ---- */
+  --tk-status-concept:    var(--tk-fog);
+  --tk-status-rd:         #7FA7FF;
+  --tk-status-prototype:  var(--tk-sun);
+  --tk-status-trial:      #C99BFF;
+  --tk-status-tested:     var(--tk-signal-green);
+  --tk-status-commercial: var(--tk-signal-green);
+  --tk-claim-verified:    var(--tk-signal-green);
+  --tk-claim-decision:    var(--tk-sun);
+  --tk-claim-hypothesis:  #7FA7FF;
+  --tk-claim-target:      #C99BFF;
+  --tk-claim-aspiration:  var(--tk-text-on-dark-faint);
+  --tk-claim-prohibited:  var(--tk-signal-coral);
+
+  /* ---- Surface roles ---- */
+  --tk-bg-page:        var(--tk-night);
+  --tk-bg-page-alt:    var(--tk-graphite);
+  --tk-bg-surface:     var(--tk-charcoal);
+  --tk-bg-surface-alt: var(--tk-soft-graphite);
+  --tk-bg-deep:        var(--tk-ink);
+  --tk-bg-light:       var(--tk-ivory);
+  --tk-bg-light-alt:   var(--tk-mist);
+  --tk-bg-field:       var(--tk-mist);
+
+  --tk-text-on-dark:       var(--tk-ivory);
+  --tk-text-on-dark-muted: rgba(246,242,232,.66);
+  --tk-text-on-dark-faint: rgba(246,242,232,.42);
+  --tk-text-on-light:      var(--tk-ink);
+  --tk-text-on-light-muted: rgba(23,23,23,.62);
+
+  --tk-border-on-dark:  rgba(246,242,232,.14);
+  --tk-border-on-dark-strong: rgba(246,242,232,.26);
+  --tk-border-on-light: rgba(23,23,23,.14);
+
+  --tk-focus: var(--tk-sun);
+  --tk-cta-bg: var(--tk-sun);
+  --tk-cta-text: var(--tk-ink);
+  --tk-error: var(--tk-signal-coral);
+  --tk-success: var(--tk-signal-green);
+
+  /* ---- Field colors (single source of truth, per component contract) ----
+     Updated 2026-09-06: form fields were still using the light/paper-theme
+     --tk-mist background with near-black text, left over from before DEC-025's
+     dark reversion — that's why checkout inputs looked like plain white boxes
+     against the dark chrome. Now a lighter-than-card dark-gray surface,
+     consistent with the rest of the theme. ---- */
+  --tk-field-bg: #3B413E;
+  --tk-field-text: var(--tk-text-on-dark);
+  --tk-field-border: var(--tk-border-on-dark-strong);
+  --tk-field-focus: var(--tk-sun);
+  --tk-field-placeholder: rgba(246,242,232,.4);
+
+  /* ---- Typography ---- */
+  --tk-font-display: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --tk-font-body: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --tk-fs-display-xl: clamp(2.4rem, 3.2vw + 1.4rem, 4.6rem);
+  --tk-fs-display-lg: clamp(2rem, 2.2vw + 1.2rem, 3.4rem);
+  --tk-fs-display-md: clamp(1.5rem, 1.2vw + 1rem, 2.2rem);
+  --tk-fs-display-sm: clamp(1.2rem, .6vw + 1rem, 1.5rem);
+  --tk-fs-body-lg: 1.125rem;
+  --tk-fs-body: 1rem;
+  --tk-fs-body-sm: .875rem;
+  --tk-fs-eyebrow: .8125rem;
+
+  --tk-lh-tight: 1.08;
+  --tk-lh-heading: 1.18;
+  --tk-lh-body: 1.6;
+
+  --tk-tracking-tight: -0.02em;
+  --tk-tracking-eyebrow: .08em;
+
+  /* ---- Spacing scale (harmonic rhythm — fixes uneven section gaps) ---- */
+  --tk-space-1: .25rem;
+  --tk-space-2: .5rem;
+  --tk-space-3: .75rem;
+  --tk-space-4: 1rem;
+  --tk-space-5: 1.5rem;
+  --tk-space-6: 2rem;
+  --tk-space-7: 2.5rem;
+  --tk-space-8: 3rem;
+  --tk-space-9: 4rem;
+
+  /* one shared rhythm token drives ALL section gaps site-wide */
+  --tk-section-gap: clamp(2.75rem, 4vw + 1rem, 5rem);
+  --tk-section-gap-tight: clamp(1.75rem, 2vw + .75rem, 3rem);
+  --tk-block-gap: clamp(1.25rem, 1.4vw + .6rem, 2rem);
+
+  --tk-container-max: 1280px;
+  --tk-content-max: 760px;
+  --tk-gutter: clamp(1rem, 3vw, 2.5rem);
+
+  /* ---- Radius ---- */
+  --tk-radius-xs: 8px;
+  --tk-radius-sm: 12px;
+  --tk-radius-md: 16px;
+  --tk-radius-lg: 22px;
+  --tk-radius-xl: 30px;
+  --tk-radius-pill: 999px;
+
+  /* ---- Elevation ---- */
+  --tk-shadow-sm: 0 1px 2px rgba(0,0,0,.24);
+  --tk-shadow-md: 0 8px 24px rgba(0,0,0,.28);
+  --tk-shadow-lg: 0 20px 60px rgba(0,0,0,.38);
+
+  /* ---- Motion ---- */
+  --tk-ease: cubic-bezier(.4,0,.2,1);
+  --tk-dur-fast: 140ms;
+  --tk-dur-base: 220ms;
+  --tk-dur-slow: 360ms;
+
+  /* ---- Header ---- */
+  --tk-header-h: 72px;
+  --tk-header-h-mobile: 60px;
+
+  /* ---- Layers ---- */
+  --tk-z-header: 100;
+  --tk-z-drawer: 200;
+  --tk-z-cart: 210;
+  --tk-z-modal: 300;
+  --tk-z-toast: 400;
+}
+
+@media (prefers-reduced-motion: reduce){
+  :root{ --tk-dur-fast: 0ms; --tk-dur-base: 0ms; --tk-dur-slow: 0ms; }
+}
+
+/* ---- base.css ---- */
+/* ==========================================================================
+   TROPIK STATIC STOREFRONT v1 — BASE
+   Reset, typography, utilities, focus & motion rules.
+   ========================================================================== */
+
+*, *::before, *::after{ box-sizing: border-box; }
+html{ -webkit-text-size-adjust: 100%; scroll-behavior: smooth; overflow-x: hidden; }
+@media (prefers-reduced-motion: reduce){ html{ scroll-behavior: auto; } }
+
+/* Icon-size safety net. Inline SVG icons with no explicit width/height fall
+   back to the browser's native intrinsic size (huge) instead of the text
+   size around them. Every icon should scale with its own context by
+   default; a component that genuinely needs a different size (header
+   brand mark, icon buttons, decorative patterns) already overrides this
+   with a more specific selector further down. */
+svg{ width: 1em; height: 1em; flex-shrink: 0; }
+
+body{
+  margin: 0;
+  background: var(--tk-bg-page);
+  color: var(--tk-text-on-dark);
+  font-family: var(--tk-font-body);
+  font-size: var(--tk-fs-body);
+  line-height: var(--tk-lh-body);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body.tk-lock-scroll{ overflow: hidden; }
+
+img, svg, video, canvas{ display: block; max-width: 100%; }
+a{ color: inherit; text-decoration: none; }
+ul, ol{ margin: 0; padding: 0; list-style: none; }
+button{ font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+input, select, textarea{ font: inherit; color: inherit; }
+h1,h2,h3,h4,p,figure{ margin: 0; }
+
+h1,h2,h3,h4{
+  font-family: var(--tk-font-display);
+  font-weight: 700;
+  line-height: var(--tk-lh-heading);
+  letter-spacing: var(--tk-tracking-tight);
+}
+
+.tk-h-xl{ font-size: var(--tk-fs-display-xl); line-height: var(--tk-lh-tight); }
+.tk-h-lg{ font-size: var(--tk-fs-display-lg); }
+.tk-h-md{ font-size: var(--tk-fs-display-md); }
+.tk-h-sm{ font-size: var(--tk-fs-display-sm); }
+
+.tk-eyebrow{
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  font-family: var(--tk-font-body);
+  font-weight: 700;
+  font-size: var(--tk-fs-eyebrow);
+  letter-spacing: var(--tk-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--tk-sun);
+}
+.tk-eyebrow::before{
+  content: "";
+  width: 6px; height: 6px; border-radius: 50%;
+  background: currentColor;
+}
+
+.tk-lede{
+  font-size: var(--tk-fs-body-lg);
+  color: var(--tk-text-on-dark-muted);
+  max-width: 46ch;
+}
+[data-surface="light"] .tk-lede{ color: var(--tk-text-on-light-muted); }
+
+/* ---- Focus ---- */
+:focus{ outline: none; }
+:focus-visible{
+  outline: 2px solid var(--tk-focus);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* ---- Skip link ---- */
+.tk-skip-link{
+  position: absolute;
+  left: var(--tk-space-4);
+  top: -60px;
+  background: var(--tk-sun);
+  color: var(--tk-ink);
+  font-weight: 700;
+  padding: var(--tk-space-3) var(--tk-space-5);
+  border-radius: var(--tk-radius-pill);
+  z-index: var(--tk-z-toast);
+  transition: top var(--tk-dur-base) var(--tk-ease);
+}
+.tk-skip-link:focus{ top: var(--tk-space-4); }
+
+/* ---- Layout ---- */
+.tk-container{
+  width: 100%;
+  max-width: var(--tk-container-max);
+  margin-inline: auto;
+  padding-inline: var(--tk-gutter);
+}
+.tk-content-width{ max-width: var(--tk-content-max); margin-inline: auto; }
+
+/* ---- Section rhythm (single source of truth — replaces uneven ad-hoc gaps) ---- */
+.tk-section{
+  padding-block: var(--tk-section-gap);
+}
+.tk-section + .tk-section{ padding-top: 0; }
+.tk-section--tight{ padding-block: var(--tk-section-gap-tight); }
+.tk-section--band{
+  padding-block: var(--tk-section-gap);
+}
+
+.tk-surface-night{ background: var(--tk-bg-page); color: var(--tk-text-on-dark); }
+.tk-surface-graphite{ background: var(--tk-bg-page-alt); color: var(--tk-text-on-dark); }
+.tk-surface-ink{ background: var(--tk-bg-deep); color: var(--tk-text-on-dark); }
+.tk-surface-ivory{ background: var(--tk-bg-light); color: var(--tk-text-on-light); }
+.tk-surface-mist{ background: var(--tk-bg-light-alt); color: var(--tk-text-on-light); }
+[data-surface="light"]{ background: var(--tk-bg-light); color: var(--tk-text-on-light); }
+
+/* ---- Visually hidden ---- */
+.tk-vh{
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- Simple grid / flex helpers ---- */
+.tk-grid{ display: grid; gap: var(--tk-block-gap); }
+.tk-cols-2{ grid-template-columns: repeat(2, 1fr); }
+.tk-cols-3{ grid-template-columns: repeat(3, 1fr); }
+.tk-cols-4{ grid-template-columns: repeat(4, 1fr); }
+.tk-flex{ display: flex; }
+.tk-flex-between{ display: flex; align-items: center; justify-content: space-between; }
+.tk-flex-wrap{ flex-wrap: wrap; }
+.tk-gap-2{ gap: var(--tk-space-2); }
+.tk-gap-3{ gap: var(--tk-space-3); }
+.tk-gap-4{ gap: var(--tk-space-4); }
+.tk-gap-6{ gap: var(--tk-space-6); }
+
+.tk-stack{ display: flex; flex-direction: column; gap: var(--tk-space-4); }
+.tk-stack--lg{ gap: var(--tk-space-6); }
+.tk-stack--sm{ gap: var(--tk-space-2); }
+
+.tk-muted{ color: var(--tk-text-on-dark-muted); }
+[data-surface="light"] .tk-muted{ color: var(--tk-text-on-light-muted); }
+.tk-mt-0{ margin-top: 0 !important; }
+
+/* ---- Pattern layer (subtle 3–10% opacity geometry, original) ---- */
+.tk-pattern{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.tk-pattern svg{ width: 100%; height: 100%; opacity: .07; }
+.tk-pattern--accent svg{ opacity: .12; }
+.tk-relative{ position: relative; z-index: 1; }
+
+/* ---- Marquee-safe wrapper for the big background wordmark ---- */
+.tk-bg-word{
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+.tk-bg-word span{
+  font-family: var(--tk-font-display);
+  font-weight: 700;
+  font-size: min(22vw, 260px);
+  color: var(--tk-text-on-dark);
+  opacity: .05;
+  line-height: 1;
+  transform: translateY(-8%);
+  white-space: nowrap;
+}
+
+/* ---- components.css ---- */
+/* ==========================================================================
+   TROPIK STATIC STOREFRONT v1 — COMPONENTS
+   See docs/COMPONENT_SPEC.md for purpose/states of every component below.
+   ========================================================================== */
+
+/* ---------------------------------------------------------------------- */
+/* BUTTONS                                                                 */
+/* ---------------------------------------------------------------------- */
+.tk-btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tk-space-2);
+  height: 50px;
+  padding-inline: var(--tk-space-6);
+  border-radius: var(--tk-radius-pill);
+  font-weight: 700;
+  font-size: var(--tk-fs-body);
+  white-space: nowrap;
+  transition: transform var(--tk-dur-fast) var(--tk-ease), background var(--tk-dur-fast) var(--tk-ease), color var(--tk-dur-fast) var(--tk-ease), border-color var(--tk-dur-fast) var(--tk-ease);
+  border: 1px solid transparent;
+}
+.tk-btn:active{ transform: scale(.98); }
+.tk-btn--primary{ background: var(--tk-cta-bg); color: var(--tk-cta-text); }
+.tk-btn--primary:hover{ background: #ffc23e; }
+.tk-btn--secondary{ background: transparent; color: var(--tk-text-on-dark); border-color: var(--tk-border-on-dark-strong); }
+.tk-btn--secondary:hover{ border-color: var(--tk-sun); color: var(--tk-sun); }
+[data-surface="light"] .tk-btn--secondary{ color: var(--tk-text-on-light); border-color: var(--tk-border-on-light); }
+.tk-btn--ghost{ background: transparent; color: inherit; height: auto; padding: 0; border-radius: 0; font-weight: 700; }
+.tk-btn--ghost .tk-arrow{ transition: transform var(--tk-dur-fast) var(--tk-ease); }
+.tk-btn--ghost:hover .tk-arrow{ transform: translateX(3px); }
+.tk-btn--block{ width: 100%; }
+.tk-btn--sm{ height: 40px; padding-inline: var(--tk-space-5); font-size: var(--tk-fs-body-sm); }
+.tk-btn[disabled]{ opacity: .45; cursor: not-allowed; }
+
+.tk-icon-btn{
+  width: 46px; height: 46px;
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid var(--tk-border-on-dark);
+  color: var(--tk-text-on-dark);
+  position: relative;
+  transition: border-color var(--tk-dur-fast) var(--tk-ease), color var(--tk-dur-fast) var(--tk-ease);
+}
+.tk-icon-btn:hover, .tk-icon-btn[aria-expanded="true"]{ border-color: var(--tk-sun); color: var(--tk-sun); }
+.tk-icon-btn svg{ width: 20px; height: 20px; }
+.tk-icon-btn__badge{
+  position: absolute; top: -4px; right: -4px;
+  min-width: 20px; height: 20px; padding-inline: 4px;
+  border-radius: var(--tk-radius-pill);
+  background: var(--tk-sun); color: var(--tk-ink);
+  font-size: 11px; font-weight: 800;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+
+/* ---------------------------------------------------------------------- */
+/* HEADER                                                                  */
+/* ---------------------------------------------------------------------- */
+.tk-header{
+  position: sticky; top: 0;
+  z-index: var(--tk-z-header);
+  height: var(--tk-header-h);
+  display: flex; align-items: center;
+  background: color-mix(in srgb, var(--tk-night) 92%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--tk-border-on-dark);
+}
+.tk-header__inner{
+  width: 100%;
+  max-width: var(--tk-container-max);
+  margin-inline: auto;
+  padding-inline: var(--tk-gutter);
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--tk-space-3);
+}
+.tk-header__start, .tk-header__end{ display: flex; align-items: center; gap: var(--tk-space-2); }
+.tk-header__end{ justify-content: flex-end; }
+.tk-header__brand{
+  display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+  font-family: var(--tk-font-display); font-weight: 700; font-size: 1.25rem;
+  letter-spacing: .01em;
+}
+/* Sized by height only, width:auto — the source mark has transparent
+   padding around the artwork, so height-based sizing keeps it legible
+   without ever cropping the file. See shell.py brand_svg(). */
+.tk-header__brand img{ height: 44px; width: auto; object-fit: contain; }
+.tk-header__shop-label{ display: none; } /* Shop lives in the drawer only — see COMPONENT_SPEC */
+
+.tk-search-bar{
+  position: sticky;
+  top: var(--tk-header-h);
+  z-index: calc(var(--tk-z-header) - 1);
+  background: var(--tk-graphite);
+  border-bottom: 1px solid var(--tk-border-on-dark);
+}
+.tk-search-bar__form{
+  display: flex; align-items: center; gap: var(--tk-space-3);
+  padding-block: var(--tk-space-4);
+}
+.tk-search-bar__icon{ color: var(--tk-text-on-dark-faint); }
+.tk-search-bar__input{
+  flex: 1; min-width: 0;
+  background: transparent; border: 0; border-bottom: 1px solid var(--tk-border-on-dark-strong);
+  padding: var(--tk-space-2) 0; color: var(--tk-ivory); font-size: 1.1rem; font-family: inherit;
+}
+.tk-search-bar__input:focus{ outline: none; border-color: var(--tk-sun); }
+.tk-search-bar__input::placeholder{ color: var(--tk-text-on-dark-faint); }
+@media (max-width: 640px){
+  .tk-search-bar{ top: var(--tk-header-h-mobile); }
+  .tk-search-bar__form .tk-btn{ display: none; } /* Enter submits; keep the mobile bar compact */
+}
+
+@media (max-width: 640px){
+  .tk-header{ height: var(--tk-header-h-mobile); }
+  .tk-header__brand{ font-size: 1.05rem; }
+  .tk-header__brand img{ height: 34px; }
+}
+
+/* ---------------------------------------------------------------------- */
+/* DRAWER (left nav) — full sitemap, two-column body                      */
+/* ---------------------------------------------------------------------- */
+.tk-drawer-backdrop, .tk-cart-backdrop{
+  position: fixed; inset: 0;
+  background: rgba(9,10,9,.55);
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--tk-dur-base) var(--tk-ease);
+  z-index: var(--tk-z-drawer);
+}
+.tk-drawer-backdrop.is-open, .tk-cart-backdrop.is-open{ opacity: 1; pointer-events: auto; }
+
+.tk-drawer{
+  position: fixed; top: 0; left: 0; bottom: 0;
+  width: min(460px, 94vw);
+  background: var(--tk-graphite);
+  color: var(--tk-text-on-dark);
+  z-index: calc(var(--tk-z-drawer) + 1);
+  transform: translateX(-100%);
+  transition: transform var(--tk-dur-slow) var(--tk-ease);
+  display: flex; flex-direction: column;
+  box-shadow: var(--tk-shadow-lg);
+}
+.tk-drawer.is-open{ transform: translateX(0); }
+.tk-drawer__head{
+  flex: none;
+  display: flex; align-items: center; justify-content: space-between;
+  height: var(--tk-header-h);
+  padding-inline: var(--tk-space-5);
+  border-bottom: 1px solid var(--tk-border-on-dark);
+}
+.tk-drawer__body{
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: var(--tk-space-5);
+  display: flex; flex-direction: column; gap: var(--tk-space-6);
+}
+.tk-drawer__cols{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--tk-space-6);
+}
+.tk-drawer__group-title{
+  font-size: var(--tk-fs-eyebrow);
+  font-weight: 800;
+  letter-spacing: var(--tk-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--tk-text-on-dark-faint);
+  margin-bottom: var(--tk-space-3);
+}
+.tk-drawer__list{ display: flex; flex-direction: column; gap: var(--tk-space-3); }
+.tk-drawer__list a{
+  display: flex; align-items: center; gap: var(--tk-space-2);
+  font-weight: 600; font-size: .95rem;
+}
+.tk-drawer__list a:hover{ color: var(--tk-sun); }
+.tk-drawer__list--collections a[data-wp-dynamic="collection-link"]::after{
+  content: "";
+}
+.tk-drawer__new-badge{
+  font-size: 10px; font-weight: 800; letter-spacing: .04em;
+  background: var(--tk-sun); color: var(--tk-ink);
+  border-radius: var(--tk-radius-pill);
+  padding: 2px 7px;
+}
+.tk-drawer__divider{ border: 0; border-top: 1px solid var(--tk-border-on-dark); margin: 0; }
+.tk-drawer__footer{
+  flex: none;
+  padding: var(--tk-space-5);
+  border-top: 1px solid var(--tk-border-on-dark);
+}
+.tk-drawer__support-card{
+  display: flex; align-items: center; justify-content: space-between; gap: var(--tk-space-3);
+  background: var(--tk-charcoal);
+  border-radius: var(--tk-radius-md);
+  padding: var(--tk-space-4);
+}
+.tk-drawer__legal{
+  display: flex; gap: var(--tk-space-4);
+  margin-top: var(--tk-space-4);
+  font-size: var(--tk-fs-body-sm);
+  color: var(--tk-text-on-dark-faint);
+}
+
+@media (max-width: 560px){
+  .tk-drawer__cols{ grid-template-columns: 1fr; }
+}
+
+/* ---------------------------------------------------------------------- */
+/* MINI CART                                                               */
+/* ---------------------------------------------------------------------- */
+.tk-cart-panel{
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: min(440px, 94vw);
+  background: var(--tk-graphite);
+  color: var(--tk-text-on-dark);
+  z-index: calc(var(--tk-z-cart) + 1);
+  transform: translateX(100%);
+  transition: transform var(--tk-dur-slow) var(--tk-ease);
+  display: flex; flex-direction: column;
+  box-shadow: var(--tk-shadow-lg);
+}
+.tk-cart-panel.is-open{ transform: translateX(0); }
+.tk-cart-panel__head{
+  flex: none; display: flex; align-items: center; justify-content: space-between;
+  padding: var(--tk-space-5);
+  border-bottom: 1px solid var(--tk-border-on-dark);
+}
+.tk-cart-panel__body{ flex: 1 1 auto; overflow-y: auto; padding: var(--tk-space-5); display: flex; flex-direction: column; gap: var(--tk-space-4); }
+.tk-cart-panel__foot{ flex: none; padding: var(--tk-space-5); border-top: 1px solid var(--tk-border-on-dark); display: flex; flex-direction: column; gap: var(--tk-space-3); }
+
+.tk-cart-line{ display: grid; grid-template-columns: 72px 1fr auto; gap: var(--tk-space-3); align-items: flex-start; }
+.tk-cart-line__media{ width: 72px; height: 72px; border-radius: var(--tk-radius-sm); overflow: hidden; background: var(--tk-mist); }
+.tk-cart-line__title{ font-weight: 700; font-size: .95rem; }
+.tk-cart-line__meta{ color: var(--tk-text-on-dark-muted); font-size: var(--tk-fs-body-sm); }
+.tk-cart-line__price{ font-weight: 700; text-align: right; color: var(--tk-signal-green); }
+.tk-cart-line__price--sale{ color: var(--tk-signal-coral); }
+.tk-cart-line__row{ display: flex; align-items: center; justify-content: space-between; margin-top: var(--tk-space-2); }
+.tk-cart-line__remove{ color: var(--tk-text-on-dark-faint); }
+.tk-cart-line__remove:hover{ color: var(--tk-signal-coral); }
+
+.tk-summary-row{ display: flex; align-items: center; justify-content: space-between; font-size: var(--tk-fs-body-sm); color: var(--tk-text-on-dark-muted); }
+.tk-summary-row--total{ font-size: 1.1rem; font-weight: 800; color: var(--tk-text-on-dark); }
+
+/* ---------------------------------------------------------------------- */
+/* QUANTITY PILL                                                          */
+/* ---------------------------------------------------------------------- */
+.tk-qty{
+  display: inline-flex; align-items: center;
+  border: 1px solid var(--tk-field-border);
+  border-radius: var(--tk-radius-pill);
+  background: var(--tk-field-bg);
+  height: 44px;
+  overflow: hidden;
+}
+[data-surface="dark"] .tk-qty, .tk-cart-line .tk-qty{
+  background: var(--tk-charcoal);
+  border-color: var(--tk-border-on-dark);
+}
+.tk-qty button{
+  width: 40px; height: 100%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; font-weight: 700;
+  color: inherit;
+}
+.tk-qty button:hover{ color: var(--tk-sun); }
+.tk-qty input{
+  width: 34px; text-align: center;
+  background: transparent; border: 0; color: inherit; font-weight: 700;
+}
+.tk-qty--sm{ height: 36px; }
+.tk-qty--sm button{ width: 32px; }
+
+/* ---------------------------------------------------------------------- */
+/* CARDS                                                                   */
+/* ---------------------------------------------------------------------- */
+.tk-card{
+  background: var(--tk-charcoal);
+  border-radius: var(--tk-radius-lg);
+  padding: var(--tk-space-6);
+  border: 1px solid var(--tk-border-on-dark);
+}
+[data-surface="light"] .tk-card{ background: var(--tk-white); border-color: var(--tk-border-on-light); }
+.tk-card--flush{ padding: 0; overflow: hidden; }
+
+.tk-territory-card{
+  background: var(--tk-charcoal);
+  border-radius: var(--tk-radius-lg);
+  padding: var(--tk-space-6);
+  border-top: 3px solid var(--tk-accent, var(--tk-sun));
+}
+.tk-territory-card .tk-eyebrow{ color: var(--tk-sun); }
+.tk-territory-card--work{ --tk-accent: var(--tk-sun); }
+.tk-territory-card--travel{ --tk-accent: var(--tk-signal-green); }
+.tk-territory-card--everyday{ --tk-accent: var(--tk-signal-coral); }
+
+/* Was an ad hoc light (--tk-bg-light) card — the only light box on an
+   otherwise all-dark page (what-we-build.html "Product principles"), not a
+   repeated pattern anywhere else. Normalized to the same raised dark
+   surface every other card on this page (.tk-territory-card, .tk-card)
+   already uses. */
+.tk-value-card{
+  background: var(--tk-charcoal);
+  color: var(--tk-text-on-dark);
+  border-radius: var(--tk-radius-lg);
+  padding: var(--tk-space-6);
+}
+.tk-value-card__index{ font-family: var(--tk-font-display); font-weight: 700; color: var(--tk-sun); font-size: var(--tk-fs-body-sm); }
+
+/* Product card.
+   Note (light-box normalization pass): the light neutral backgrounds on
+   .tk-product-card__media, .tk-media-card__media, .tk-gallery__stage/thumb
+   and .tk-cart-row__media/.tk-cart-line__media are an intentional, already
+   sitewide-repeated "light photo canvas" placeholder for missing product
+   imagery — left as-is on purpose, unlike the one-off .tk-value-card below. */
+.tk-product-card{ display: flex; flex-direction: column; gap: var(--tk-space-3); }
+.tk-product-card__media{
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: var(--tk-radius-lg);
+  overflow: hidden;
+  background: var(--tk-mist);
+}
+.tk-product-card__media img{ width: 100%; height: 100%; object-fit: cover; }
+.tk-product-card__tag{
+  position: absolute; top: var(--tk-space-3); left: var(--tk-space-3);
+  background: var(--tk-ink); color: var(--tk-ivory);
+  font-size: 11px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
+  padding: 4px 10px; border-radius: var(--tk-radius-pill);
+}
+.tk-product-card__title{ font-weight: 700; font-size: .98rem; }
+.tk-product-card__price{ color: var(--tk-signal-green); font-weight: 700; }
+.tk-product-card__price del{ color: var(--tk-text-on-dark-faint); font-weight: 500; margin-right: .4em; }
+.tk-product-card__price--sale{ color: var(--tk-signal-coral); }
+
+/* Story / article card */
+.tk-media-card{ display: flex; flex-direction: column; gap: var(--tk-space-3); }
+.tk-media-card__media{ aspect-ratio: 16/10; border-radius: var(--tk-radius-lg); overflow: hidden; background: var(--tk-mist); }
+.tk-media-card__media img{ width: 100%; height: 100%; object-fit: cover; }
+.tk-media-card__tag{ color: var(--tk-sun); font-size: var(--tk-fs-eyebrow); font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+.tk-media-card__title{ font-family: var(--tk-font-display); font-weight: 700; font-size: 1.1rem; }
+.tk-media-card__excerpt{ color: var(--tk-text-on-dark-muted); font-size: var(--tk-fs-body-sm); }
+.tk-media-card__meta{ color: var(--tk-text-on-dark-faint); font-size: 12px; }
+
+/* ---------------------------------------------------------------------- */
+/* TAGS / CHIPS / BREADCRUMB / CALLOUT                                     */
+/* ---------------------------------------------------------------------- */
+.tk-chip{
+  display: inline-flex; align-items: center; gap: .4em;
+  padding: .5em 1.05em;
+  border-radius: var(--tk-radius-pill);
+  border: 1px solid var(--tk-border-on-dark);
+  font-weight: 700; font-size: var(--tk-fs-body-sm);
+  transition: border-color var(--tk-dur-fast) var(--tk-ease), background var(--tk-dur-fast) var(--tk-ease), color var(--tk-dur-fast) var(--tk-ease);
+}
+.tk-chip[aria-pressed="true"], .tk-chip.is-active{ background: var(--tk-sun); color: var(--tk-ink); border-color: var(--tk-sun); }
+.tk-chip:hover:not(.is-active){ border-color: var(--tk-sun); }
+
+.tk-breadcrumb{ display: flex; flex-wrap: wrap; gap: .4em; font-size: var(--tk-fs-body-sm); color: var(--tk-text-on-dark-faint); }
+.tk-breadcrumb a:hover{ color: var(--tk-sun); }
+.tk-breadcrumb__sep{ opacity: .5; }
+
+.tk-callout{
+  border-radius: var(--tk-radius-md);
+  padding: var(--tk-space-5);
+  border: 1px solid var(--tk-border-on-dark);
+  background: var(--tk-charcoal);
+  display: flex; gap: var(--tk-space-3);
+}
+.tk-callout--gate{ border-color: rgba(246,178,24,.4); background: rgba(246,178,24,.08); }
+.tk-callout--success{ border-color: rgba(47,185,143,.4); background: rgba(47,185,143,.08); }
+.tk-callout__icon{ flex: none; color: var(--tk-sun); }
+.tk-callout--success .tk-callout__icon{ color: var(--tk-signal-green); }
+.tk-callout__title{ font-weight: 800; margin-bottom: 2px; }
+.tk-callout__text{ color: var(--tk-text-on-dark-muted); font-size: var(--tk-fs-body-sm); }
+
+/* Content gate marker (unapproved policy copy) */
+.tk-gate-tag{
+  display: inline-flex; align-items: center; gap: .4em;
+  font-size: 11px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
+  color: var(--tk-ink); background: var(--tk-sun);
+  border-radius: var(--tk-radius-pill); padding: 3px 10px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* FORMS                                                                   */
+/* ---------------------------------------------------------------------- */
+.tk-field{ display: flex; flex-direction: column; gap: var(--tk-space-2); }
+.tk-field__label{ font-weight: 700; font-size: var(--tk-fs-body-sm); }
+.tk-field__label .tk-optional{ font-weight: 500; color: var(--tk-text-on-dark-faint); }
+.tk-field__control{
+  height: 54px;
+  border-radius: var(--tk-radius-md);
+  border: 1px solid var(--tk-field-border);
+  background: var(--tk-field-bg);
+  color: var(--tk-field-text);
+  padding-inline: var(--tk-space-4);
+  width: 100%;
+}
+textarea.tk-field__control{ height: auto; min-height: 130px; padding-block: var(--tk-space-3); resize: vertical; }
+.tk-field__control::placeholder{ color: var(--tk-field-placeholder); }
+.tk-field__control:focus-visible{ outline: 2px solid var(--tk-field-focus); outline-offset: 1px; }
+.tk-field__control.has-error{ outline: 2px solid var(--tk-error); }
+.tk-field__error{ color: var(--tk-error); font-size: var(--tk-fs-body-sm); font-weight: 600; }
+.tk-field__hint{ color: var(--tk-text-on-dark-faint); font-size: var(--tk-fs-body-sm); }
+.tk-form-row{ display: grid; grid-template-columns: 1fr 1fr; gap: var(--tk-space-4); }
+
+.tk-select{ position: relative; }
+.tk-select select{
+  appearance: none;
+  height: 54px; width: 100%;
+  border-radius: var(--tk-radius-md);
+  border: 1px solid var(--tk-field-border);
+  background: var(--tk-field-bg);
+  color: var(--tk-field-text);
+  padding-inline: var(--tk-space-4) var(--tk-space-8);
+}
+.tk-select::after{
+  content: "";
+  position: absolute; right: var(--tk-space-4); top: 50%;
+  width: 9px; height: 9px;
+  border-right: 2px solid var(--tk-field-text);
+  border-bottom: 2px solid var(--tk-field-text);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+
+.tk-checkbox, .tk-radio{ display: flex; align-items: flex-start; gap: var(--tk-space-3); cursor: pointer; }
+.tk-checkbox input, .tk-radio input{ width: 20px; height: 20px; margin-top: 2px; accent-color: var(--tk-sun); }
+
+.tk-variant-group{ display: flex; flex-direction: column; gap: var(--tk-space-2); }
+.tk-variant-options{ display: flex; flex-wrap: wrap; gap: var(--tk-space-2); }
+.tk-variant-swatch{
+  min-width: 52px; height: 46px; padding-inline: var(--tk-space-4);
+  border-radius: var(--tk-radius-sm);
+  background: var(--tk-charcoal);
+  border: 1px solid var(--tk-border-on-dark);
+  font-weight: 700;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.tk-variant-swatch[aria-pressed="true"]{ border-color: var(--tk-sun); box-shadow: 0 0 0 1px var(--tk-sun) inset; color: var(--tk-sun); }
+.tk-variant-swatch[disabled]{ opacity: .3; text-decoration: line-through; cursor: not-allowed; }
+
+/* ---------------------------------------------------------------------- */
+/* ACCORDION (FAQ, drawer groups, checkout sections)                      */
+/* ---------------------------------------------------------------------- */
+.tk-accordion{ border-top: 1px solid var(--tk-border-on-dark); }
+[data-surface="light"] .tk-accordion{ border-color: var(--tk-border-on-light); }
+.tk-accordion-item{ border-bottom: 1px solid var(--tk-border-on-dark); }
+[data-surface="light"] .tk-accordion-item{ border-color: var(--tk-border-on-light); }
+.tk-accordion-item__trigger{
+  width: 100%;
+  display: flex; align-items: center; justify-content: space-between; gap: var(--tk-space-4);
+  padding-block: var(--tk-space-5);
+  text-align: left;
+  font-weight: 700; font-size: 1.02rem;
+}
+.tk-accordion-item__icon{
+  flex: none; width: 24px; height: 24px; position: relative;
+}
+.tk-accordion-item__icon::before, .tk-accordion-item__icon::after{
+  content: ""; position: absolute; background: currentColor;
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+}
+.tk-accordion-item__icon::before{ width: 14px; height: 2px; }
+.tk-accordion-item__icon::after{ width: 2px; height: 14px; transition: transform var(--tk-dur-fast) var(--tk-ease); }
+.tk-accordion-item__trigger[aria-expanded="true"] .tk-accordion-item__icon::after{ transform: translate(-50%,-50%) rotate(90deg) scale(0); }
+.tk-accordion-item__panel{
+  overflow: hidden;
+  height: 0;
+  transition: height var(--tk-dur-base) var(--tk-ease);
+}
+.tk-accordion-item__panel-inner{ padding-bottom: var(--tk-space-5); color: var(--tk-text-on-dark-muted); }
+[data-surface="light"] .tk-accordion-item__panel-inner{ color: var(--tk-text-on-light-muted); }
+
+/* ---------------------------------------------------------------------- */
+/* COLLAPSIBLE SECTION (checkout — single-page fast-checkout contract)     */
+/* ---------------------------------------------------------------------- */
+.tk-collapse{
+  border-radius: var(--tk-radius-lg);
+  border: 1px solid var(--tk-border-on-dark);
+  background: var(--tk-charcoal);
+  overflow: hidden;
+}
+.tk-collapse__head{
+  width: 100%;
+  display: flex; align-items: center; gap: var(--tk-space-4);
+  padding: var(--tk-space-5) var(--tk-space-6);
+  text-align: left;
+}
+.tk-collapse__step{
+  flex: none; width: 32px; height: 32px; border-radius: 50%;
+  background: var(--tk-soft-graphite);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: .9rem;
+}
+.tk-collapse.is-complete .tk-collapse__step{ background: var(--tk-sun); color: var(--tk-ink); }
+.tk-collapse__head-text{ flex: 1 1 auto; }
+.tk-collapse__title{ font-weight: 800; font-size: 1.05rem; }
+.tk-collapse__summary{ font-size: var(--tk-fs-body-sm); color: var(--tk-text-on-dark-muted); }
+.tk-collapse__edit{ flex: none; font-weight: 700; color: var(--tk-sun); font-size: var(--tk-fs-body-sm); }
+.tk-collapse__chevron{ flex: none; width: 20px; height: 20px; transition: transform var(--tk-dur-fast) var(--tk-ease); }
+.tk-collapse__head[aria-expanded="true"] .tk-collapse__chevron{ transform: rotate(180deg); }
+.tk-collapse__body{ overflow: hidden; height: 0; transition: height var(--tk-dur-base) var(--tk-ease); }
+.tk-collapse__body-inner{ padding: 0 var(--tk-space-6) var(--tk-space-6); display: flex; flex-direction: column; gap: var(--tk-space-4); border-top: 1px solid var(--tk-border-on-dark); padding-top: var(--tk-space-5); }
+.tk-collapse + .tk-collapse{ margin-top: var(--tk-space-4); }
+
+/* ---------------------------------------------------------------------- */
+/* PROGRESS STEPPER                                                        */
+/* ---------------------------------------------------------------------- */
+.tk-stepper{ display: flex; align-items: center; gap: var(--tk-space-2); justify-content: center; }
+.tk-stepper__step{ display: flex; align-items: center; gap: var(--tk-space-2); font-size: var(--tk-fs-body-sm); font-weight: 700; color: var(--tk-text-on-dark-faint); }
+.tk-stepper__dot{ width: 10px; height: 10px; border-radius: 50%; background: var(--tk-soft-graphite); }
+.tk-stepper__step.is-active{ color: var(--tk-sun); }
+.tk-stepper__step.is-active .tk-stepper__dot{ background: var(--tk-sun); }
+.tk-stepper__step.is-done .tk-stepper__dot{ background: var(--tk-signal-green); }
+.tk-stepper__line{ width: 28px; height: 1px; background: var(--tk-border-on-dark); }
+
+/* ---------------------------------------------------------------------- */
+/* GALLERY (product page)                                                  */
+/* ---------------------------------------------------------------------- */
+.tk-gallery{ display: flex; flex-direction: column; gap: var(--tk-space-4); }
+.tk-gallery__stage{
+  position: relative;
+  border-radius: var(--tk-radius-xl);
+  background: var(--tk-bg-light-alt);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+.tk-gallery__track{ display: flex; height: 100%; transition: transform var(--tk-dur-base) var(--tk-ease); }
+.tk-gallery__slide{ flex: 0 0 100%; display: flex; align-items: center; justify-content: center; padding: var(--tk-space-7); }
+.tk-gallery__slide img{ max-height: 100%; object-fit: contain; }
+.tk-gallery__nav{
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--tk-white); color: var(--tk-ink);
+  display: inline-flex; align-items: center; justify-content: center;
+  box-shadow: var(--tk-shadow-sm);
+}
+.tk-gallery__nav--prev{ left: var(--tk-space-4); }
+.tk-gallery__nav--next{ right: var(--tk-space-4); }
+.tk-gallery__thumbs{ display: flex; gap: var(--tk-space-3); overflow-x: auto; scrollbar-width: thin; padding-bottom: 2px; }
+.tk-gallery__thumb{
+  flex: 0 0 auto;
+  width: 76px; aspect-ratio: 1/1;
+  border-radius: var(--tk-radius-sm);
+  background: var(--tk-bg-light-alt);
+  border: 2px solid transparent;
+  overflow: hidden;
+  padding: var(--tk-space-1);
+}
+.tk-gallery__thumb img{ width: 100%; height: 100%; object-fit: contain; }
+.tk-gallery__thumb[aria-current="true"]{ border-color: var(--tk-sun); }
+
+/* ---------------------------------------------------------------------- */
+/* HERO CAROUSEL (home)                                                    */
+/* ---------------------------------------------------------------------- */
+.tk-hero-carousel{ position: relative; border-radius: var(--tk-radius-xl); overflow: hidden; background: var(--tk-graphite); }
+.tk-hero-carousel__track{ display: flex; transition: transform var(--tk-dur-slow) var(--tk-ease); }
+.tk-hero-carousel__slide{ flex: 0 0 100%; position: relative; padding: var(--tk-space-9) var(--tk-gutter); min-height: 480px; display: flex; align-items: center; }
+.tk-hero-carousel__slide-inner{ position: relative; z-index: 2; max-width: 640px; }
+.tk-hero-carousel__media{ position: absolute; inset: 0; z-index: 0; opacity: .9; }
+.tk-hero-carousel__controls{
+  position: absolute; bottom: var(--tk-space-5); right: var(--tk-space-6);
+  display: flex; align-items: center; gap: var(--tk-space-4); z-index: 3;
+}
+.tk-hero-carousel__dots{ display: flex; gap: var(--tk-space-2); }
+.tk-hero-carousel__dot{ width: 8px; height: 8px; border-radius: 50%; background: var(--tk-border-on-dark-strong); }
+.tk-hero-carousel__dot[aria-current="true"]{ width: 22px; border-radius: var(--tk-radius-pill); background: var(--tk-sun); }
+.tk-hero-carousel__arrows{ display: flex; gap: var(--tk-space-2); }
+.tk-hero-carousel__arrow{
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--tk-border-on-dark-strong);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.tk-hero-carousel__arrow:hover{ border-color: var(--tk-sun); color: var(--tk-sun); }
+@media (min-width: 641px){
+  .tk-hero-carousel__slide{ min-height: 560px; }
+}
+
+/* ---------------------------------------------------------------------- */
+/* CAROUSEL — reusable horizontal card scroller                           */
+/* (featured products, homepage content/learn row, shop collection rows,  */
+/* learn hub grid). Markup: .tk-carousel > .tk-carousel__btn--prev,       */
+/* .tk-carousel__track > .tk-carousel__item*, .tk-carousel__btn--next.    */
+/* ---------------------------------------------------------------------- */
+.tk-carousel{ position: relative; }
+.tk-carousel__track{
+  display: flex;
+  gap: var(--tk-space-5);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+.tk-carousel__track::-webkit-scrollbar{ display: none; } /* Chrome / Safari */
+.tk-carousel__item{ flex: 0 0 auto; scroll-snap-align: start; }
+/* Card-type width defaults — the cards themselves are unchanged, this only
+   gives each a fixed basis so the track can scroll instead of wrap. */
+.tk-carousel__track .tk-product-card{ width: 280px; }
+.tk-carousel__track .tk-media-card{ width: 320px; }
+
+.tk-carousel__btn{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: var(--tk-charcoal);
+  box-shadow: var(--tk-shadow-sm);
+}
+.tk-carousel__btn--prev{ left: var(--tk-space-2); }
+.tk-carousel__btn--next{ right: var(--tk-space-2); }
+.tk-carousel__btn.is-disabled{ opacity: .35; pointer-events: none; }
+@media (max-width: 640px){
+  /* Same convention as .tk-search-bar__form .tk-btn above: hide the
+     secondary control on narrow phones and rely on native touch scroll. */
+  .tk-carousel__btn{ display: none; }
+}
+
+/* ---------------------------------------------------------------------- */
+/* TABLE                                                                   */
+/* ---------------------------------------------------------------------- */
+.tk-table{ width: 100%; border-collapse: collapse; font-size: var(--tk-fs-body-sm); }
+.tk-table th, .tk-table td{ text-align: left; padding: var(--tk-space-3) var(--tk-space-3); border-bottom: 1px solid var(--tk-border-on-dark); }
+[data-surface="light"] .tk-table th, [data-surface="light"] .tk-table td{ border-color: var(--tk-border-on-light); }
+.tk-table th{ color: var(--tk-text-on-dark-faint); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; font-size: 11px; }
+.tk-table-wrap{ overflow-x: auto; border-radius: var(--tk-radius-md); border: 1px solid var(--tk-border-on-dark); }
+.tk-table-wrap .tk-table{ min-width: 480px; }
+
+/* ---------------------------------------------------------------------- */
+/* MODAL / TOAST / EMPTY STATE                                             */
+/* ---------------------------------------------------------------------- */
+.tk-modal-backdrop{ position: fixed; inset: 0; background: rgba(9,10,9,.6); z-index: var(--tk-z-modal); display: flex; align-items: center; justify-content: center; padding: var(--tk-space-5); }
+.tk-modal{ background: var(--tk-graphite); border-radius: var(--tk-radius-lg); padding: var(--tk-space-6); max-width: 460px; width: 100%; }
+
+.tk-toast{
+  position: fixed; bottom: var(--tk-space-5); left: 50%; transform: translateX(-50%);
+  background: var(--tk-ink); color: var(--tk-ivory);
+  padding: var(--tk-space-3) var(--tk-space-5);
+  border-radius: var(--tk-radius-pill);
+  z-index: var(--tk-z-toast);
+  font-weight: 700; font-size: var(--tk-fs-body-sm);
+  box-shadow: var(--tk-shadow-md);
+}
+
+.tk-empty{ text-align: center; padding: var(--tk-space-9) var(--tk-space-5); display: flex; flex-direction: column; align-items: center; gap: var(--tk-space-4); }
+.tk-empty__icon{ width: 56px; height: 56px; color: var(--tk-text-on-dark-faint); }
+.tk-empty__icon svg{ width: 100%; height: 100%; }
+
+/* ---------------------------------------------------------------------- */
+/* Support / fundraising banner ("kurzgesagt-style" mission strip)         */
+/* ---------------------------------------------------------------------- */
+.tk-mission-banner{
+  border-radius: var(--tk-radius-xl);
+  background: var(--tk-bg-surface);
+  color: var(--tk-ivory);
+  padding: var(--tk-space-7) var(--tk-space-7);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--tk-space-6);
+  align-items: center;
+}
+.tk-mission-banner .tk-eyebrow{ color: var(--tk-sun); }
+@media (max-width: 760px){
+  .tk-mission-banner{ grid-template-columns: 1fr; text-align: left; }
+}
+
+/* ---- pages.css ---- */
+/* ==========================================================================
+   TROPIK STATIC STOREFRONT v1 — PAGE LAYOUTS
+   ========================================================================== */
+
+/* ---- HOME ---- */
+.tk-hero{ position: relative; padding-top: var(--tk-space-6); }
+.tk-hero .tk-container{ position: relative; }
+
+.tk-pieces-head{ max-width: 640px; margin: 0 auto var(--tk-space-7); text-align: center; }
+.tk-pieces-head .tk-lede{ max-width: 56ch; margin-inline: auto; }
+.tk-pieces-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--tk-space-5); }
+.tk-pieces-grid .tk-product-card:nth-child(n+4){ display: none; }
+
+.tk-territories-head{ display: flex; align-items: flex-end; justify-content: space-between; gap: var(--tk-space-6); margin-bottom: var(--tk-space-7); }
+.tk-territories-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--tk-space-5); }
+.tk-territories-note{ margin-top: var(--tk-space-5); padding: var(--tk-space-4) var(--tk-space-5); border: 1px solid var(--tk-border-on-dark); border-radius: var(--tk-radius-md); font-size: var(--tk-fs-body-sm); color: var(--tk-text-on-dark-muted); }
+
+.tk-values-grid{ display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--tk-space-5); }
+
+.tk-story-preview{ display: grid; grid-template-columns: 1fr 1fr; gap: var(--tk-space-7); align-items: center; }
+.tk-story-preview__art{ aspect-ratio: 4/3; border-radius: var(--tk-radius-xl); background: linear-gradient(135deg, var(--tk-sun), var(--tk-signal-green)); position: relative; overflow: hidden; }
+
+.tk-learn-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--tk-space-5); }
+
+.tk-support-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--tk-space-5); }
+
+.tk-closer{ border-radius: var(--tk-radius-xl); background: var(--tk-bg-surface); padding: var(--tk-space-8); display: flex; align-items: center; justify-content: space-between; gap: var(--tk-space-6); flex-wrap: wrap; }
+
+/* ---- SHOP / COLLECTION ---- */
+.tk-shop-head{ margin-bottom: var(--tk-space-6); }
+.tk-shop-toolbar{ display: flex; align-items: center; justify-content: space-between; gap: var(--tk-space-4); margin-bottom: var(--tk-space-6); flex-wrap: wrap; }
+.tk-shop-filters{ display: flex; gap: var(--tk-space-2); flex-wrap: wrap; }
+.tk-shop-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--tk-space-5); }
+
+/* Shop = collections stacked vertically, each its own carousel row. */
+.tk-shop-collections{ display: flex; flex-direction: column; }
+.tk-shop-collection + .tk-shop-collection{ margin-top: var(--tk-space-8); }
+.tk-shop-collection__head{ display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--tk-space-3); margin-bottom: var(--tk-space-6); }
+
+/* ---- PRODUCT ---- */
+.tk-product-layout{ display: grid; grid-template-columns: 1.05fr .95fr; gap: var(--tk-space-8); align-items: start; }
+.tk-buy-panel{ display: flex; flex-direction: column; gap: var(--tk-space-5); }
+.tk-buy-panel__price{ font-size: 1.6rem; font-weight: 800; color: var(--tk-signal-green); }
+.tk-buy-panel__price del{ color: var(--tk-text-on-dark-faint); font-weight: 500; font-size: 1rem; margin-right: .5em; }
+.tk-buy-panel__price--sale{ color: var(--tk-signal-coral); }
+.tk-buy-panel__cta-row{ display: flex; gap: var(--tk-space-3); align-items: center; }
+.tk-buy-panel__support{ display: flex; gap: var(--tk-space-2); flex-wrap: wrap; }
+.tk-related{ margin-top: var(--tk-space-9); }
+
+/* ---- CART ---- */
+.tk-cart-layout{ display: grid; grid-template-columns: 1.4fr .9fr; gap: var(--tk-space-8); align-items: start; }
+.tk-cart-items{ display: flex; flex-direction: column; }
+.tk-cart-row{ display: grid; grid-template-columns: 96px 1fr auto; gap: var(--tk-space-4); padding-block: var(--tk-space-5); border-bottom: 1px solid var(--tk-border-on-dark); }
+.tk-cart-row__media{ width: 96px; height: 96px; border-radius: var(--tk-radius-md); overflow: hidden; background: var(--tk-mist); }
+.tk-cart-row__title{ font-weight: 700; }
+.tk-cart-row__meta{ color: var(--tk-text-on-dark-muted); font-size: var(--tk-fs-body-sm); }
+.tk-cart-row__end{ display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; gap: var(--tk-space-3); }
+.tk-order-summary{ position: sticky; top: calc(var(--tk-header-h) + var(--tk-space-5)); }
+
+/* ---- CHECKOUT (single-page, collapsible — fast-checkout DECISION) ---- */
+.tk-checkout-header{ height: var(--tk-header-h); display: flex; align-items: center; justify-content: center; position: relative; border-bottom: 1px solid var(--tk-border-on-dark); }
+.tk-checkout-header__back{ position: absolute; left: var(--tk-gutter); font-weight: 700; font-size: var(--tk-fs-body-sm); }
+.tk-checkout-layout{ display: grid; grid-template-columns: 1.3fr .9fr; gap: var(--tk-space-8); align-items: start; }
+.tk-checkout-sections{ display: flex; flex-direction: column; }
+.tk-billing-toggle{ display: flex; flex-direction: column; gap: var(--tk-space-3); padding: var(--tk-space-4); border: 1px dashed var(--tk-border-on-dark); border-radius: var(--tk-radius-md); }
+.tk-payment-slot{ border: 1px dashed var(--tk-border-on-dark); border-radius: var(--tk-radius-md); padding: var(--tk-space-5); display: flex; flex-direction: column; gap: var(--tk-space-2); }
+.tk-payment-option{ display: flex; align-items: center; gap: var(--tk-space-3); padding: var(--tk-space-4); border: 1px solid var(--tk-border-on-dark); border-radius: var(--tk-radius-md); }
+.tk-consent{ font-size: var(--tk-fs-body-sm); color: var(--tk-text-on-dark-muted); }
+.tk-place-order{ margin-top: var(--tk-space-2); }
+
+/* ---- ORDER CONFIRMATION ---- */
+.tk-confirmation-hero{ text-align: center; display: flex; flex-direction: column; align-items: center; gap: var(--tk-space-4); }
+.tk-confirmation-badge{ width: 76px; height: 76px; border-radius: 50%; background: rgba(47,185,143,.14); color: var(--tk-signal-green); display: inline-flex; align-items: center; justify-content: center; }
+.tk-confirmation-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: var(--tk-space-6); margin-top: var(--tk-space-7); }
+
+/* ---- ACCOUNT ---- */
+.tk-account-layout{ display: grid; grid-template-columns: 260px 1fr; gap: var(--tk-space-8); align-items: start; }
+/* Grid items default to a content-based min-width, which stretches a
+   single-column mobile layout instead of letting a child (nav row, table,
+   gallery) scroll or wrap internally. Reset it wherever a grid can collapse
+   to one column, across every two-up layout below. */
+.tk-account-layout > *, .tk-legal-layout > *, .tk-guide-layout > *,
+.tk-product-layout > *, .tk-cart-layout > *, .tk-checkout-layout > *,
+.tk-confirmation-grid > *, .tk-story-preview > *, .tk-learn-featured > *{
+  min-width: 0;
+}
+.tk-account-nav{ display: flex; flex-direction: column; gap: var(--tk-space-1); position: sticky; top: calc(var(--tk-header-h) + var(--tk-space-5)); }
+.tk-account-nav a{
+  display: flex; align-items: center; justify-content: space-between; gap: var(--tk-space-3);
+  padding: var(--tk-space-4); border-radius: var(--tk-radius-md); font-weight: 700; font-size: .95rem;
+}
+.tk-account-nav a:hover{ background: var(--tk-charcoal); }
+.tk-account-nav a[aria-current="page"]{ background: var(--tk-charcoal); color: var(--tk-sun); border: 1px solid var(--tk-border-on-dark); }
+.tk-account-nav__utility{
+  margin-top: var(--tk-space-4); border-top: 1px solid var(--tk-border-on-dark); padding-top: var(--tk-space-4);
+  display: flex; flex-direction: column; gap: var(--tk-space-1);
+}
+.tk-account-nav__utility a{ padding: var(--tk-space-2) var(--tk-space-4); font-size: var(--tk-fs-body-sm); font-weight: 600; color: var(--tk-text-on-dark-muted); border-radius: var(--tk-radius-md); }
+.tk-account-nav__utility a:hover{ background: var(--tk-charcoal); color: var(--tk-text-on-dark); }
+.tk-account-nav__utility a[aria-current="page"]{ background: var(--tk-charcoal); color: var(--tk-sun); }
+.tk-account-panels{ display: flex; flex-direction: column; gap: var(--tk-space-5); }
+.tk-account-summary-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--tk-space-5); }
+.tk-order-card{ display: flex; flex-direction: column; gap: var(--tk-space-4); }
+.tk-order-card__head{ display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--tk-space-3); }
+.tk-order-status{ font-size: 11px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; padding: 4px 10px; border-radius: var(--tk-radius-pill); background: var(--tk-soft-graphite); }
+.tk-order-status--fulfilled{ background: rgba(47,185,143,.16); color: var(--tk-signal-green); }
+.tk-order-status--processing{ background: rgba(246,178,24,.18); color: var(--tk-sun); }
+.tk-address-grid{ display: grid; grid-template-columns: 1fr 1fr; gap: var(--tk-space-5); }
+.tk-address-card{ display: flex; flex-direction: column; gap: var(--tk-space-2); }
+.tk-address-card__tag{ font-size: var(--tk-fs-eyebrow); font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--tk-text-on-dark-faint); }
+.tk-login-shell{ max-width: 440px; margin-inline: auto; }
+.tk-payment-card{ display: flex; align-items: center; gap: var(--tk-space-4); }
+.tk-payment-card__brand{
+  flex: none; width: 48px; height: 32px; border-radius: var(--tk-radius-sm);
+  background: var(--tk-soft-graphite); color: var(--tk-ivory);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 800; letter-spacing: .03em;
+}
+.tk-payment-card__body{ flex: 1; display: flex; flex-direction: column; gap: 2px; }
+
+/* ---- OUR STORY / WHAT WE BUILD ---- */
+.tk-story-hero{ text-align: center; max-width: 760px; margin-inline: auto; }
+.tk-philosophy-steps{ display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--tk-space-4); counter-reset: step; }
+.tk-philosophy-step{ display: flex; flex-direction: column; gap: var(--tk-space-2); }
+.tk-philosophy-step__num{ font-family: var(--tk-font-display); font-size: 2rem; color: var(--tk-sun); font-weight: 700; }
+.tk-not-do{ border-left: 3px solid var(--tk-signal-coral); padding-left: var(--tk-space-5); }
+
+/* ---- FAQ ---- */
+.tk-faq-cats{ display: flex; gap: var(--tk-space-2); flex-wrap: wrap; margin-bottom: var(--tk-space-7); }
+.tk-faq-group + .tk-faq-group{ margin-top: var(--tk-space-7); }
+
+/* ---- SHIPPING & RETURNS ---- */
+.tk-anchor-nav{ display: flex; gap: var(--tk-space-2); flex-wrap: wrap; position: sticky; top: calc(var(--tk-header-h) + var(--tk-space-3)); background: var(--tk-bg-page); padding-block: var(--tk-space-3); z-index: 5; }
+
+/* ---- TERMS / PRIVACY ---- */
+.tk-legal-layout{ display: grid; grid-template-columns: 260px 1fr; gap: var(--tk-space-8); align-items: start; }
+.tk-toc{ position: sticky; top: calc(var(--tk-header-h) + var(--tk-space-5)); display: flex; flex-direction: column; gap: var(--tk-space-2); font-size: var(--tk-fs-body-sm); }
+.tk-toc a{ color: var(--tk-text-on-dark-muted); padding: var(--tk-space-1) 0; }
+.tk-toc a:hover, .tk-toc a.is-active{ color: var(--tk-sun); }
+.tk-legal-body h2{ margin-top: var(--tk-space-7); font-size: var(--tk-fs-display-sm); }
+.tk-legal-body p, .tk-legal-body li{ color: var(--tk-text-on-dark-muted); }
+.tk-legal-body{ display: flex; flex-direction: column; gap: var(--tk-space-3); }
+
+/* ---- CONTACT ---- */
+.tk-contact-grid{ display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--tk-space-5); align-items: stretch; }
+/* Equal-height cards with mismatched description lengths still need their
+   CTA buttons to land on the same baseline — flex column + margin-top:auto
+   on the button, instead of a fixed margin-top that drifts with content. */
+.tk-contact-grid .tk-card{ display: flex; flex-direction: column; gap: var(--tk-space-3); }
+.tk-contact-grid__cta{ margin-top: auto; align-self: flex-start; }
+.tk-contact-form{ margin-top: var(--tk-space-8); max-width: var(--tk-content-max); }
+
+/* ---- LEARN HUB ---- */
+.tk-learn-featured{ display: grid; grid-template-columns: 1.1fr .9fr; gap: var(--tk-space-7); align-items: center; }
+.tk-learn-topics{ display: flex; gap: var(--tk-space-2); flex-wrap: wrap; margin: var(--tk-space-7) 0; }
+.tk-learn-search{ max-width: 420px; margin-bottom: var(--tk-space-7); }
+
+/* ---- ARTICLE ---- */
+.tk-article-hero{ max-width: var(--tk-content-max); margin-inline: auto; text-align: left; }
+.tk-article-body{ max-width: var(--tk-content-max); margin-inline: auto; display: flex; flex-direction: column; gap: var(--tk-space-5); }
+.tk-article-body h2{ font-size: var(--tk-fs-display-sm); margin-top: var(--tk-space-4); }
+.tk-article-body p{ color: var(--tk-text-on-dark-muted); }
+.tk-article-related{ margin-top: var(--tk-space-8); }
+
+/* ---- INDUSTRY GUIDE (SEO) ---- */
+.tk-guide-layout{ display: grid; grid-template-columns: 1fr 240px; gap: var(--tk-space-8); align-items: start; }
+.tk-guide-body{ display: flex; flex-direction: column; gap: var(--tk-space-5); max-width: var(--tk-content-max); }
+.tk-guide-body p{ color: var(--tk-text-on-dark-muted); }
+.tk-guide-body h2{ font-size: var(--tk-fs-display-sm); scroll-margin-top: calc(var(--tk-header-h) + var(--tk-space-4)); }
+.tk-guide-body h3{ font-size: 1.1rem; scroll-margin-top: calc(var(--tk-header-h) + var(--tk-space-4)); }
+.tk-guide-toc{ position: sticky; top: calc(var(--tk-header-h) + var(--tk-space-5)); }
+.tk-guide-sources{ font-size: var(--tk-fs-body-sm); color: var(--tk-text-on-dark-faint); }
+
+/* ---- SEARCH ---- */
+.tk-search-tabs{ display: flex; gap: var(--tk-space-2); margin-bottom: var(--tk-space-6); }
+.tk-search-results-grid{ display: grid; grid-template-columns: repeat(3,1fr); gap: var(--tk-space-5); }
+
+/* ---- 404 ---- */
+.tk-404{ text-align: center; padding-block: var(--tk-space-9); display: flex; flex-direction: column; align-items: center; gap: var(--tk-space-5); }
+.tk-404__code{ font-family: var(--tk-font-display); font-size: clamp(4rem, 10vw, 8rem); font-weight: 700; color: var(--tk-sun); line-height: 1; }
+.tk-404__links{ display: flex; gap: var(--tk-space-3); flex-wrap: wrap; justify-content: center; }
+
+/* ---- FOOTER ---- */
+.tk-footer{ background: var(--tk-bg-deep); color: var(--tk-ivory); }
+.tk-footer__top{ padding-block: var(--tk-space-8); display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: var(--tk-space-6); }
+.tk-footer__brand-col{ display: flex; flex-direction: column; gap: var(--tk-space-4); }
+.tk-footer__brand{ display: inline-flex; align-items: center; gap: .5rem; font-family: var(--tk-font-display); font-weight: 700; font-size: 1.15rem; }
+.tk-footer__brand img{ height: 40px; width: auto; object-fit: contain; }
+@media (max-width: 640px){ .tk-footer__brand img{ height: 32px; } }
+.tk-footer__col-title{ font-size: var(--tk-fs-eyebrow); letter-spacing: var(--tk-tracking-eyebrow); text-transform: uppercase; color: rgba(246,242,232,.5); margin-bottom: var(--tk-space-4); }
+.tk-footer__col ul{ display: flex; flex-direction: column; gap: var(--tk-space-3); }
+.tk-footer__col a:hover{ color: var(--tk-sun); }
+.tk-footer__bottom{ border-top: 1px solid rgba(246,242,232,.14); padding-block: var(--tk-space-5); display: flex; align-items: center; justify-content: space-between; font-size: var(--tk-fs-body-sm); color: rgba(246,242,232,.55); }
+.tk-footer__back-top{ display: inline-flex; align-items: center; gap: .4em; font-weight: 700; }
+
+/* ---- responsive.css ---- */
+/* ==========================================================================
+   TROPIK STATIC STOREFRONT v1 — RESPONSIVE
+   Deliberately tuned at 1440 / 1024 / 768 / 430 / 390 / 360.
+   See docs/RESPONSIVE_QA.md for the per-page breakdown.
+   ========================================================================== */
+
+/* ---- 1024px — tablet / small laptop ---- */
+@media (max-width: 1024px){
+  .tk-pieces-grid, .tk-territories-grid, .tk-shop-grid, .tk-search-results-grid, .tk-learn-grid, .tk-support-grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .tk-values-grid, .tk-philosophy-steps{ grid-template-columns: repeat(2, 1fr); }
+  .tk-product-layout{ grid-template-columns: 1fr; }
+  .tk-cart-layout, .tk-checkout-layout{ grid-template-columns: 1fr; }
+  .tk-order-summary{ position: static; }
+  .tk-account-layout, .tk-legal-layout, .tk-guide-layout{ grid-template-columns: 1fr; }
+  .tk-account-nav{ position: static; flex-direction: row; overflow-x: auto; }
+  .tk-account-nav__utility{ border-top: 0; margin-top: 0; padding-top: 0; flex-direction: row; }
+  .tk-toc, .tk-guide-toc{ position: static; }
+  .tk-story-preview, .tk-learn-featured{ grid-template-columns: 1fr; }
+  .tk-footer__top{ grid-template-columns: 1fr 1fr 1fr; }
+  .tk-confirmation-grid{ grid-template-columns: 1fr; }
+}
+
+/* ---- 768px — large mobile / small tablet ---- */
+@media (max-width: 768px){
+  .tk-drawer{ width: min(420px, 94vw); }
+  .tk-header__brand{ font-size: 1.1rem; }
+  .tk-territories-head{ flex-direction: column; align-items: flex-start; gap: var(--tk-space-3); }
+  .tk-address-grid, .tk-account-summary-grid{ grid-template-columns: 1fr; }
+  .tk-contact-grid{ grid-template-columns: 1fr; }
+  .tk-closer{ flex-direction: column; align-items: flex-start; text-align: left; }
+  .tk-footer__top{ grid-template-columns: 1fr 1fr; }
+  .tk-hero-carousel__slide{ padding: var(--tk-space-7) var(--tk-gutter); min-height: 420px; }
+}
+
+/* ---- 430 / 390 / 360px — phones ---- */
+@media (max-width: 480px){
+  .tk-pieces-grid, .tk-territories-grid, .tk-shop-grid, .tk-search-results-grid, .tk-learn-grid, .tk-support-grid,
+  .tk-values-grid, .tk-philosophy-steps{
+    grid-template-columns: 1fr;
+  }
+  .tk-form-row{ grid-template-columns: 1fr; }
+  .tk-cart-row{ grid-template-columns: 72px 1fr; }
+  .tk-cart-row__end{ grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; margin-top: var(--tk-space-3); }
+  .tk-footer__top{ grid-template-columns: 1fr; }
+  .tk-footer__bottom{ flex-direction: column; gap: var(--tk-space-2); align-items: flex-start; }
+  .tk-mission-banner{ padding: var(--tk-space-6); }
+  .tk-gallery__stage{ border-radius: var(--tk-radius-lg); }
+  .tk-hero-carousel__controls{ right: var(--tk-space-4); bottom: var(--tk-space-4); }
+  /* Fixed 2026-09-06: 100vw left no visible/tappable backdrop strip on phones,
+     so the only way to close was the head X — and if that was ever missed or
+     mis-tapped there was no fallback. Capping at 92vw always leaves a dark
+     backdrop sliver on the covered edge that closes the panel on tap. */
+  .tk-drawer, .tk-cart-panel{ width: min(92vw, 400px); }
+  .tk-collapse__head{ padding: var(--tk-space-4); }
+  .tk-collapse__body-inner{ padding-inline: var(--tk-space-4); }
+}
+
+@media (max-width: 400px){
+  .tk-h-xl{ font-size: clamp(2rem, 8vw, 2.6rem); }
+  .tk-btn{ padding-inline: var(--tk-space-5); }
+  .tk-container{ padding-inline: var(--tk-space-4); }
+}
+
+
+/* ---- rebuild-components.css (added 2026-09-06, DEC-026 Page System) ---- */
+/* ==========================================================================
+   Language switch, status/claim badges, process-stage card, evidence block,
+   hub section header (with a non-overlapping carousel-control pattern),
+   previous/next page nav, drawer "soon" badge, material page grid.
+   All built on the existing tk-* token set — no new prefix introduced.
+   ========================================================================== */
+
+/* Language switch (header) — restores the EN/ES control the founder flagged
+   as missing; ES/EN only for now, easy to extend. */
+.tk-lang-switch{
+  display: inline-flex;
+  border: 1px solid var(--tk-border-on-dark);
+  border-radius: var(--tk-radius-pill);
+  padding: 3px;
+  gap: 2px;
+}
+.tk-lang-switch__opt{
+  height: 30px;
+  padding-inline: 12px;
+  border-radius: var(--tk-radius-pill);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: .02em;
+  color: var(--tk-text-on-dark-faint);
+}
+.tk-lang-switch__opt[aria-pressed="true"]{ background: var(--tk-sun); color: var(--tk-ink); }
+.tk-lang-switch__opt:not([aria-pressed="true"]):hover{ color: var(--tk-text-on-dark); }
+@media (max-width: 640px){ .tk-lang-switch{ display: none; } } /* header stays compact on phones; language lives in the drawer footer instead */
+
+.tk-drawer__lang-row{ display: flex; align-items: center; justify-content: space-between; gap: var(--tk-space-3); margin-top: var(--tk-space-4); }
+
+/* Drawer "coming soon" link state — distinct from the green "Live" badge,
+   so an unbuilt cluster is visibly previewed without pretending it's ready. */
+.tk-drawer__list a.tk-drawer__soon{ color: var(--tk-text-on-dark-faint); pointer-events: none; }
+.tk-drawer__soon-badge{
+  font-size: 10px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase;
+  background: transparent; color: var(--tk-text-on-dark-faint);
+  border: 1px solid var(--tk-border-on-dark-strong);
+  border-radius: var(--tk-radius-pill); padding: 2px 7px;
+}
+
+/* ---------------------------------------------------------------------- */
+/* STATUS BADGE — material lifecycle (sitemap §4.D legend)                */
+/* ---------------------------------------------------------------------- */
+.tk-status-badge{
+  display: inline-flex; align-items: center; gap: .5em;
+  font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: var(--tk-radius-pill);
+  border: 1px solid currentColor;
+  color: var(--tk-status-concept);
+}
+.tk-status-badge::before{ content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.tk-status-badge--concept{ color: var(--tk-status-concept); }
+.tk-status-badge--rd{ color: var(--tk-status-rd); }
+.tk-status-badge--prototype{ color: var(--tk-status-prototype); }
+.tk-status-badge--trial{ color: var(--tk-status-trial); }
+.tk-status-badge--tested{ color: var(--tk-status-tested); }
+.tk-status-badge--commercial{ color: var(--tk-status-commercial); background: rgba(47,185,143,.12); }
+
+/* ---------------------------------------------------------------------- */
+/* CLAIM BADGE — evidence classification (project-wide taxonomy)          */
+/* ---------------------------------------------------------------------- */
+.tk-claim-badge{
+  display: inline-flex; align-items: center; gap: .5em;
+  font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+  padding: 5px 11px;
+  border-radius: var(--tk-radius-pill);
+  background: var(--tk-charcoal);
+  color: var(--tk-text-on-dark);
+}
+.tk-claim-badge--fact{ color: var(--tk-claim-verified); }
+.tk-claim-badge--decision{ color: var(--tk-claim-decision); }
+.tk-claim-badge--hypothesis{ color: var(--tk-claim-hypothesis); }
+.tk-claim-badge--target{ color: var(--tk-claim-target); }
+.tk-claim-badge--aspiration{ color: var(--tk-claim-aspiration); }
+.tk-claim-badge--prohibited{ color: var(--tk-claim-prohibited); }
+
+/* ---------------------------------------------------------------------- */
+/* EVIDENCE / STATUS BLOCK — sits under any claim or metric                */
+/* ---------------------------------------------------------------------- */
+.tk-evidence-block{
+  border-radius: var(--tk-radius-md);
+  border: 1px solid var(--tk-border-on-dark);
+  border-left: 3px solid var(--tk-sun);
+  background: var(--tk-charcoal);
+  padding: var(--tk-space-4) var(--tk-space-5);
+  display: flex; flex-direction: column; gap: var(--tk-space-2);
+}
+.tk-evidence-block__row{ display: flex; align-items: center; gap: var(--tk-space-3); flex-wrap: wrap; }
+.tk-evidence-block__text{ color: var(--tk-text-on-dark-muted); font-size: var(--tk-fs-body-sm); }
+.tk-evidence-block__source{ font-size: var(--tk-fs-body-sm); font-weight: 700; }
+.tk-evidence-block__source a{ text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------------------------------------------------------------------- */
+/* PROCESS-STAGE FLOW — numbered horizontal sequence, current stage lit   */
+/* ---------------------------------------------------------------------- */
+.tk-stage-flow{ display: flex; flex-wrap: wrap; gap: var(--tk-space-3); }
+.tk-stage-flow__step{
+  display: inline-flex; align-items: center; gap: var(--tk-space-2);
+  padding: var(--tk-space-2) var(--tk-space-4);
+  border-radius: var(--tk-radius-pill);
+  border: 1px solid var(--tk-border-on-dark);
+  color: var(--tk-text-on-dark-faint);
+  font-weight: 700; font-size: var(--tk-fs-body-sm);
+}
+.tk-stage-flow__step-num{ font-family: var(--tk-font-display); font-weight: 800; color: inherit; }
+.tk-stage-flow__step.is-current{ border-color: var(--tk-sun); color: var(--tk-sun); background: rgba(246,178,24,.08); }
+.tk-stage-flow__step.is-done{ color: var(--tk-signal-green); border-color: var(--tk-signal-green); }
+.tk-stage-flow__sep{ color: var(--tk-text-on-dark-faint); align-self: center; }
+
+.tk-stage-card{
+  background: var(--tk-charcoal);
+  border-radius: var(--tk-radius-lg);
+  padding: var(--tk-space-6);
+  display: flex; flex-direction: column; gap: var(--tk-space-2);
+}
+.tk-stage-card__label{ color: var(--tk-text-on-dark-faint); font-size: var(--tk-fs-eyebrow); font-weight: 800; letter-spacing: var(--tk-tracking-eyebrow); text-transform: uppercase; }
+.tk-stage-card__value{ font-weight: 700; }
+.tk-stage-grid{ display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--tk-space-4); }
+
+/* ---------------------------------------------------------------------- */
+/* BREADCRUMB + PREV/NEXT — journey nav shared by every content page      */
+/* ---------------------------------------------------------------------- */
+.tk-page-nav{
+  display: flex; align-items: center; justify-content: space-between; gap: var(--tk-space-4);
+  padding-top: var(--tk-space-6);
+  border-top: 1px solid var(--tk-border-on-dark);
+  flex-wrap: wrap;
+}
+.tk-page-nav__link{ display: flex; flex-direction: column; gap: 2px; max-width: 260px; }
+.tk-page-nav__link--next{ text-align: right; align-items: flex-end; margin-left: auto; }
+.tk-page-nav__eyebrow{ font-size: 11px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; color: var(--tk-text-on-dark-faint); }
+.tk-page-nav__title{ font-weight: 700; }
+.tk-page-nav__link:hover .tk-page-nav__title{ color: var(--tk-sun); }
+
+/* ---------------------------------------------------------------------- */
+/* HUB SECTION HEADER — title + lede + carousel controls, ALL in one row  */
+/* This is the fix for "las flechas se superponen con los boxes": the     */
+/* prev/next controls live in the header row next to the section title,  */
+/* never floating on top of the cards themselves.                        */
+/* ---------------------------------------------------------------------- */
+.tk-hub-head{
+  display: flex; align-items: flex-end; justify-content: space-between; gap: var(--tk-space-6);
+  margin-bottom: var(--tk-space-6);
+  flex-wrap: wrap;
+}
+.tk-hub-head__text{ max-width: 56ch; }
+.tk-hub-head__controls{ display: flex; align-items: center; gap: var(--tk-space-3); flex: none; }
+.tk-hub-head__nav-btn{
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid var(--tk-border-on-dark-strong);
+  display: inline-flex; align-items: center; justify-content: center;
+  flex: none;
+}
+.tk-hub-head__nav-btn:hover{ border-color: var(--tk-sun); color: var(--tk-sun); }
+.tk-hub-head__nav-btn.is-disabled{ opacity: .3; pointer-events: none; }
+
+/* A carousel used under a .tk-hub-head never needs its own overlay
+   buttons — hide any inherited .tk-carousel__btn inside this pattern. */
+.tk-hub-head + .tk-carousel .tk-carousel__btn{ display: none; }
+
+/* Slightly pull the legacy overlay carousel buttons fully clear of the
+   card edge instead of sitting on top of the first/last card corner. */
+.tk-carousel__btn--prev{ left: calc(-1 * var(--tk-space-5)); }
+.tk-carousel__btn--next{ right: calc(-1 * var(--tk-space-5)); }
+@media (max-width: 900px){
+  .tk-carousel__btn--prev{ left: var(--tk-space-2); }
+  .tk-carousel__btn--next{ right: var(--tk-space-2); }
+}
+
+/* ---------------------------------------------------------------------- */
+/* MATERIAL PAGE — spec table + request-quote panel (NOT add-to-cart)     */
+/* ---------------------------------------------------------------------- */
+.tk-material-layout{ display: grid; grid-template-columns: 1.1fr .9fr; gap: var(--tk-space-8); align-items: start; }
+.tk-material-layout > *{ min-width: 0; }
+.tk-material-media{ aspect-ratio: 4/3; border-radius: var(--tk-radius-xl); background: var(--tk-mist); }
+.tk-quote-panel{ display: flex; flex-direction: column; gap: var(--tk-space-4); position: sticky; top: calc(var(--tk-header-h) + var(--tk-space-5)); }
+.tk-uses-list{ display: flex; flex-direction: column; gap: var(--tk-space-2); }
+.tk-uses-list__item{ display: flex; align-items: flex-start; gap: var(--tk-space-2); font-size: var(--tk-fs-body-sm); }
+.tk-uses-list__item--prohibited{ color: var(--tk-signal-coral); }
+@media (max-width: 900px){ .tk-material-layout, .tk-stage-grid{ grid-template-columns: 1fr; } }
+
+/* ---------------------------------------------------------------------- */
+/* COMPONENT LIBRARY page                                                  */
+/* ---------------------------------------------------------------------- */
+.tk-lib-row{ display: flex; flex-wrap: wrap; gap: var(--tk-space-4); align-items: center; padding: var(--tk-space-5) 0; border-bottom: 1px solid var(--tk-border-on-dark); }
+.tk-lib-row__label{ flex: 0 0 220px; color: var(--tk-text-on-dark-faint); font-size: var(--tk-fs-body-sm); font-family: ui-monospace, "SFMono-Regular", Menlo, monospace; }
+.tk-lib-row__demo{ display: flex; flex-wrap: wrap; gap: var(--tk-space-3); align-items: center; flex: 1 1 320px; }
+
+/* ==========================================================================
+   ITERATION 1 OVERRIDES — founder 2026-09-07 deltas the frozen source above
+   does not yet reflect. Each one is logged in 01_SOURCE_OF_TRUTH_AND_INPUT_
+   STATUS.md / 03_GOLDEN_MASTER_PARITY_MATRIX.md as a resolved conflict, not
+   a silent guess. Kept in one block, at the end, so a future diff against
+   a re-frozen Golden Master is a one-file, one-block comparison.
+   ========================================================================== */
+
+/* 1) Mobile narrative-rail arrows: founder override requires them visible
+   and vertically centered on mobile, never hidden. The frozen ≤640px rule
+   above (".tk-carousel__btn{ display:none }") is explicitly superseded here,
+   not edited in place, so the source diff stays traceable. */
+@media (max-width: 640px){
+  .tk-carousel__btn{ display: inline-flex !important; }
+}
+
+/* 2) One-card-at-a-time on mobile: give rail items a mobile-specific basis
+   equal to the viewport-safe container width instead of the fixed 280/320px
+   desktop card widths, so each scroll-snap stop shows exactly one card and
+   initCarousel's existing scrollByPage() (0.9 * track width) already lands
+   on the next card without any JS change. */
+@media (max-width: 640px){
+  .tk-carousel__track{ scroll-snap-type: x mandatory; }
+  .tk-carousel__track .tk-product-card,
+  .tk-carousel__track .tk-media-card{ width: calc(100vw - (var(--tk-gutter) * 2) - 56px); }
+}
+
+/* 3) Honest "content pending founder approval" placeholder — the same
+   convention the Artifact already uses via .tk-gate-tag on unsupplied legal
+   copy (see terms.html / privacy.html in the Golden Master), extended here
+   to any theme-authored placeholder section. Never used to invent copy. */
+.tk-content-pending{
+  border: 1px dashed var(--tk-border-on-dark-strong);
+  border-radius: var(--tk-radius-md);
+  padding: var(--tk-space-6);
+  display: flex; flex-direction: column; gap: var(--tk-space-3);
+  align-items: flex-start;
+}
+.tk-content-pending .tk-gate-tag{ margin-bottom: 0; }
+.tk-content-pending p{ color: var(--tk-text-on-dark-muted); margin: 0; max-width: 56ch; }
+
+/* 4) Language switch degrades to hidden (not fake) when Polylang isn't
+   active — header.php only prints .tk-lang-switch when a real translated
+   route exists, so no CSS change is needed here; documented for completeness. */
+
+/* 5) WooCommerce field defaults: force Woo's own cart/checkout inputs onto
+   the same dark field tokens as every other .tk-field, matching the exact
+   failure mode TOKENS.md flags ("Woo ships unstyled/white by default"). */
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce form .form-row select,
+.woocommerce-checkout #payment,
+.woocommerce table.shop_table{
+  background: var(--tk-field-bg);
+  color: var(--tk-field-text);
+  border-color: var(--tk-field-border);
+}
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row select{
+  height: 54px;
+  border-radius: var(--tk-radius-md);
+  padding-inline: var(--tk-space-4);
+}
+.woocommerce ::placeholder{ color: var(--tk-field-placeholder); }
